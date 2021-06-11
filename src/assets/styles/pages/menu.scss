@@ -1,0 +1,28 @@
+.menu {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	&__title {
+		margin-bottom: 40px;
+	}
+	&__container {
+		padding-top: 182px;
+		padding-left: 132px;
+		position: relative;
+	}
+	&__content {
+		display: flex;
+	}
+	&__main {
+		margin-right: 90px;
+		&_item {
+			font-weight: bold;
+			font-size: 18px;
+			line-height: 100%;
+			margin-bottom: 18px;
+		}
+	}
+}
+
+.vector__menu {
+	left: 53%;
+}

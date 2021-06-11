@@ -1,0 +1,48 @@
+.environment {
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: column;
+	max-width: 75%;
+	margin-left: auto;
+	padding-bottom: 130px;
+	&__blocks {
+		display: grid;
+	 grid-template-columns: 1fr 1fr;
+	 justify-content: space-between;
+	 grid-gap: 50px;
+	 margin-bottom: 50px;
+	}
+	&__main {
+		display: flex;
+		justify-content: space-between;
+		position: relative;
+		&_block {
+			display: flex;
+			justify-content: space-between;
+			width: 649px;
+			height: 220px;
+			background: rgba(15, 28, 32, 0.9);
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			padding: 50px;
+		}
+	}
+}
+
+
+.block__text {
+	display: flex;
+	&_vector {
+		height: 60px;
+		width: auto;
+		margin-right: 30px;
+	}
+	&_desc {
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 140%;
+		color: #ECEFDC;
+		max-width: 240px;
+	}
+}

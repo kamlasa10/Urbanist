@@ -1,0 +1,127 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Документи'
+    var id_page = 'id-page-documents'
+    var class_page = 'class-page-documents'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/documents.js')
+
+block content
+  .content.content-docs
+    .container-content
+      .links.container
+        a.link-prev(href='./') Головна
+        p.link-line —
+        p.current-page Документи
+      h1.page-title.container Документи
+        .vector
+          .vector__rounded
+      .docs
+        <div class="swiper-container swiper-container__docs">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              .docs__block
+                .docs__inf 
+                  +img('documents/1.jpg').docs__inf_photo
+                  .docs__inf__text 
+                    p.docs__size 1.65 мб (PDF)
+                    .date__block 
+                      +img('clock.svg').date__block_icon
+                      p.docs__inf_date 10.12.2020
+                p.docs__block_title Експертиза проекта
+              a.link__btn(href='#') Завантажити
+            </div>
+            <div class="swiper-slide">
+              .docs__block
+                .docs__inf 
+                  +img('documents/2.jpg').docs__inf_photo
+                  .docs__inf__text 
+                    p.docs__size 6.33 мб (PDF)
+                    .date__block 
+                      +img('clock.svg').date__block_icon
+                      p.docs__inf_date 10.12.2020
+                p.docs__block_title Договір оренди земельної ділянки від 12.06.2020р
+              a.link__btn(href='#') Завантажити
+            </div> 
+            <div class="swiper-slide">
+              .docs__block
+                .docs__inf 
+                  +img('documents/3.jpg').docs__inf_photo
+                  .docs__inf__text 
+                    p.docs__size 1.26 мб (PDF)
+                    .date__block 
+                      +img('clock.svg').date__block_icon
+                      p.docs__inf_date 10.12.2020
+                p.docs__block_title Лiцензiя Г. П. Командор ( повiдомлення, перелiк робiт, Витяг iз сайту_ДАБI )
+              a.link__btn(href='#') Завантажити
+            </div>
+            <div class="swiper-slide">
+              .docs__block
+                .docs__inf 
+                  +img('documents/4.jpg').docs__inf_photo
+                  .docs__inf__text 
+                    p.docs__size 860.4 кб (PDF)
+                    .date__block 
+                      +img('clock.svg').date__block_icon
+                      p.docs__inf_date 10.12.2020
+                p.docs__block_title 2020-11-26 ГП Цедика 14А Стадия П - КОРРЕКТ-2 ГП
+              a.link__btn(href='#') Завантажити
+            </div>
+            <div class="swiper-slide">
+              .docs__block
+                .docs__inf 
+                  +img('documents/5.jpg').docs__inf_photo
+                  .docs__inf__text 
+                    p.docs__size 77.92 кб (PDF)
+                    .date__block 
+                      +img('clock.svg').date__block_icon
+                      p.docs__inf_date 10.12.2020
+                p.docs__block_title Витяг на земельний участок
+              a.link__btn(href='#') Завантажити
+            </div>
+            <div class="swiper-slide">
+              .docs__block
+                .docs__inf 
+                  +img('documents/6.jpg').docs__inf_photo
+                  .docs__inf__text 
+                    p.docs__size 154.62 КБ (PDF)
+                    .date__block 
+                      +img('clock.svg').date__block_icon
+                      p.docs__inf_date 10.12.2020
+                p.docs__block_title Дозвіл на будівництво ІУ013210208238
+              a.link__btn(href='#') Завантажити
+            </div>
+          </div>
+        </div>
+        .swiper__btns_doc
+            <div class="swiper-button-prev1">
+              +img('arrow-slider.svg').arrow-prev.arrow
+            </div>
+            <div class="swiper-button-next1">
+              +img('arrow-slider.svg').arrow
+            </div>
+  
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

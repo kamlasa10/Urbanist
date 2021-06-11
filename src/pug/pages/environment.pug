@@ -1,0 +1,73 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Оточення'
+    var id_page = 'id-page-environment'
+    var class_page = 'class-page-environment'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/environment.js')
+block content
+  .content
+    .container-content.container
+      .vector
+        .vector__rounded
+      .links 
+        a.link-prev(href='./') Головна
+        p.link-line —
+        p.current-page Оточення
+      h1.page-title Оточення
+      .pattern
+      .environment 
+        .environment__blocks 
+          .environment__item 
+            .block__text
+              +img('vector.svg').block__text_vector
+              p.block__text_desc Вдале розташування в одному з центральних районів міста.
+            +img('environment1.jpg').environment__item_photo
+          .environment__item 
+            .block__text
+              +img('vector.svg').block__text_vector
+              p.block__text_desc Вдале розташування в одному з центральних районів міста.
+            +img('environment2.jpg').environment__item_photo
+          .environment__item 
+            .block__text
+              +img('vector.svg').block__text_vector
+              p.block__text_desc Вдале розташування в одному з центральних районів міста.
+            +img('environment3.jpg').environment__item_photo
+          .environment__item 
+            .block__text
+              +img('vector.svg').block__text_vector
+              p.block__text_desc Вдале розташування в одному з центральних районів міста.
+            +img('environment4.jpg').environment__item_photo
+        .environment__main
+          +img('environment-main.jpg').environment__main__photo 
+          .environment__main_block 
+            .block__text
+              +img('vector.svg').block__text_vector
+              p.block__text_desc Поруч є дитсадок, школа, університети, спорткомплекс, стадіон,  тому URBANIST - це кращий вибір для молоді, студентів та сімей із дітьми. 
+            .block__btns
+              button.border-green_btn Замовити дзвінок	 
+              a.link__btn_green(href='infrastructure.html') Інфраструктура
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

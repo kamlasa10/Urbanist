@@ -1,0 +1,119 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Обрати квартиру'
+    var id_page = 'id-page-apartments'
+    var class_page = 'class-page-apartments'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/apartments.js')
+block content
+  .content.content-apartments
+    .container-content.container
+      .apartments
+        .apartments__buttons.apartments__buttons_top
+          button.apartments__filter
+            .apartments__filter__icon
+              +img('filter-icon.svg')
+            span.apartments__filter_text.apartments__text підбір за параметрами
+          a.apartments__selected(href='selected.html') 
+            p.apartments__selected_text.apartments__text обране:
+            p.apartments__selected_text.apartments__text  |
+            p.apartments__selected_count.apartments__text  2
+            +img('selected.svg').apartments__selected_icon 
+        .apartments__inf
+          .apartments__inf_container
+            .apartments__menu 
+              h3.apartments__menu_title Меню 3D
+              .apartments__menu__blocks   
+                a.apartments__menu_block.apartments__menu_block_active 3D генплан
+                a.apartments__menu_block(href='planning.html') вибір планувань
+                a.apartments__menu_block.apartments__menu_block_disable квартира
+            h1.page-title Вибір на 3D моделі
+          .apartments__buttons.apartments__buttons_bottom 
+            button.instruction__btn  
+              p.instruction__btn_text.apartments__text повторити інструкцію
+              p.apartments__text.instruction__btn_line |
+              +img('instr-icon.svg').instruction__icon
+            .infr__switch 
+              label.switch.apartments__text  
+                <input type="checkbox">
+                span.slider.round
+                  p.apartments__text.slider__text інфраструктура
+            
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .modal
+    +img('vector-modal.svg').modal__vector
+    button.modal__close
+      +img('close.svg')
+    h1.modal__title Замовити консультацію
+    form(action="#").contacts__form
+      <div class="form__group field">
+        <input type="input" class="form__field" placeholder="Ім'я*" name="name" id='name'/>
+        <label for="name" class="form__label">Ім'я*</label>
+      </div>
+      <div class="form__group field">
+        <input type="input" class="form__field" placeholder="Телефон*" name="phone" id='phone'/>
+        <label for="phone" class="form__label">Телефон*</label>
+      </div>
+      button.green-light_btn(type='submit').modal__btn надіслати повідомлення
+  .modal
+    
+    +img('vector-modal.svg').modal__vector
+    button.modal__close
+      +img('close.svg')
+    h1.modal__title Замовити дзвінок
+    form(action="#").contacts__form
+      <div class="form__group field">
+        <input type="input" class="form__field" placeholder="Ім'я*" name="name" id='name'/>
+        <label for="name" class="form__label">Ім'я*</label>
+      </div>
+      <div class="form__group field">
+        <input type="input" class="form__field" placeholder="Телефон*" name="phone" id='phone'/>
+        <label for="phone" class="form__label">Телефон*</label>
+      </div>
+      button.green-light_btn(type='submit').modal__btn надіслати повідомлення
+  .modal
+    .pattern.pattern__small
+    +img('vector-modal.svg').modal__vector
+    button.modal__close
+      +img('close.svg')
+    h1.modal__title Повідомлення надіслано
+    p.modal__text Дякуємо за звернення! Очікуйте на дзвінок з відділу продажів Urbanist.
+    button.green-light_btn(type='submit').modal__btn Зрозуміло
+
+block header
+  include ../includes/header.pug

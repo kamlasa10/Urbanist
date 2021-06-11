@@ -1,0 +1,121 @@
+body.class-page-contacts {
+	background: url(../images/bg/bg-contacts.jpg) no-repeat bottom;
+	background-size: cover;
+}
+
+.contacts {
+	display: grid;
+	grid-template-columns: auto auto 394px;
+	grid-column-gap: 125px;
+	justify-content: space-between;
+	padding-bottom: 110px;
+	&__icon {
+		width: 14px;
+		height: auto;
+		margin-right: 20px;
+	}
+	&__title {
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 160%;
+		text-transform: uppercase;
+
+		color: #9EBC00;
+		margin-bottom: 20px;
+	}
+	&__block {
+		display: flex;
+		margin-bottom: 10px;
+	}
+	&__text {
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 120%;
+		color: #ECEFDC;
+		text-decoration: none;
+	}
+	&__link {
+		margin-bottom: 30px;
+	}
+	&__inf {
+		&__block {
+				display: flex;
+				margin-bottom: 15px;
+				.contacts__text {
+					line-height: 140%;
+				}
+		}
+	}
+}
+
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 100%;
+	&_textarea {
+		padding-top: 22px;
+	}
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #2A363B;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+	&_textarea {
+		height: 80px;
+	}
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    font-size: 14px;
+		line-height: 100%;
+    cursor: text;
+    top: 20px;
+		color: #ECEFDC;
+  }
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: $gray;
+}
+
+.form__field:focus {
+  ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+		opacity: 0.4;
+  }
+  padding-bottom: 6px;  
+	border-bottom: 1px solid #9EBC00;
+}
+/* reset input */
+.form__field{
+  &:required,&:invalid { box-shadow:none; }
+}
+
+.pattern__contacts {
+	&::after {
+		background: linear-gradient(270deg, #0F1C20 0%, rgba(15, 28, 32, 0.0749543) 92.5%, rgba(15, 28, 32, 0) 100%);
+	}
+}

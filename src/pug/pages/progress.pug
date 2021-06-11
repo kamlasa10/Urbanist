@@ -1,0 +1,173 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Хід будівництва'
+    var id_page = 'id-page-progress'
+    var class_page = 'class-page-progress'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/progress.js')
+block content
+  .content
+    .container-content.container
+      .vector.vector-main
+        .vector__rounded
+      .links 
+        a.link-prev(href='./') Головна
+        p.link-line —
+        p.current-page Хід будівництва
+      h1.page-title Хід будівництва
+      .pattern
+      .progress 
+        .progress__inf 
+          h3.progress__inf_title Статус робіт:
+          p.progress__inf_text Виконується монтаж ліфтів. Триває влаштування систем опалення, вентиляції, водопроводу, каналізації та електрики. 
+          <div class="items">
+            <div class="item">
+              <svg viewBox="-250 -250 500 500">
+                <circle r="180"  class="sc"/>
+                <circle r="180"  class="c1"/>
+                <text x="-70" y="30"> 74% </text>
+              </svg>
+              <div>будівництво</div>
+            </div>
+
+            <div class="item">
+              <svg viewBox="-250 -250 500 500">
+                <circle r="180"  class="sc"/>
+                <circle r="180"  class="c2"/>
+                <text x="-70" y="30"> 25% </text>
+              </svg>
+              <div>фасад</div>
+            </div>
+
+            <div class="item">
+              <svg viewBox="-250 -250 500 500">
+                <circle r="180"  class="sc"/>
+                <circle r="180"  class="c3"/>
+                <text x="-70" y="30"> 62% </text>
+              </svg>
+              <div>благоустрій</div>h
+            </div>
+
+            <div class="item">
+              <svg viewBox="-250 -250 500 500">
+                <circle r="180" class="sc"/>
+                <circle r="180" class="c4"/>
+                <text x="-70" y="30"> 17% </text>
+              </svg>
+              <div>мережі</div>
+            </div>
+          </div>
+          a.link__btn(href="webcam.html") Веб камера
+        .progress__content
+          .progress__blocks
+            .progress__item
+              .progress__item__block
+                +img("progress.jpg").progress__item_photo
+                .progress__item__more
+                  button.progress__item_button
+                    +img('+.svg')
+              .progress__text 
+                p.progress__text_mounth Січень
+                .date__block 
+                  +img('clock.svg').date__block_icon
+                  p 10.12.2020
+            .progress__item
+              .progress__item__block
+                +img("progress.jpg").progress__item_photo
+                .progress__item__more
+                  button.progress__item_button
+                    +img('+.svg')
+              .progress__text 
+                p.progress__text_mounth Січень
+                .date__block 
+                  +img('clock.svg').date__block_icon
+                  p 10.12.2020
+            .progress__item
+              .progress__item__block
+                +img("progress.jpg").progress__item_photo
+                .progress__item__more
+                  button.progress__item_button
+                    +img('+.svg')
+              .progress__text 
+                p.progress__text_mounth Січень
+                .date__block 
+                  +img('clock.svg').date__block_icon
+                  p 10.12.2020
+            .progress__item
+              .progress__item__block
+                +img("progress.jpg").progress__item_photo
+                .progress__item__more
+                  button.progress__item_button
+                    +img('+.svg')
+              .progress__text 
+                p.progress__text_mounth Січень
+                .date__block 
+                  +img('clock.svg').date__block_icon
+                  p 10.12.2020
+            .progress__item
+              .progress__item__block
+                +img("progress.jpg").progress__item_photo
+                .progress__item__more
+                  button.progress__item_button
+                    +img('+.svg')
+              .progress__text 
+                p.progress__text_mounth Січень
+                .date__block 
+                  +img('clock.svg').date__block_icon
+                  p 10.12.2020
+            .progress__item
+              .progress__item__block
+                +img("progress.jpg").progress__item_photo
+                .progress__item__more
+                  button.progress__item_button
+                    +img('+.svg')
+              .progress__text 
+                p.progress__text_mounth Січень
+                .date__block 
+                  +img('clock.svg').date__block_icon
+                  p 10.12.2020
+      
+          .progress__pagination 
+            button.pagination__button
+              <svg width="5" height="6" viewBox="0 0 5 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 6V0L0 3L5 6Z" fill="#FFF2E4"/>
+              </svg>
+              p попередня
+            button.pagination__button
+              p 1
+            button.pagination__button 
+              p 2
+            button.pagination__button 
+              p 3
+            button.pagination__button
+              p 4
+            button.pagination__button
+              p наступна
+              <svg width="6" height="7" viewBox="0 0 6 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.5 6.5L0.5 0.5L5.5 3.5L0.5 6.5Z" fill="#ECEFDC"/>
+              </svg>
+      
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

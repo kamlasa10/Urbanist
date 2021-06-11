@@ -1,0 +1,94 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'home'
+    var id_page = 'flat-page'
+    var class_page = 'home'
+    var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= 'Галерея'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/gallery.js')
+block content
+  .container-gallery
+    <div class="swiper-container gallery-top">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          +img('slider/1.jpg')
+        </div>
+        <div class="swiper-slide">
+          +img('slider/2.jpg')
+        </div>
+        <div class="swiper-slide">
+          +img('slider/3.jpg')
+        </div>
+        <div class="swiper-slide">
+          +img('slider/4.jpg')
+        </div>
+        <div class="swiper-slide">
+          +img('slider/1.jpg')
+        </div>
+        <div class="swiper-slide">
+          +img('slider/2.jpg')
+        </div>
+      </div>  
+    </div>
+    .swiper__content.container
+        .swiper__btns_gallery
+          <div class="swiper-button-prev_gallery"> 
+            +img('arrow-slider.svg').arrow-prev.arrow
+          </div>
+          <div class="swiper-button-next_gallery"> 
+            +img('arrow-slider.svg').arrow
+          </div>
+        <div class="swiper-pagination"></div>
+    <div class="swiper-container gallery-thumbs">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          +img('slider/1.jpg')
+        </div>
+        <div class="swiper-slide">
+          +img('slider/2.jpg')
+        </div>
+        <div class="swiper-slide">
+          +img('slider/3.jpg')
+        </div>
+        <div class="swiper-slide">
+          +img('slider/4.jpg')
+        </div>
+        <div class="swiper-slide">
+          +img('slider/1.jpg')
+        </div>
+        <div class="swiper-slide">
+          +img('slider/2.jpg')
+        </div>
+      </div>
+    </div>
+  .container-content.gallery.container
+    .links 
+      a.link-prev(href='./') Головна
+      p.link-line —
+      p.current-page Галерея
+    h1.page-title Галерея
+    
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

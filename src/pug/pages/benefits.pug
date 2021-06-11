@@ -1,0 +1,85 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Переваги'
+    var id_page = 'id-page-benefits'
+    var class_page = 'class-page-benefits'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/benefits.js')
+block content
+  .content
+   .container-content.container
+    .vector
+      .vector__rounded
+    .links 
+      a.link-prev(href='./') Головна
+      p.link-line —
+      p.current-page Переваги
+    .pattern
+    h1.page-title Переваги
+    .benefits 
+      .benefits__block
+        .block__text
+            +img('vector.svg').block__text_vector
+            p.block__text_desc Оптимальні за площею квартири з вільним плануванням і великими панорамними вікнами.
+        +img('benefits1.jpg').benefits__block_img
+      .benefits__item 
+        .benefits__item__block 
+          .block__text
+            +img('vector.svg').block__text_vector
+            p.block__text_desc Енергоефективність та економія — власна котельня та енергоощадні безпечні будматеріали.
+          +img('benefits2.jpg')
+        .benefits__item__block 
+          .block__text
+            +img('vector.svg').block__text_vector
+            p.block__text_desc Зручна транспортна розв'язка — 5 хвилин до метро.
+          +img('benefits3.jpg')
+      .benefits__block
+        +img('benefits4.jpg').benefits__block_img
+        .block__text
+          +img('vector.svg').block__text_vector
+          p.block__text_desc Доступна інвестиція в майбутнє — квартири в цьому районі завжди в ціні.
+      .benefits__item.benefits__item_right
+        .benefits__item__block 
+          .block__text
+            +img('vector.svg').block__text_vector
+            p.block__text_desc Розвинена інфраструктура — поруч є все, що потрібно для комфортного життя.
+          +img('benefits5.jpg')
+        .benefits__item__block 
+          .block__text
+            +img('vector.svg').block__text_vector
+            p.block__text_desc Інноваційні технології для безпеки та комфорту.
+          +img('benefits6.jpg')
+      .benefits__inf 
+        +img('benefits7.jpg')
+        .benefits__inf_block 
+          .block__text
+            +img('vector.svg').block__text_vector
+            p.block__text_desc Енергоефективність та економія — власна котельня та енергоощадні безпечні будматеріали.
+          .block__btns
+            button.border-green_btn Замовити консультацію 
+            a.link__btn_green(href='environment.html') Оточення
+        
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

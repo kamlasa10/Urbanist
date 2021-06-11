@@ -1,0 +1,48 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'menu'
+    var id_page = 'id-page-menu'
+    var class_page = 'class-page-menu'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/menu.js')
+block content
+  .content 
+    .pattern.pattern__small
+    .menu 
+      .menu__image 
+        +img('bg/bg-menu.png')
+      .menu__container
+        .vector.vector__menu
+          .vector__rounded
+        h1.page-title.menu__title Menu
+        .menu__content
+          ul.menu__block.menu__main
+            each el in menu1
+              li.menu__block_item.menu__main_item
+                a(href=el[1]).menu__block_link.menu__main_item= el[0]
+          ul.menu__block 
+            each el in menu2
+              li.menu__block_item
+                a(href=el[1]).menu__block_link= el[0]
+          
+block header
+  include ../includes/header.pug

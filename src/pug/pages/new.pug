@@ -1,0 +1,61 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'new'
+    var id_page = 'id-page-new'
+    var class_page = 'class-page-new'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/new.js')
+block content
+  .content
+    .container-content.container
+      .vector
+        .vector__rounded
+      .links 
+        a.link-prev(href='./') Головна
+        p.link-line —
+        a.link-prev(href='./') Новини
+        p.link-line —
+        p.current-page Графік роботи відділу продажу на новорічні свята
+      h1.page-title Графік роботи відділу продажу на новорічні свята
+      .pattern
+      .new 
+        .new__dates
+          a.new__back(href="news.html")  
+            <svg width="5" height="6" viewBox="0 0 5 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 6V0L0 3L5 6Z" fill="#FFF2E4"/>
+            </svg>
+            p.new__back_text назад
+          .date__block 
+            +img('clock.svg').date__block_icon
+            p 10.12.2020
+        .new__container
+          p.new__text Шановні клієнти, вітаємо вас з прийдешнім Новим роком і Різдвом!  Якщо на свята ви плануєте завітати до відділу продажу RYBALSKY, зверніть увагу на змінений графік роботи. 6 січня чекаємо на вас з 9.00 до 16.00, 8 січня — з 10.00 до 18.00. Наша адреса: вул. Набережно-Рибальська дорога, 3, 9.
+          +img("new.jpg").new__image
+          p.new__text Шановні клієнти, вітаємо вас з прийдешнім Новим роком і Різдвом!  Якщо на свята ви плануєте завітати до відділу продажу RYBALSKY, зверніть увагу на змінений графік роботи. 6 січня чекаємо на вас з 9.00 до 16.00, 8 січня — з 10.00 до 18.00. Наша адреса: вул. Набережно-Рибальська дорога, 3, 9.
+          a.link__btn_green(href='apartments.html') обрати квартиру
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

@@ -1,0 +1,51 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Веб камера'
+    var id_page = 'id-page-webcam'
+    var class_page = 'class-page-webcam'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/webcam.js')
+block content
+  .pattern
+  .content.content-web
+    .container-content.container
+      .vector
+        .vector__rounded
+      .links 
+        a.link-prev(href='./') Головна
+        p.link-line —
+        p.current-page Веб камера
+      .webcam-title
+        h1.page-title Веб камера
+        a.webcam-title__link(href='progress.html') 
+          p Хід будівництва
+          +img('Arrow.svg').webcam-title__link_arrow
+      .webcam 
+        .block__btns
+          button.border-green_btn Камера 1
+          button.webcam_btn Камера 2
+        <video class="webcam__video" width="706"  height="350" src="https://www.w3schools.com/html/mov_bbb.mp4"  controls autobuffer>
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

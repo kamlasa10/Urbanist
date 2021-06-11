@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../src/assets/styles/pages/gallery.scss"
+    ],
+    "names": [],
+    "file": "gallery.min.css"
+}
