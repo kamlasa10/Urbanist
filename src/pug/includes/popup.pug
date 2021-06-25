@@ -1,0 +1,18 @@
+.menu.js-menu 
+		.pattern.pattern__small
+		.menu__image 
+			+img('bg/bg-menu.png')
+		.menu__container
+			.vector.vector__menu
+				.vector__rounded
+			.menu__container-wrap
+				h1.page-title.menu__title Menu
+				.menu__content
+					ul.menu__block.menu__main
+						each el in menu1
+							li.menu__block_item.menu__main_item
+								a(href=el[1]).menu__block_link.menu__main_item= el[0]
+					ul.menu__block 
+						each el in menu2
+							li.menu__block_item
+								a(href=el[1]).menu__block_link= el[0]

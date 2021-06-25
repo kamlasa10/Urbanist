@@ -23,10 +23,12 @@ header(class="header container")
 				button.border-green_btn.show__popup.btn 
 					span.btn__text Замовити дзвінок
 			li.header-list__item
-				button(class="header-list__item_menu header-menu")
-					p.header-menu_text меню
+				button(class="header-list__item_menu header-menu js-btn-menu")
+					p.header-menu_text 
+						span.default.header-menu_span меню
+						span.open.header-menu_span закрити
 					.header-menu__block
-						a(href='menu.html')
+						div
 							.header-menu__line
 							.header-menu__line_short
 	

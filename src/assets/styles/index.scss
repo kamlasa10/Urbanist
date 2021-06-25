@@ -18,16 +18,26 @@ body {
 	padding-right: 50px;
 }
 
-.container {
-	padding: 0 50px;
-	width: 100%;
-  &-content {
-		padding-top: 135px;
+#home-page {
+	.container {
+		padding: 0 50px;
+		width: 100%;
+	  &-content {
+			padding-top: 135px;
+		}
+	
+		@media (min-width: 2000px) {
+			max-width: calc(100vw - 10vw);
+		}
 	}
 
 	@media (min-width: 2000px) {
-        max-width: calc(100vw - 10vw);
-    }
+		max-width: calc(100vw - 10vw);
+
+		.menu__container {
+			padding-left: 17vw;
+		}
+	}
 }
 
 #home-page {
@@ -133,10 +143,6 @@ body {
 		&__block {
 			display: flex;
 			align-items: center;
-
-			@media (min-width: 2700px) {
-				margin-right: 1.6vw;
-			}
 		}
 	}
 	
@@ -153,12 +159,6 @@ body {
 		-moz-appearance: none;
 		transform: translateX(-106px);
 		transition: all .4s;
-
-		@media (min-width: 2000px) {
-			width: 3.3vw;
-			height: 2.3vh;
-		}
-
 
 		&--prev {
 			&:hover {
@@ -196,10 +196,6 @@ body {
 		position: absolute;
 		align-items: center;
 		font-size: 15px;
-
-		@media (min-width: 2000px) {
-			font-size: 0.8vw;
-		}
 	}
 	
 	.slides-nav__index-current {
@@ -253,6 +249,7 @@ body {
 
 			@media (min-width: 2000px) {
 				max-width: 17vw;
+				margin-bottom: 50px;
 			}
 
 			@include to(1440px) {
@@ -278,10 +275,6 @@ body {
 			height: auto;
 			margin-right: 15px;
 
-			@media (min-width: 2000px) {
-				width: 1vw;
-			}
-
 			@include to(1440px) {
 				width: 14px;
 			}
@@ -293,10 +286,6 @@ body {
 			letter-spacing: 0.05em;
 			text-transform: uppercase;
 			color: #9EBC00;
-
-			@media (min-width: 2000px) {
-				font-size: $defaultFontSize;
-			}
 
 			@include to(1440px) {
 				font-size: 10px;
@@ -547,7 +536,7 @@ body {
 		z-index: 1;
 	}
 	&__small {
-		height: 159px;
+		height: 18vh;
 	}
 }
 

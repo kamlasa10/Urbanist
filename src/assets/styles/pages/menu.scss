@@ -5,7 +5,8 @@
 		margin-bottom: 40px;
 	}
 	&__container {
-		padding-top: 182px;
+		display: flex;
+		align-items: center;
 		padding-left: 132px;
 		position: relative;
 	}

@@ -2,6 +2,32 @@
 	position: relative;
 }
 
+#gallery-page {
+  .gallery__decor {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      height: 100vh;
+      z-index: 5;
+    }
+
+    &::before {
+      left: 0;
+      width: 26%;
+      
+      background: linear-gradient(90deg, rgba(36, 121, 148, 0.2) 0%, rgba(15, 28, 32, 0.2) 100%);
+    }
+
+    &::after {
+      right: 0;
+      width: 20%;
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+  }
+}
+
 
 .gallery {
 	position: absolute;

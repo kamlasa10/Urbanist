@@ -2,10 +2,10 @@
 extends ../layout/main
 block variable
   -
-    var title_page = 'home'
-    var id_page = 'flat-page'
-    var class_page = 'home'
-    var breadcrumbsBtn = 'filter'
+    var title_page = 'Галерея'
+    var id_page = 'gallery-page'
+    var class_page = 'gallery'
+    var breadcrumbsBtn = 'gallery'
     var breadcrumbsSubitem = [
       {
         label: 'About',
@@ -25,6 +25,7 @@ block scripts
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/gallery.js')
 block content
+  .gallery__decor
   .container-gallery
     <div class="swiper-container gallery-top">
       <div class="swiper-wrapper">

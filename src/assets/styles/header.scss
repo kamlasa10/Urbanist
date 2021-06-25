@@ -6,23 +6,13 @@
   transform: translate(-50%, 0);
   width: 100%;
   height: 104px;
-  z-index: 20;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 
   @media (min-width: 2000px) {
     height: auto;
-  }
-
-  &__logo {
-    @media (min-width: 2000px) {
-      width: 9vw;
-    }
-
-    @media (min-width: 2800px) {
-      width: 7vw;
-    }
   }
 
   &-container {
@@ -47,9 +37,9 @@
     grid-gap: 50px;
     align-items: center;
 
-    @media (min-width: 2000px) {
-      grid-gap: 2.5vw;
-    }
+    // @media (min-width: 2000px) {
+    //   grid-gap: 2.5vw;
+    // }
 
     &__item {
       &_link {
@@ -121,6 +111,12 @@
     &_text {
       margin-right: 20px;
       transition: all .4s;
+
+      .open {
+        position: absolute;
+        left: 0;
+        opacity: 0;
+      }
     }
 
     &__block {
@@ -137,10 +133,10 @@
         &::before {
           content: "";
           position: absolute;
-          top: -10px;
-          height: 12px;
+          top: -30px;
+          height: 34px;
           background-color: $green;
-          width: calc(100% - 2px);
+          width: 100%;
         }
       }
 
@@ -155,6 +151,7 @@
       background: #ECEFDC;
       margin-bottom: 4px;
       margin-top: -3px;
+      transition: all .4s;
 
       @include to(1440px) {
         margin-top: 0;
@@ -186,6 +183,28 @@
         opacity: 0.7;
       }
     }
+
+    &.active {
+      .default {
+        position: absolute;
+        opacity: 0;
+      }
+
+      .open {
+        position: static;
+        opacity: 1;
+      }
+
+      .header-menu__line {
+        transform: rotate(45deg) translate(3px, 4px);
+        width: 27px;
+      }
+
+      .header-menu__line_short {
+        transform: rotate(-45deg);
+        width: 27px;
+      }
+    }
   }
 }
 .lang {
@@ -197,8 +216,8 @@
     color: #fff;
     font-size: 12px;
 
-    @media (min-width: 2000px) {
-      font-size: 0.7vw;
+    @include to(1440px) {
+      font-size: 10px;
     }
   }
 
@@ -208,9 +227,8 @@
     height: 6px;
     transition: all .4s;
 
-    @media (min-width: 2000px) {
-      width: 0.4vw;
-      height: 0.5vw;
+    @include to(1440px) {
+      width: 6px;
     }
   }
 

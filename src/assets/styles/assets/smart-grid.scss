@@ -49,9 +49,15 @@ $fields_ss: 10px;
     margin: 0 auto;
     @include wrapper-full();
 
-    @media (min-width: 2000px) {
-        max-width: calc(100vw - 10vw);
+    @include to(1440px) {
+        max-width: 1330px;
+        padding-left: 50px;
+        padding-right: 50px;
     }
+
+    // @media (min-width: 2000px) {
+    //     max-width: calc(100vw - 10vw);
+    // }
 }
 
 @mixin row-flex(){

@@ -1,0 +1,17 @@
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0F1C20;
+    z-index: 50;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .4s;
+
+    &.show {
+        opacity: 1;
+        pointer-events: initial;
+    }
+}
