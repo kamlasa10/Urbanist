@@ -1,0 +1,68 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Про проєкт'
+    var id_page = 'id-page-about'
+    var class_page = 'class-page-about'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/about.js')
+block content
+  .content
+    .container-content.container
+      .vector
+        .vector__rounded
+      .links 
+        a.link-prev(href='./') Головна
+        p.link-line —
+        p.current-page Про проєкт
+      h1.page-title Про проєкт
+      .pattern
+      .about 
+        .about__main 
+          .about__main_text
+            p.about__text <span class="about__text_green">URBANIST </span>- житловий комплекс для молодих, цілеспрямованих та активних. Для тих, хто обирає життя в центрі подій, легкість пересування, нові технології та подорожі. 
+            p.about__text <span class="about__text_green">URBANIST </span>-  це  сучасний будинок із оптимальними за квадратурою та вільними за плануванням квартирами з панорамними вікнами та підземним паркінгом.
+            +img('about-main.jpg').about__main_photo
+        .about__blocks 
+          .about__block
+            +img('about1.jpg').about__block_photo
+            .about__block__text.about__block__text_right
+              p.about__text.about__text_block <span class="about__text_green">URBANIST </span> розташований  в кількох хвилинах пішки від метро, у безпосередній близькості від центру столиці. Квартири в цьому районі завжди будуть мати попит. Отже це кращий вибір для тих, хто шукає можливості для інвестицій в майбутнє, що дозволяють жити у своє задоволення.
+          .about__block.about__block_reverse
+            .about__block__text
+              p.about__text.about__text_block <span class="about__text_green">URBANIST </span> - це комфортне та економічне житло, що будується за сучасними технологіями з  енергозберігаючих безпечних матеріалів. Це квартири для тих, хто не відкладає життя на завтра і будує його за своїми правилами, для кого комфорт та безпека набагато важливіше того, яке враження він справляє на оточуючих.
+            +img('about2.jpg').about__block_photo
+          .about__block
+            +img('about3.jpg').about__block_photo
+            .about__block__text.about__block__text_right.about__text_block
+              div.about__text <span class="about__text_green">URBANIST </span> - сучасний, стильний, безпечний та продуманий до дрібниць. Житло для тих, хто обирає комфорт в усьому.
+              h3.about__text_title URBANIST - комфорт в усьому і нічого зайвого!
+              .block__btns
+                button.border-green_btn Замовити консультацію 
+                a.link__btn_green(href='benefits.html') Переваги
+
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

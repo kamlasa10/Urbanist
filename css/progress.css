@@ -1,0 +1,196 @@
+.progress {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  grid-gap: 100px;
+}
+
+.progress__inf_title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 160%;
+  color: #9EBC00;
+  margin-bottom: 10px;
+}
+
+.progress__inf_text {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 140%;
+  color: #ECEFDC;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.progress__blocks {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-column-gap: 45px;
+  grid-row-gap: 30px;
+}
+
+.progress__text {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.progress__text_mounth {
+  font-size: 18px;
+  line-height: 120%;
+  color: #ECEFDC;
+}
+
+.items {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (65px)[4];
+      grid-template-columns: repeat(4, 65px);
+  grid-gap: 32px;
+}
+
+.item svg {
+  display: block;
+  margin: auto;
+  width: 100%;
+}
+
+.item div {
+  font-size: 12px;
+  line-height: 100%;
+  /* identical to box height, or 12px */
+  text-align: center;
+  /* GREEN LIGHT */
+  color: #CAD1A6;
+  padding-top: 20px;
+}
+
+circle {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  transform-box: fill-box;
+  -webkit-transform: rotate(-270deg);
+          transform: rotate(-270deg);
+  stroke-linejoin: round;
+  stroke-width: 10px;
+  fill: none;
+}
+
+text {
+  font-size: 80px;
+  line-height: 100%;
+  text-align: center;
+  fill: #CAD1A6;
+}
+
+.c1 {
+  stroke: #9EBC00;
+  stroke-dasharray: 0 1383;
+  -webkit-animation: c1 1.5s linear forwards;
+          animation: c1 1.5s linear forwards;
+}
+
+.c2 {
+  stroke: #9EBC00;
+  stroke-dasharray: 0 1383;
+  -webkit-animation: c2 1.5s linear forwards;
+          animation: c2 1.5s linear forwards;
+}
+
+.c3 {
+  stroke: #9EBC00;
+  stroke-dasharray: 0 1383;
+  -webkit-animation: c3 1.5s linear forwards;
+          animation: c3 1.5s linear forwards;
+}
+
+.c4 {
+  stroke: #9EBC00;
+  stroke-dasharray: 0 1383;
+  -webkit-animation: c4 1.5s linear forwards;
+          animation: c4 1.5s linear forwards;
+}
+
+@-webkit-keyframes c1 {
+  0% {
+    stroke-dasharray: 0 1383;
+  }
+  100% {
+    stroke-dasharray: 850 1383;
+  }
+}
+
+@keyframes c1 {
+  0% {
+    stroke-dasharray: 0 1383;
+  }
+  100% {
+    stroke-dasharray: 850 1383;
+  }
+}
+
+@-webkit-keyframes c2 {
+  0% {
+    stroke-dasharray: 0 1383;
+  }
+  100% {
+    stroke-dasharray: 300 1383;
+  }
+}
+
+@keyframes c2 {
+  0% {
+    stroke-dasharray: 0 1383;
+  }
+  100% {
+    stroke-dasharray: 300 1383;
+  }
+}
+
+@-webkit-keyframes c3 {
+  0% {
+    stroke-dasharray: 0 1383;
+  }
+  100% {
+    stroke-dasharray: 700 1383;
+  }
+}
+
+@keyframes c3 {
+  0% {
+    stroke-dasharray: 0 1383;
+  }
+  100% {
+    stroke-dasharray: 700 1383;
+  }
+}
+
+@-webkit-keyframes c4 {
+  0% {
+    stroke-dasharray: 0 1383;
+  }
+  100% {
+    stroke-dasharray: 220 1383;
+  }
+}
+
+@keyframes c4 {
+  0% {
+    stroke-dasharray: 0 1383;
+  }
+  100% {
+    stroke-dasharray: 220 1383;
+  }
+}
+/*# sourceMappingURL=progress.css.map */

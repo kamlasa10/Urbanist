@@ -1,0 +1,60 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Забудовник'
+    var id_page = 'id-page-developer'
+    var class_page = 'class-page-developer'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/developer.js')
+block content
+  .content
+    .container-content.container
+      .vector
+        .vector__rounded
+      .links 
+        a.link-prev(href='./') Головна
+        p.link-line —
+        p.current-page Забудовник
+      h1.page-title Забудовник
+      .pattern.pattern__small
+      .developer 
+        .developer__site 
+          +img('dev-logo.svg').developer__site_logo
+          a.link__btn(href='#' target='__blank') сайт забудовника
+        .developer__contacts
+          h2.developer__contacts_title Контакти компанії
+          .contacts__inf 
+            .contacts__inf__block
+              +img('map-pin.svg').contacts__icon
+              a.contacts__text(href="https://goo.gl/maps/fPX1pqgobV3RwVF66" target="__blank") м. Київ, вул. Бойчука, 44а
+            .contacts__inf__block
+              +img('mail.svg').contacts__icon
+              a.contacts__text(href="mailto:info@contour-development.com") info@contour-development.com
+            .contacts__inf__block
+              +img('phone.svg').contacts__icon
+              a.contacts__text(href="tel:0443909798") (044) 390-97-98
+          
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

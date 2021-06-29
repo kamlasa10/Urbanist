@@ -1,0 +1,87 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Контакти'
+    var id_page = 'id-page-contacts'
+    var class_page = 'class-page-contacts'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/contacts.js')
+block content
+  .pattern.pattern__small.pattern__contacts
+  .content
+    .container-content.container
+      .vector.vector-main
+        .vector__rounded
+      .links 
+        a.link-prev(href='./') Головна
+        p.link-line —
+        p.current-page Контакти
+      h1.page-title Контакти
+      .contacts 
+        .contacts__adress
+          h2.contacts__title Адреса об’єкту:
+          .contacts__block
+            +img('map-pin.svg').contacts__icon
+            p.contacts__text Київ, вул. Антона Цедіка, 14а
+          a.contacts__link.link__btn(href='https://goo.gl/maps/6bBHwDMPXudZx6od8' target='__blank') показати на google maps
+        .contacts__adress
+          h2.contacts__title відділ продажів:
+          .contacts__block
+            +img('map-pin.svg').contacts__icon
+            p.contacts__text м. Київ, вул. Бойчука, 44а
+          a.contacts__link.link__btn(href='https://goo.gl/maps/G84BivrkGUJKHLoM9' target="__blank") показати на google maps
+          .contacts__inf 
+            .contacts__inf__block
+              +img('phone.svg').contacts__icon
+              a.contacts__text(href="tel:0443909798") (044) 390-97-98
+            .contacts__inf__block
+              +img('mail.svg').contacts__icon
+              a.contacts__text(href="mailto:info@contour-development.com") info@contour-development.com
+            .contacts__inf__block
+              +img('clock.svg').contacts__icon
+              .contacts__text
+                p пн-пт: 09:00-19:00
+                p сб-вс: 10:00-18:00
+        .contacts__form 
+          h2.contacts__title залишились запитання?
+          form(action="#").contacts__form
+            <div class="form__group field">
+              <input type="input" class="form__field" placeholder="Ім'я*" name="name" id='name'/>
+              <label for="name" class="form__label">Ім'я*</label>
+            </div>
+            <div class="form__group field">
+              <input type="input" class="form__field" placeholder="Телефон*" name="phone" id='phone'/>
+              <label for="phone" class="form__label">Телефон*</label>
+            </div>
+            <div class="form__group form__group_textarea field">
+              <textarea type="text" class="form__field form__field_textarea" placeholder="Ім'я*" name="name" id='name'></textarea>
+              <label for="name" class="form__label">Повідомлення</label>
+            </div>
+          button.green-light_btn(type='submit') надіслати повідомлення
+
+
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

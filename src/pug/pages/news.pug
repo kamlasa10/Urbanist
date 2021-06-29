@@ -1,0 +1,127 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Новини'
+    var id_page = 'id-page-news'
+    var class_page = 'class-page-news'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/news.js')
+block content
+  .filter__container
+    .news__filter 
+      p.news__filter_title Фільтр
+      .news__filter__year
+        p.news__filter_desc Рік
+        .news__filter__fill.filter__year__fill 2021
+          +img('chevron.svg').chevron.chevron__filter
+          .filter__year
+            a.filter__link(href="") Усі
+            a.filter__link(href="") 2021
+            a.filter__link(href="") 2020
+            a.filter__link(href="") 2019
+      .news__filter__month
+        p.news__filter_desc Місяць
+        .news__filter__fill.filter__month__fill Січень
+          +img('chevron.svg').chevron.chevron__filter
+          .filter__month
+            .filter__title 
+              p.filter__text Усі
+              .filter__line
+            .filter__month__container
+              .filter__month__block
+                a.filter__link(href="") Січень
+                a.filter__link(href="") лютий
+                a.filter__link(href="") березень
+                a.filter__link(href="") квітень
+              .filter__month__block
+                a.filter__link(href="") Травень
+                a.filter__link(href="") Червень
+                a.filter__link(href="") Липень
+                a.filter__link(href="") серпень
+              .filter__month__block
+                a.filter__link(href="") Вересень
+                a.filter__link(href="") Жовтень
+                a.filter__link(href="") Листопад
+                a.filter__link(href="") грудень
+    
+  .content
+   .container-content.container
+    .vector
+      .vector__rounded
+    .links 
+      a.link-prev(href='./') Головна
+      p.link-line —
+      p.current-page Новини
+    h1.page-title Новини
+    .pattern.pattern__small
+    .news
+      .news__blocks
+        .news__item
+          +img('news/1.jpg')
+          .news__item__text  
+            .date__block 
+              +img('clock.svg').date__block_icon
+              p 10.12.2020
+            p.news__item_title Графік роботи відділу продажу на новорічні свята
+            .news__item__link
+              a(href="new.html").link__btn.news__item__link_more Детальніше
+        .news__item
+          +img('news/2.jpg')
+          .news__item__text  
+            .date__block 
+              +img('clock.svg').date__block_icon
+              p 10.12.2020
+            p.news__item_title Встигніть здійснити бажання про власне житло! Купуйте квартиру з першим внеском 10%
+            .news__item__link
+              a(href="new.html").link__btn.news__item__link_more Детальніше
+        .news__item
+          +img('news/3.jpg')
+          .news__item__text  
+            .date__block 
+              +img('clock.svg').date__block_icon
+              p 10.12.2020
+            p.news__item_title Наші балкони люблять Bosch за простір для важливих речей!
+            .news__item__link
+              a(href="new.html").link__btn.news__item__link_more Детальніше
+        .news__item
+          +img('news/1.jpg')
+          .news__item__text  
+            .date__block 
+              +img('clock.svg').date__block_icon
+              p 10.12.2020
+            p.news__item_title На виплат у гривнях чи у доларах? Обирайте, що зручніше!
+            .news__item__link
+              a(href="new.html").link__btn.news__item__link_more Детальніше
+        .news__item
+          +img('news/1.jpg')
+          .news__item__text  
+            .date__block 
+              +img('clock.svg').date__block_icon
+              p 10.12.2020
+            p.news__item_title Встигніть скористатися акційними умовами розстрочки
+            .news__item__link
+              a(href="new.html").link__btn.news__item__link_more Детальніше
+        
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

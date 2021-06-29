@@ -1,0 +1,214 @@
+.content-apartments {
+	height: 100vh;
+}
+
+.apartments {
+	&__buttons {
+		display: flex;
+
+		align-items: center;
+		&_top {
+			padding-top: 7px;
+			justify-content: space-between;
+		}
+		&_bottom {
+			align-items: flex-end;
+			margin-right: 47px;
+			margin-bottom: 30px;
+		}
+
+	}
+	&__text {
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 120%;
+		color: #ECEFDC;
+		font-family: "TTFirsNeue", sans-serif;
+		text-align: left;
+		margin-right: 10px;
+	}
+	&__filter {
+		width: 240px;
+		height: 50px;
+		border: none;
+		outline: none;
+		display: flex;
+		padding: 0;
+		&__icon {
+			width: 50px;
+			height: 50px;
+			background: #0F1C20;
+			padding: 17px 15px;
+		}
+		&_text {
+
+			background: #9EBC00;
+
+			width: 100%;
+			height: 100%;
+			padding: 8px 20px 8px 30px;
+			margin-right: 0;
+		}
+	}
+
+	&__selected {
+		display: flex;
+		align-items: center;
+		text-decoration: none;
+	}
+
+	&__inf {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		&_container {
+			display: flex;
+			align-items: flex-end;
+		}
+	}
+	&__menu {
+		width: 160px;
+		height: 220px;
+		background: rgba(15, 28, 32, 0.8);
+		box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.25);
+		backdrop-filter: blur(10px);
+		padding: 20px 20px 40px 0; 
+		&_title {
+			font-size: 18px;
+			line-height: 100%;
+			text-transform: uppercase;
+			margin-left: 20px;
+			color: #ECEFDC;
+			margin-bottom: 10px;
+		}
+		&_block {
+			margin-right: 10px;
+			margin-bottom: 2px;
+			padding: 10px 20px;
+			background: #ECEFDC;
+			font-size: 14px;
+			line-height: 120%;
+			display: flex;
+			align-items: center;
+			color: #0F1C20;
+			transition: margin 0.3s ease-in-out;
+			text-decoration: none;
+			&:hover {
+				margin-right: 0;
+			}
+			&_active {
+				background: #9EBC00;
+				margin-right: 0;
+				color: #fff;
+			}
+			&_disable {
+				background: rgba(114, 114, 114, 0.5);
+				color: #999999;
+				&:hover {
+					margin-right: 10px;
+				}
+			}
+		}
+	}
+}
+
+.instruction {
+	&__btn {
+			height: 17px;
+			padding: 0;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			border: none;
+			background: transparent;
+			outline: none;
+			margin-right: 20px;
+			&_line {
+				color: #9EBC00;
+				margin-right: 10px;
+			}
+	}
+	&__icon {
+		max-height: 14px;
+		width: auto;
+	}
+}
+
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 36px;
+	height: 20px;
+	padding: 0;
+	margin-right: 0;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ECEFDC;
+  transition: .4s;
+	&__text {
+		position: absolute;
+    left: -125px;
+		top: 50%;
+		transform: translate(0, -50%);
+	}
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #9EBC00;
+}
+
+
+input:checked + .slider:before {
+  transform: translateX(16px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+  background: white;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+  background-color: #9EBC00;
+}
+
+input:checked + .slider.round:before {
+  background-color: white;
+}
+
+.infr__switch {
+	display: flex;
+	align-items: center;
+	width: 160px;
+	justify-content: flex-end;
+}
+

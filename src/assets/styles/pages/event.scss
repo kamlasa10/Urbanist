@@ -1,0 +1,26 @@
+.event {
+	max-width: 800px;
+	margin: auto;
+	&-inf {
+		&__details {
+			padding: 18px 17px;
+		}
+	}
+	&-title {
+		&__details {
+			margin-bottom: 13px;
+		}
+	}
+	&-description {
+		&__details {
+			max-height: 100%;
+			margin-bottom: 48px;
+		}
+	}
+	&-date {
+		&__details {
+			margin-bottom: 25px;
+		}
+	}
+}
+

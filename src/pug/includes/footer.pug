@@ -1,0 +1,51 @@
+footer(class="footer ")
+	.container
+		.footer__content
+			ul.menu__block
+				each el in menu1
+					li.menu__block_item.footer__item
+						a(href=el[1]).menu__block_link= el[0]
+			ul.menu__block 
+				each el in menu2
+					li.menu__block_item.footer__item
+						a(href=el[1]).menu__block_link= el[0]
+			.footer__form
+				.footer__input 
+					h2.footer__input_title Якщо у вас виникли запитання, залиште свій номер і ми передзвонимо вам:
+					label.footer__input_label(for="input-phone") +(38) 
+					input.footer__input_inp(type="text" id="input-phone" name="phone")
+				.footer__send 
+					button.footer__send_btn Надіслати
+			.footer__contacts
+				ul
+					li.footer__contacts_item 
+						h3.footer__contacts_title Наш телефон:
+						a.footer__contacts_desc(href="tel:0442907388") (044) 290-73-88
+					li.footer__contacts_item 
+						h3.footer__contacts_title Адреса об’єкту:
+						a.footer__contacts_desc(href="https://goo.gl/maps/hLZD95Q19k4ZD8o16" target="__blank") м. Київ, вул. Антона Цедіка, 14а
+					li.footer__contacts_item 
+						h3.footer__contacts_title Відділ продажу:
+						a.footer__contacts_desc(href="https://goo.gl/maps/fPX1pqgobV3RwVF66" target="__blank") м. Київ, вул. Бойчука, 44а
+					li.footer__contacts_item 
+						h3.footer__contacts_title Години роботи відділу продажу:
+						p.footer__contacts_desc Пн-пт: 09.00 - 19.00
+						p.footer__contacts_desc Сб-нд: 10.00 - 18.00
+				ul.footer__social
+					li.footer__social_item 
+						a(href="#" target='__blank')
+							+img('facebook.svg').footer__social_icon
+					li.footer__social_item 
+						a(href="#" target='__blank')
+							+img('instagram.svg').footer__social_icon
+					li.footer__social_item 
+						a(href="#" target='__blank')
+							+img('viber.svg').footer__social_icon
+					li.footer__social_item 
+						a(href="#" target='__blank')
+							+img('telegram.svg').footer__social_icon
+					
+		.footer__inf
+			p.footer__inf_text 2020 Urbanist house
+			a.footer__inf_link(href="https://smarto.agency/" target="__blank") SmartOrange
+

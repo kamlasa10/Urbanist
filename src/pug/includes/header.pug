@@ -1,0 +1,36 @@
+header(class="header")
+	.container
+		a(href="./" class="header__logo") 
+			+img("header-logo.svg")(class="header__logo_img")
+		.header-container
+			.header-container_block
+			ul.header-list
+				li.header-list__item
+					.lang
+						.lang__current-block 
+							span.lang__current uk
+							<svg width="6" height="5" viewBox="0 0 6 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M0 -2.62268e-07L6 0L3 5L0 -2.62268e-07Z" fill="#FFF2E4"/>
+							</svg>
+						.lang__list
+							a(href="#").lang__link.lang__link--current uk
+							a(href="#").lang__link ru
+							a(href="#").lang__link en
+				li.header-list__item
+					a(href='apartments.html').header-list__item_link.link-with-opacity-animate Обрати квартиру
+				li.header-list__item
+					a(href="tel:0449999123").header-list__item_phone.link-with-opacity-animate (044) 99 99 123
+				li.header-list__item
+					button.border-green_btn.show__popup.btn 
+						span.btn__text Замовити дзвінок
+				li.header-list__item
+					button(class="header-list__item_menu header-menu js-btn-menu")
+						p.header-menu_text 
+							span.default.header-menu_span меню
+							span.open.header-menu_span закрити
+						.header-menu__block
+							div.header-menu__block-wrap
+								.header-menu__line
+								.header-menu__line_short
+	
+
