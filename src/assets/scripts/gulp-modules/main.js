@@ -42,9 +42,18 @@ class Slideshow extends EventEmitter {
         // current position
         this.current = 0;
         // some settings, like the clip paths
+
+        let initialCircle
+
+        if($(window).width() < 2000 && $(window).width() > 1350) {
+            initialCircle = 'circle(52% at 70% 50%)'
+        } else {
+            initialCircle = 'circle(55% at 70% 50%)'
+        }
+
         this.config = {
             clipPath: {
-                initial: 'circle(55% at 70% 50%)',
+                initial: initialCircle,
                 final: 'circle(15% at 70% 50%)',
                 hover: 'circle(20% at 30% 50%)'
             }

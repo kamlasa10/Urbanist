@@ -1,4 +1,81 @@
-document.addEventListener('')
+class InitDoubleSliders {
+    constructor({$slider1, $slider2}) {
+        this.$slider1 = $slider1
+        this.$slider2 = $slider2
+    }
+
+    init() {
+        this.$slider2 = new Swiper(this.$slider2, {
+            direction: 'vertical',
+            loop: true,
+            slidesPerView: 5,
+            centeredSlides: true,
+            on: {
+                slideChangeTransitionStart(e) {
+                    
+                },
+                init(swiper) {
+                    swiper.slides.forEach(item => {
+                        item.addEventListener('click', e => {
+                            const clickedEl = e.currentTarget
+                            const activeSlide = swiper.$el.find('.swiper-slide-active')
+
+                            swiper.slides.forEach(item => item.classList.remove('swiper-slide-active'))
+                            clickedEl.classList.add('swiper-slide-active')
+                            
+
+                            gsap.to(clickedEl, {
+                                top: (activeSlide[0].getBoundingClientRect().bottom - clickedEl.getBoundingClientRect().bottom) + 'px',
+                                duration: 0.8
+                            })
+                            console.log(clickedEl.getBoundingClientRect(), activeSlide[0].getBoundingClientRect())
+                            gsap.to(activeSlide, {
+                                top: (clickedEl.getBoundingClientRect().bottom - activeSlide[0].getBoundingClientRect().bottom) + 'px',
+                                duration: 0.8
+                            })
+                        })
+                    })
+                }
+            }
+        })
+
+        this.$slider1 = new Swiper(this.$slider1, {
+            loop: true,
+            speed: 700,
+            navigation: {
+                nextEl: '.js-swiper-button-next_gallery',
+                prevEl: '.js-swiper-button-prev_gallery'
+            },
+            thumbs: {
+                swiper: this.$slider2
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'fraction',
+                formatFractionCurrent: function (number) {
+                    let isWithZero = number < 10 ? `0${number}`: number + ''
+                    return isWithZero.slice(-2);
+                },
+                formatFractionTotal: function (number) {
+                    let isWithZero = number < 10 ? `0${number}`: number + ''
+                    return isWithZero.slice(-2);
+                },
+                renderFraction: function (currentClass, totalClass) {
+                    return '<span class="' + currentClass + '"></span>' +
+                            ' - ' +
+                            '<span class="' + totalClass + '"></span>';
+                }
+            }
+        })
+    }
+}
+
+const initDoubleSliders = new InitDoubleSliders(
+    {$slider1: '.js-gallery-main', $slider2: '.js-gallery-thumbs'})
+
+document.addEventListener('DOMContentLoaded', () => {
+    initDoubleSliders.init()
+})
 
 
 // function initSliderGallery() {

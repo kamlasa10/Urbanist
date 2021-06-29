@@ -14,7 +14,7 @@
 
     &::before {
       left: 0;
-      width: 26%;
+      width: 30%;
       top: 0;
       background: linear-gradient(90deg, rgba(36, 121, 148, 0.2) 0%, rgba(15, 28, 32, 0.2) 100%);
     }
@@ -41,6 +41,30 @@
       transform: scaleX(-1);
       z-index: 3;
     }
+  }
+
+  .swiper__content {
+    z-index: 8;
+  }
+
+  .gallery-thumbs {
+    z-index: 10;
+  }
+
+  .swiper-pagination-fraction {
+    font-size: 15px;
+
+    @include to(1440px) {
+      font-size: 10px;
+    }
+  }
+
+  .swiper-pagination-current {
+    margin-right: 15px;
+  }
+
+  .swiper-pagination-total {
+    margin-left: 15px;
   }
 }
 
@@ -76,7 +100,6 @@
   img {
     height: 100%;
   }
-
 }
 
 .gallery-thumbs .swiper-slide-active {

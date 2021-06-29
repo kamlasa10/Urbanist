@@ -27,7 +27,7 @@ block scripts
 block content
   .gallery__decor
   .container-gallery
-    <div class="swiper-container gallery-top">
+    <div class="swiper-container gallery-top js-gallery-main">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           +img('slider/1.jpg')
@@ -50,15 +50,15 @@ block content
       </div>  
     </div>
     .swiper__content.container
-        .swiper__btns_gallery
-          <div class="swiper-button-prev_gallery"> 
+        .swiper__btns_gallery.js-swiper__btns_gallery
+          <div class="swiper-button-prev_gallery js-swiper-button-prev_gallery"> 
             +img('arrow-slider.svg').arrow-prev.arrow
           </div>
-          <div class="swiper-button-next_gallery"> 
+          <div class="swiper-button-next_gallery js-swiper-button-next_gallery"> 
             +img('arrow-slider.svg').arrow
           </div>
         <div class="swiper-pagination"></div>
-    <div class="swiper-container gallery-thumbs">
+    <div class="swiper-container gallery-thumbs js-gallery-thumbs">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           +img('slider/1.jpg')
