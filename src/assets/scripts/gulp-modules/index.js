@@ -4,7 +4,7 @@ function showMenu() {
     $('.js-btn-menu').on('click', e => {
         e.preventDefault()
         
-        $('.js-btn-menu').toggleClass('active')
+        $('.header').toggleClass('active')
         $('.js-menu').toggleClass('show')
     })
 }

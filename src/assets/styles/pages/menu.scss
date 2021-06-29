@@ -7,8 +7,12 @@
 	&__container {
 		display: flex;
 		align-items: center;
-		padding-left: 132px;
+		padding-left: 180px;
 		position: relative;
+
+		@include to(1440px) {
+			padding-left: 132px;
+		}
 	}
 	&__content {
 		display: flex;

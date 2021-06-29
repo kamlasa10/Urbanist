@@ -15,7 +15,7 @@
     &::before {
       left: 0;
       width: 26%;
-      
+      top: 0;
       background: linear-gradient(90deg, rgba(36, 121, 148, 0.2) 0%, rgba(15, 28, 32, 0.2) 100%);
     }
 
@@ -24,6 +24,22 @@
       width: 20%;
       transform: matrix(-1, 0, 0, 1, 0, 0);
       background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+  }
+
+  .gallery-top {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 15vh;
+      right: 0;
+      width: 100%;
+      bottom: 0;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+      transform: scaleX(-1);
+      z-index: 3;
     }
   }
 }
