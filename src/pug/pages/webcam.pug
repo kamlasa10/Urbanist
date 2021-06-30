@@ -5,12 +5,7 @@ block variable
     var title_page = 'Веб камера'
     var id_page = 'id-page-webcam'
     var class_page = 'class-page-webcam'
-    var breadcrumbsSubitem = [
-      {
-        label: 'About',
-        link: pagesLink[0].about
-      }
-    ]
+    var breadcrumbsLink = 'webcam'
   
 block meta
   title= title_page
@@ -30,10 +25,7 @@ block content
     .container-content.container
       .vector
         .vector__rounded
-      .links 
-        a.link-prev(href='./') Головна
-        p.link-line —
-        p.current-page Веб камера
+      include ../includes/breadcrumbs.pug
       .webcam-title
         h1.page-title Веб камера
         a.webcam-title__link(href='progress.html') 

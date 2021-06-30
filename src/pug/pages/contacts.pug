@@ -5,12 +5,7 @@ block variable
     var title_page = 'Контакти'
     var id_page = 'id-page-contacts'
     var class_page = 'class-page-contacts'
-    var breadcrumbsSubitem = [
-      {
-        label: 'About',
-        link: pagesLink[0].about
-      }
-    ]
+    var breadcrumbsLink = 'contacts'
   
 block meta
   title= title_page
@@ -30,10 +25,7 @@ block content
     .container-content.container
       .vector.vector-main
         .vector__rounded
-      .links 
-        a.link-prev(href='./') Головна
-        p.link-line —
-        p.current-page Контакти
+      include ../includes/breadcrumbs.pug
       h1.page-title Контакти
       .contacts 
         .contacts__adress

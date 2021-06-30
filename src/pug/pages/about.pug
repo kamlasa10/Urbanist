@@ -5,12 +5,7 @@ block variable
     var title_page = 'Про проєкт'
     var id_page = 'id-page-about'
     var class_page = 'class-page-about'
-    var breadcrumbsSubitem = [
-      {
-        label: 'About',
-        link: pagesLink[0].about
-      }
-    ]
+    var breadcrumbsLink = 'about'
   
 block meta
   title= title_page
@@ -29,10 +24,7 @@ block content
     .container-content.container
       .vector
         .vector__rounded
-      .links 
-        a.link-prev(href='./') Головна
-        p.link-line —
-        p.current-page Про проєкт
+      include ../includes/breadcrumbs.pug
       h1.page-title Про проєкт
       .pattern
       .about 

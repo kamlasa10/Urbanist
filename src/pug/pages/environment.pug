@@ -5,12 +5,7 @@ block variable
     var title_page = 'Оточення'
     var id_page = 'id-page-environment'
     var class_page = 'class-page-environment'
-    var breadcrumbsSubitem = [
-      {
-        label: 'About',
-        link: pagesLink[0].about
-      }
-    ]
+    var breadcrumbsLink = 'environment'
   
 block meta
   title= title_page
@@ -29,10 +24,7 @@ block content
     .container-content.container
       .vector
         .vector__rounded
-      .links 
-        a.link-prev(href='./') Головна
-        p.link-line —
-        p.current-page Оточення
+      include ../includes/breadcrumbs.pug
       h1.page-title Оточення
       .pattern
       .environment 

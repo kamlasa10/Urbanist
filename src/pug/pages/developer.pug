@@ -5,12 +5,7 @@ block variable
     var title_page = 'Забудовник'
     var id_page = 'id-page-developer'
     var class_page = 'class-page-developer'
-    var breadcrumbsSubitem = [
-      {
-        label: 'About',
-        link: pagesLink[0].about
-      }
-    ]
+    var breadcrumbsLink = 'developer'
   
 block meta
   title= title_page
@@ -29,10 +24,7 @@ block content
     .container-content.container
       .vector
         .vector__rounded
-      .links 
-        a.link-prev(href='./') Головна
-        p.link-line —
-        p.current-page Забудовник
+      include ../includes/breadcrumbs.pug
       h1.page-title Забудовник
       .pattern.pattern__small
       .developer 

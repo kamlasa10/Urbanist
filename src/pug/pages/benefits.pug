@@ -5,12 +5,7 @@ block variable
     var title_page = 'Переваги'
     var id_page = 'id-page-benefits'
     var class_page = 'class-page-benefits'
-    var breadcrumbsSubitem = [
-      {
-        label: 'About',
-        link: pagesLink[0].about
-      }
-    ]
+    var breadcrumbsLink = 'benefits'
   
 block meta
   title= title_page
@@ -29,10 +24,7 @@ block content
    .container-content.container
     .vector
       .vector__rounded
-    .links 
-      a.link-prev(href='./') Головна
-      p.link-line —
-      p.current-page Переваги
+    include ../includes/breadcrumbs.pug
     .pattern
     h1.page-title Переваги
     .benefits 
@@ -52,11 +44,7 @@ block content
             +img('vector.svg').block__text_vector
             p.block__text_desc Зручна транспортна розв'язка — 5 хвилин до метро.
           +img('benefits3.jpg')
-<<<<<<< HEAD
-      .benefits__block
-=======
       .benefits__block.benefits__block-revers
->>>>>>> 15028534acc8e51d9cb47c193a30708f73a3ec9c
         +img('benefits4.jpg').benefits__block_img
         .block__text
           +img('vector.svg').block__text_vector

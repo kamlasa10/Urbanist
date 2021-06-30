@@ -10,6 +10,13 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  transition: all .4s;
+
+  &.move {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    background-color: rgba(#0F1C20, .95);
+  }
 
   &.show {
     .lang {

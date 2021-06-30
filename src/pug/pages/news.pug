@@ -5,12 +5,7 @@ block variable
     var title_page = 'Новини'
     var id_page = 'id-page-news'
     var class_page = 'class-page-news'
-    var breadcrumbsSubitem = [
-      {
-        label: 'About',
-        link: pagesLink[0].about
-      }
-    ]
+    var breadcrumbsLink = 'news'
   
 block meta
   title= title_page
@@ -66,10 +61,7 @@ block content
    .container-content.container
     .vector
       .vector__rounded
-    .links 
-      a.link-prev(href='./') Головна
-      p.link-line —
-      p.current-page Новини
+      include ../includes/breadcrumbs.pug
     h1.page-title Новини
     .pattern.pattern__small
     .news

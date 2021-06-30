@@ -5,12 +5,7 @@ block variable
     var title_page = 'new'
     var id_page = 'id-page-new'
     var class_page = 'class-page-new'
-    var breadcrumbsSubitem = [
-      {
-        label: 'About',
-        link: pagesLink[0].about
-      }
-    ]
+    var breadcrumbsLink = 'new'
   
 block meta
   title= title_page
@@ -29,12 +24,7 @@ block content
     .container-content.container
       .vector
         .vector__rounded
-      .links 
-        a.link-prev(href='./') Головна
-        p.link-line —
-        a.link-prev(href='./') Новини
-        p.link-line —
-        p.current-page Графік роботи відділу продажу на новорічні свята
+      include ../includes/breadcrumbs.pug
       h1.page-title Графік роботи відділу продажу на новорічні свята
       .pattern
       .new 

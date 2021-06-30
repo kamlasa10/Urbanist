@@ -26,6 +26,11 @@
 			margin-bottom: 18px;
 		}
 	}
+
+	&__image {
+		position: relative;
+		overflow: hidden;
+	}
 }
 
 .vector__menu {

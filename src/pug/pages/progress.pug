@@ -5,12 +5,7 @@ block variable
     var title_page = 'Хід будівництва'
     var id_page = 'id-page-progress'
     var class_page = 'class-page-progress'
-    var breadcrumbsSubitem = [
-      {
-        label: 'About',
-        link: pagesLink[0].about
-      }
-    ]
+    var breadcrumbsLink = 'progress'
   
 block meta
   title= title_page
@@ -29,10 +24,7 @@ block content
     .container-content.container
       .vector.vector-main
         .vector__rounded
-      .links 
-        a.link-prev(href='./') Головна
-        p.link-line —
-        p.current-page Хід будівництва
+      include ../includes/breadcrumbs.pug
       h1.page-title Хід будівництва
       .pattern
       .progress 

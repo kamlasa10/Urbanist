@@ -5,12 +5,7 @@ block variable
     var title_page = 'Інфраструктура'
     var id_page = 'id-page-infrastructure'
     var class_page = 'class-page-infrastructure'
-    var breadcrumbsSubitem = [
-      {
-        label: 'About',
-        link: pagesLink[0].about
-      }
-    ]
+    var breadcrumbsLink = 'infra'
   
 block meta
   title= title_page
@@ -24,13 +19,49 @@ block scripts
   script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/header.js')
   script(defer src='./assets/scripts/infrastructure.js')
+  <script defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4EBsCfQfnwCFGD_o8iLWwH97tmNCU-6E&amp;ver=1625051700" id="out-resurs-0-js"></script>
 block content
-  .container-content.container
-    .links 
-      a.link-prev(href='./') Головна
-      p.link-line —
-      p.current-page Інфраструктура
-    h1.page-title Інфраструктура
+  .container-content 
+    .container
+      include ../includes/breadcrumbs.pug
+      h1.page-title Інфраструктура
+  .map 
+    .map__block.js-map 
+    .map__infra 
+      .map__infra-list 
+        .map__infra-item.map__infra-item--1
+          +svg('1')
+          span ЖК Urbanist
+        .map__infra-item.map__infra-item--2
+          +svg('2')
+          span Метро
+        .map__infra-item.map__infra-item--3
+          +svg('3')
+          span Парки 
+        .map__infra-item.map__infra-item--4
+          +svg('4')
+          span Освіта
+        .map__infra-item.map__infra-item--5
+          +svg('5')
+          span Кафе, рестораны
+        .map__infra-item.map__infra-item--6
+          +svg('6')
+          span Магазини
+        .map__infra-item.map__infra-item--7
+          +svg('7')
+          span Спорт
+        .map__infra-item.map__infra-item--8
+          +svg('8')
+          span Школи танцю 
+        .map__infra-item.map__infra-item--9
+          +svg('9')
+          span Кінотеатри
+        .map__infra-item.map__infra-item--10
+          +svg('10')
+          span Аптеки
+        .map__infra-item.map__infra-item--11
+          +svg('11')
+          span Зупинки громадського транспорту
 block footer
   include ../includes/footer.pug
 

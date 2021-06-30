@@ -11,7 +11,11 @@
   }
   
   &__form {
-    width: 268px;
+    width: 300px;
+
+    @include to(1440px) {
+      width: 268px;
+    }
   }
   &__input {
     padding-bottom: 30px;
@@ -19,9 +23,13 @@
     margin-bottom: 30px;
     &_title {
       font-weight: normal;
-      font-size: 14px;
+      font-size: 15px;
       line-height: 160%;
       text-transform: uppercase;
+
+      @include to(1440px) {
+        font-size: 14px;
+      }
 
       color: #9EBC00;
       margin-bottom: 30px;
@@ -35,23 +43,30 @@
       color: #ECEFDC;
     }
     &_inp {
-      width: 149px;
+      width: 185px;
       background: transparent;
       outline: none;
       border: none;
       border-bottom: 2px solid #ECEFDC;
       font-size: 30px;
       line-height: 100%;
-
       color: #ECEFDC;
-      cursor: pointer;
+      transition: all .4s;
+
+      @include to(1440px) {
+        width: 149px;
+      }
+
+      &:focus,&:active {
+        border-color: #9EBC00;
+      }
     }
   }
   &__send {
     &_btn {
       background: transparent;
       border: 1px solid #CAD1A6;
-      width: 240px;
+      width: 90%;
       height: 50px;
       font-size: 10px;
       line-height: 100%;
@@ -59,6 +74,10 @@
       text-transform: uppercase;
       color: #ECEFDC;
       cursor: pointer;
+
+      @include to(1440px) {
+        width: 240px;
+      }
     }
   }
   &__contacts {
@@ -68,20 +87,28 @@
     }
     &_title {
       font-weight: normal;
-      font-size: 12px;
+      font-size: 13px;
       line-height: 160%;
       text-transform: uppercase;
+
+      @include to(1440px) {
+        font-size: 12px;
+      }
 
       color: #ECEFDC;
       margin-bottom: 5px;
     }
     &_desc {
       font-weight: normal;
-      font-size: 14px;
+      font-size: 15px;
       line-height: 160%;
       /* or 22px */
       color: #79868A;
       text-decoration: none;
+
+      @include to(1440x) {
+        font-size: 14px;
+      }
     }
   }
   &__inf {
@@ -101,9 +128,13 @@
   &__social {
     display: flex;
     &_icon {
-      height: 16px;
+      height: 18px;
       width: auto;
       margin-right: 25px;
+
+      @include to(1440px) {
+        height: 16px;
+      }
     }
   }
 }

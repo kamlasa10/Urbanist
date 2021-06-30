@@ -20,10 +20,6 @@
   },
   "lint-staged": {
     "*.(js|jsx)": [
-<<<<<<< HEAD
-=======
-      "make lint-w",
->>>>>>> 15028534acc8e51d9cb47c193a30708f73a3ec9c
       "git add"
     ]
   },

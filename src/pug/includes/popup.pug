@@ -1,18 +1,61 @@
 .menu.js-menu 
 		.pattern.pattern__small
-		.menu__image 
+		.menu__image.js-menu__image 
 			+img('bg/bg-menu.png')
 		.menu__container
 			.vector.vector__menu
 				.vector__rounded
 			.menu__container-wrap
-				h1.page-title.menu__title Menu
+				h1.page-title.menu__title.js-menu__title Menu
 				.menu__content
-					ul.menu__block.menu__main
+					ul.menu__block.menu__main.js-menu-item
 						each el in menu1
 							li.menu__block_item.menu__main_item
 								a(href=el[1]).menu__block_link.menu__main_item= el[0]
-					ul.menu__block 
+					ul.menu__block.js-menu-item 
 						each el in menu2
 							li.menu__block_item
 								a(href=el[1]).menu__block_link= el[0]
+.overlay 
+	.popup.popup-callback(data-popup-type="callback") 
+		.popup__decor 
+			+svg('global-decor')
+		.popup__block
+			button(type="button").popup__close.btn-res(data-popup-close="callback")
+				+svg('close')
+		form.popup__wrap
+			.popup__title Замовити <br> дзвінок
+			.popup__item 
+				input.popup__input.btn-res(type="text" name="name" placeholder="Ім`я*" data-required="true" autocomplete="off")
+				.popup__text-warn text
+			.popup__item 
+				input.popup__input.btn-res(type="tel" name="phone" placeholder="Телефон*" data-required="true" autocomplete="off")
+				.popup__text-warn
+			button(type="submit" class="link__btn_green popup__submit") надіслати повідомлення
+	.popup.popup-callback(data-popup-type="consult") 
+		.popup__decor 
+			+svg('global-decor')
+		.popup__block
+			button(type="button").popup__close.btn-res(data-popup-close="consult")
+				+svg('close')
+		form.popup__wrap
+			.popup__title Замовити <br> дзвінок
+			.popup__item 
+				input.popup__input.btn-res(type="text" name="name" placeholder="Ім`я*" data-required="true" autocomplete="off")
+				.popup__text-warn text
+			.popup__item 
+				input.popup__input.btn-res(type="tel" name="phone" placeholder="Телефон*" data-required="true" autocomplete="off")
+				.popup__text-warn text
+			button(type="submit" class="link__btn_green popup__submit") надіслати повідомлення
+	.popup.popup-callback.popup-thanks(data-popup-type="thanks") 
+		.popup__decor 
+			+svg('global-decor')
+		.popup__block
+			button(type="button").popup__close.btn-res(data-popup-close="thanks")
+				+svg('close')
+		.popup__wrap
+			.popup__title Повідомлення <br> надіслано
+			.popup__desc Дякуємо за звернення! Очікуйте на дзвінок з відділу продажів Urbanist.
+			button(type="button").btn-res.link__btn_green.popup__thanks(data-popup-close="thanks") Зрозуміло
+		.popup__pattern 
+

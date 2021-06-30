@@ -9,13 +9,16 @@ footer(class="footer ")
 				each el in menu2
 					li.menu__block_item.footer__item
 						a(href=el[1]).menu__block_link= el[0]
-			.footer__form
+			form.footer__form
 				.footer__input 
 					h2.footer__input_title Якщо у вас виникли запитання, залиште свій номер і ми передзвонимо вам:
-					label.footer__input_label(for="input-phone") +(38) 
-					input.footer__input_inp(type="text" id="input-phone" name="phone")
+					.footer__form-wrap
+						label.footer__input_label(for="input-phone") +(38) 
+						input.footer__input_inp(type="tel" id="input-phone" name="phone")
+						.popup__text-warn text
 				.footer__send 
-					button.footer__send_btn Надіслати
+					button.footer__send_btn.btn
+						span.btn__text Надіслати
 			.footer__contacts
 				ul
 					li.footer__contacts_item 
