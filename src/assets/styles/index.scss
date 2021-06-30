@@ -6,10 +6,12 @@ body {
 .page__inner .page__content {
 	z-index: 0;
 	position: relative;
+  margin-top: 136px;
 }
 
 .content {
 	position: relative;
+  // margin-top: 136px;
 }
 
 .apartment-content {
@@ -373,6 +375,9 @@ body {
 .links {
 	display: flex;
 	margin-bottom: 10px;
+  @include to(1920px) {
+    margin-bottom: 12px;
+  }
 }
 
 .link-prev, .link-line {
@@ -383,6 +388,11 @@ body {
 
 	color: #ECEFDC;
 	margin-right: 10px;
+
+  @media (min-width:1920px) {
+    font-size: 16px;
+    margin-right: 12px;
+  }
 }
 
 .current-page {
@@ -390,7 +400,10 @@ body {
 	font-size: 14px;
 	line-height: 100%;
 	color: #9EBC00;
-
+  
+  @media (min-width:1920px) {
+    font-size: 16px;
+  }
 }
 
 
@@ -403,6 +416,10 @@ body {
 
 	color: #ECEFDC;
 	margin-bottom: 30px;
+  @media (min-width:1920px) {
+    font-size: 38px;
+    margin-bottom: 32px;
+  }
 }
 
 .link__btn {
@@ -421,6 +438,11 @@ body {
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
 	text-decoration: none;
+  @media (min-width:1920px) {
+    font-size: 12px;
+    width: 244px;
+	  height: 54px;
+  }
 
 }
 
@@ -440,6 +462,11 @@ body {
 	text-decoration: none;
 	border: none;
 	background: #9EBC00;
+  @media (min-width:1920px) {
+    font-size: 12px;
+    width: 244px;
+	  height: 54px;
+  }
 }
 
 .border-green_btn {
@@ -458,7 +485,7 @@ body {
 }
 
 .green-light_btn {
-	width: 240px;
+  	width: 240px;
 		height: 50px;
 		background: #9EBC00;
 		border: none;
@@ -473,6 +500,11 @@ body {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+     @media (min-width:1920px) {
+    font-size: 12px;
+    width: 244px;
+	  height: 54px;
+  }
 }
 
 .block__btns {
@@ -506,8 +538,10 @@ body {
 		line-height: 100%;
 		letter-spacing: 0.05em;
 		text-transform: uppercase;
-
 		color: #79868A;
+    @media (min-width:1920px) {
+      font-size: 12px;
+    }
 		&_icon {
 			max-width: 12px;
 			margin-right: 10px;

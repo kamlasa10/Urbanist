@@ -7,6 +7,9 @@
 		border: 1px solid #2F3435;
 		padding: 50px 55px;
 		height: min-content;
+    @media (min-width:1920px) {
+      left: 25%;
+    }
 	}
 	&__text, &__link {
 		font-size: 10px;
@@ -101,7 +104,9 @@
 			justify-content: space-between;
 			align-items: center;
 			cursor: pointer;
-		
+		  @media (min-width:1920px) {
+        font-size: 12px;
+      }
 
 		}
 		&_title {
@@ -110,6 +115,10 @@
 			line-height: 100%;
 			color: #ECEFDC;
 			margin-bottom: 30px;
+      @media (min-width:1920px) {
+        font-size: 26px;
+        margin-bottom: 32px;
+      }
 		}
 		&_desc {
 			font-weight: normal;
@@ -117,6 +126,10 @@
 			line-height: 12px;
 			color: #CAD1A6;
 			margin-bottom: 20px;
+      @media (min-width:1920px) {
+        font-size: 14px;
+        margin-bottom: 22px;
+      }
 		}
 	}
 	&__blocks {
@@ -163,6 +176,10 @@
 			line-height: 140%;
 			color: #ECEFDC;
 			margin-top: 20px;
+      @media (min-width:1920px) {
+        font-size: 20px;
+        margin-top: 22px;
+      }
 		}
 	}
 }

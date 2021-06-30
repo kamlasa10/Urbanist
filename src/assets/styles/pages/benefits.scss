@@ -8,6 +8,18 @@
 		margin-bottom: 80px;
 		justify-content: space-between;
 	}
+    @media (min-width:1920px) {
+      grid-template-columns: 260px auto;
+      grid-gap: 90px;
+      justify-content: inherit;
+      margin-bottom: 95px;
+    }
+   &__block-revers {
+      @media (min-width:1920px) {
+      display: grid;
+      grid-template-columns: auto 260px;
+      }
+    }
 	&__inf {
 		display: flex;
 		justify-content: space-between;
@@ -22,6 +34,10 @@
 			right: 0;
 			bottom: 0;
 			padding: 50px;
+      @media (min-width:1920px) {
+        width: 700px;
+        height: 230px;
+      }
 		}
 	}
 	&__item {

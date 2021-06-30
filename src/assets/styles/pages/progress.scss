@@ -13,6 +13,10 @@
 			line-height: 160%;
 			color: #9EBC00;
 			margin-bottom: 10px;
+      @media (min-width:1920px) {
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
 		}
 		&_text {
 			font-weight: normal;
@@ -21,6 +25,11 @@
 			color: #ECEFDC;
 			max-width: 300px;
 			margin-bottom: 20px;
+      @media (min-width:1920px) {
+        font-size: 16px;
+        margin-bottom: 22px;
+        max-width: 340px;
+      }
 		}
 	}
 	&__blocks {
@@ -38,6 +47,9 @@
 			font-size: 18px;
 			line-height: 120%;
 			color: #ECEFDC;
+      @media (min-width:1920px) {
+        font-size: 20px;
+      }
 		}
 	}
 	&__pagination {
@@ -91,6 +103,10 @@
   display: grid;
 	grid-template-columns: repeat(4, 65px);
 	grid-gap: 32px;
+  @media (min-width:1920px) {
+    grid-template-columns: repeat(4, 74px);
+	  grid-gap: 34px;
+  }
 }
 
 .item svg {
@@ -110,6 +126,11 @@
 
 		color: #CAD1A6;
 		padding-top: 20px;
+    @media (min-width: 1920px) {
+      font-size: 14px;
+      padding-top: 22px;
+      margin-bottom: 20px;
+    }
 }
 
 circle {
@@ -128,6 +149,9 @@ text {
 	text-align: center;
 
 	fill: #CAD1A6;
+    @media (min-width: 1920px) {
+      font-size:88px;
+    }
 }
 
 
@@ -206,6 +230,10 @@ text {
 	p {
 		margin: 0 10px;
 	}
+  @media (min-width:1920px) {
+    font-size: 16px;
+    margin-top: 54px;
+  }
 }
 
 

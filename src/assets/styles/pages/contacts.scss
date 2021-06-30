@@ -22,10 +22,17 @@ body.class-page-contacts {
 
 		color: #9EBC00;
 		margin-bottom: 20px;
+    @media (min-width:1920px) {
+      font-size: 16px;
+      margin-bottom: 22px;
+    }
 	}
 	&__block {
 		display: flex;
 		margin-bottom: 10px;
+    @media (min-width:1920px) {
+      margin-bottom: 12px;
+    }
 	}
 	&__text {
 		font-style: normal;
@@ -37,6 +44,10 @@ body.class-page-contacts {
 	}
 	&__link {
 		margin-bottom: 30px;
+    @media (min-width:1920px) {
+      font-size: 16px;
+	  margin-bottom: 32px;
+    }
 	}
 	&__inf {
 		&__block {
@@ -85,6 +96,10 @@ body.class-page-contacts {
     cursor: text;
     top: 20px;
 		color: #ECEFDC;
+    @media (min-width:1920px) {
+      font-size: 16px;
+      top: 22px;
+    }
   }
 }
 

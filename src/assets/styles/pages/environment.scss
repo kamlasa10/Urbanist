@@ -44,5 +44,9 @@
 		line-height: 140%;
 		color: #ECEFDC;
 		max-width: 240px;
+    @media (min-width:1920px) {
+      font-size: 16px;
+      max-width: 270px;
+    }
 	}
 }

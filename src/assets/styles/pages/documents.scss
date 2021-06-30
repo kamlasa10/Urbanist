@@ -15,6 +15,10 @@
 			line-height: 160%;
 			color: #ECEFDC;
 			height: 66px;
+      @media (min-width:1920px) {
+        font-size: 16px;
+        height: 76px;
+      }
 		}
 	}
 	&__inf {

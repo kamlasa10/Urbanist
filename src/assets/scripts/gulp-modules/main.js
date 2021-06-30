@@ -42,6 +42,7 @@ class Slideshow extends EventEmitter {
         // current position
         this.current = 0;
         // some settings, like the clip paths
+<<<<<<< HEAD
 
         let initialCircle
 
@@ -54,6 +55,11 @@ class Slideshow extends EventEmitter {
         this.config = {
             clipPath: {
                 initial: initialCircle,
+=======
+        this.config = {
+            clipPath: {
+                initial: 'circle(55% at 70% 50%)',
+>>>>>>> 15028534acc8e51d9cb47c193a30708f73a3ec9c
                 final: 'circle(15% at 70% 50%)',
                 hover: 'circle(20% at 30% 50%)'
             }

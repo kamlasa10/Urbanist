@@ -7,8 +7,10 @@
 	justify-content: end;
 	margin-left: auto;
 	padding-bottom: 145px;
+  @media (min-width:1920px) {
+    max-width: 70%;
+  }
 	&__site {
-
 		padding: 73px 60px;
 		border: 1px solid #2F3435;
 		display: flex;
@@ -32,6 +34,9 @@
 			text-transform: uppercase;
 			color: #9EBC00;
 			margin-bottom: 20px;
+      @media (min-width:1920px) {
+        font-size: 16px;
+      }
 		}
 	}
 }

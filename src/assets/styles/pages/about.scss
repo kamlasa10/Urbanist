@@ -11,21 +11,38 @@
 		&_text {
 			padding: 32px 0 10px 0;
 		}
+    &_photo {
+      padding-top: 10px;
+      @media (min-width:1920px) {
+        padding-top: 12px;
+      }
+    }
 	}
 	&__text {
 		color: #ECEFDC;
 		margin-bottom: 20px;
+    @media (min-width: 1920px) {
+      margin-bottom: 22px;
+      font-size: 18px;
+    }
 		&_green {
 			color: #9EBC00
 		}
 		&_block {
 			max-width: 290px;
+      @media (min-width:1920px) {
+        max-width: 375px;
+      }
 		}
 		&_title {
 			font-size: 24px;
 			line-height: 120%;
 			color: #ECEFDC;
 			margin: 30px 0px;
+      @media (min-width: 1920px) {
+      font-size: 26px;
+			margin: 32px 0px;
+    }
 		}
 	}
 	&__block {
