@@ -35,28 +35,49 @@ function animateShowingMenu() {
         y: 0,
         duration: 1.3
     }, 0)
-    
+
 }
 
 function showMenu() {
     $('.js-btn-menu').on('click', e => {
         e.preventDefault()
-        
+
         $('.header').toggleClass('active')
-        $('.js-menu').toggleClass('show')  
-        
+        $('.js-menu').toggleClass('show')
+
         if($('.header').hasClass('active')) {
             animateShowingMenu()
         }
     })
 }
 
+function disabledScroll() {
+  if(window.locoScroll) {
+    window.locoScroll.stop()
+    return
+  }
+
+  document.body.style.overflow = 'hidden'
+}
+
+function onScroll() {
+  if(window.locoScroll) {
+    window.locoScroll.start()
+    return
+  }
+
+  document.body.style.overflowY = 'scroll'
+}
+
 function openPopup(type) {
     $('[data-popup-type]').hide()
     $('.overlay').addClass('show')
+    disabledScroll()
 
     if(!type) {
         $('.overlay').removeClass('show')
+        onScroll()
+        return
     }
 
     $(`[data-popup-type=${type}]`).show()
@@ -82,78 +103,6 @@ function handlePopup({listeners, doOpen, popupType}) {
     })
 }
 
-window.initCustomScroll = function(needSmothScroll = true) {
-  $(window)
-    .on('resize', () => {
-      if ($(window).width() > 1025 && needSmothScroll) {
-        if (window.locoScroll) return;
-
-        window.locoScroll = new LocomotiveScroll({
-          el: document.querySelector('[data-scroll-container]'),
-          smooth: true,
-          smoothMobile: false,
-          inertia: 1.1,
-        });
-
-        window.locoScroll.on('scroll', e => {
-          ScrollTrigger.update(e);
-        });
-
-        ScrollTrigger.scrollerProxy('[data-scroll-container]', {
-          scrollTop(value) {
-            return arguments.length
-              ? locoScroll.scrollTo(value, 0, 0)
-              : locoScroll.scroll.instance.scroll.y;
-          }, // we don't have to define a scrollLeft because we're only scrolling vertically.
-          getBoundingClientRect() {
-            return {
-              top: 0,
-              left: 0,
-              width: window.innerWidth,
-              height: window.innerHeight,
-            };
-          },
-          // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-          pinType: document.querySelector('[data-scroll-container]').style.transform
-            ? 'transform'
-            : 'fixed',
-        });
-
-        ScrollTrigger.addEventListener('refresh', () => window.locoScroll.update());
-
-        // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
-        ScrollTrigger.refresh();
-
-        setTimeout(() => {
-          window.locoScroll.update();
-        }, 1000);
-      }
-    })
-    .resize();
-
-    const $header = $('.header');
-
-    function animateScroll(offset) {
-      if (offset > 10) {
-        $header.addClass('move');
-      } else {
-        $header.removeClass('move');
-      }
-    }
-
-    if (window.locoScroll) {
-      window.locoScroll.on('scroll', e => {
-        animateScroll(e.scroll.y);
-      });
-
-      return;
-    }
-
-    window.addEventListener('scroll', e => {
-      animateScroll(window.pageYOffset);
-    });
-  }
-
 document.addEventListener('DOMContentLoaded', () => {
     showMenu()
 
@@ -176,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     $('[name=phone]').each(function() {
-        
+
         $(this).mask('(000) 000-000-000', {selectOnFocus: true});
     });
 
@@ -206,11 +155,11 @@ document.addEventListener('DOMContentLoaded', () => {
           .find('.field__error-msg')
           .remove();
       }
-  
+
       function checkNumbers(str) {
         return str.replace(/[\W_]+/g, '');
       }
-  
+
       function removeAllFormTextWarn(inputs) {
         inputs.each(function() {
           $(this)
@@ -219,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .remove();
         });
       }
-  
+
       function addIndicateWarnForNode(node, classes, isAdded = true) {
         if (isAdded) {
           $(node)
@@ -227,12 +176,12 @@ document.addEventListener('DOMContentLoaded', () => {
             .addClass(classes);
           return;
         }
-  
+
         $(node)
           .closest('.field')
           .removeClass(classes);
       }
-  
+
       function removeNodeByDelay(node, delay) {
         setTimeout(() => {
           node.remove();
@@ -277,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
               }
             });
-  
+
             if ($(this).attr('name') === 'phone' && this.value.length < 8) {
               const parent = $(this)
                 .parent()
@@ -286,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
               isValid = false;
               return;
             }
-  
+
             if (
               !$(this)
                 .val()
@@ -300,17 +249,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           }
         });
-  
+
         return isValid;
       }
 
       $('form').on('submit', e => {
         e.preventDefault();
-  
+
         let $form = $(e.currentTarget);
         const inputs = $form.find($('[name]'));
         const isValid = validateForm(inputs);
-  
+
         if (isValid) {
           sendAjaxForm('static/mail.php', $form);
         }
@@ -318,7 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       function sendAjaxForm(url, selectorForm) {
         const data = new FormData();
-  
+
         $(selectorForm)
           .find('input')
           .each(function() {
@@ -332,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         selectorForm.find('button[type=submit]').css('pointer-events', 'none')
-  
+
         $.ajax({
           url: url, //url страницы (action_ajax_form.php)
           type: 'POST', //метод отправки
@@ -358,9 +307,9 @@ document.addEventListener('DOMContentLoaded', () => {
               `<div class="form__status">${status.error[currentLanguage]}</div>`,
             );
             const msg = $(selectorForm).find('.form__status');
-  
+
             removeNodeByDelay(msg, 5000);
-  
+
             if (selectorForm[0].tagName.toLowerCase() === 'form') {
               selectorForm[0].reset();
             } else {

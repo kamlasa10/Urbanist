@@ -37,8 +37,7 @@
       right: 0;
       width: 100%;
       bottom: 0;
-      background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
-      transform: scaleX(-1);
+      background: linear-gradient(152deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
       z-index: 3;
     }
   }
@@ -67,12 +66,12 @@
   }
 
   .gallery-thumbs .swiper-slide-active {
-    opacity: 0.5;
-  }
-
-  .gallery-thumbs .swiper-slide-thumb-active {
     opacity: 1;
   }
+
+  //.gallery-thumbs .swiper-slide-thumb-active {
+  //  opacity: 1;
+  //}
 
   .gallery {
     position: absolute;

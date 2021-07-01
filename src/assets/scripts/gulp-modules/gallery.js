@@ -11,7 +11,7 @@ class InitDoubleSliders {
 
   animationChangeSlide(direction) {
     const activeSlides = $('.js-gallery-thumbs .swiper-slide-thumb-active')
-    
+
     activeSlides.each((_, item) => {
       if(direction === 'prev') {
         const prevSlide = $(item).prev()
@@ -154,5 +154,6 @@ const initDoubleSliders = new InitDoubleSliders({
 
 document.addEventListener('DOMContentLoaded', () => {
   initDoubleSliders.init();
+  window.initCustomScroll(true)
 });
 
