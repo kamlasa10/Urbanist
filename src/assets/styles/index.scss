@@ -1,6 +1,10 @@
 body {
 	font-family: "TTFirsNeue", sans-serif;
 	background: #0F1C20;
+
+	> svg {
+		display: none;
+	}
 }
 
 .breadcrumbs {

@@ -252,13 +252,18 @@ text {
 }
 
 .gallery-thumbs {
-  width: 100px;
-  height: 500px;
+  width: 115px;
+  height: 575px;
   position: absolute;
   z-index: 2;
   bottom: 0;
   right: 0;
   margin: auto;
+
+  @include to(1440px) {
+    width: 100px;
+    height: 500px;
+  }
 }
 
 .gallery-thumbs .swiper-slide {

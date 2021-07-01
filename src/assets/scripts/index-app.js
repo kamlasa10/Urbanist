@@ -16,14 +16,14 @@ global.axios = axios;
 global.EventEmitter = EventEmitter
 
 /* eslint-disable-next-line */
-const locoScroll = new LocomotiveScroll({
-  el: document.querySelector('[data-scroll-container]'),
-  smooth: true,
-  smoothMobile: false,
-  inertia: 1.1,
-});
+// const locoScroll = new LocomotiveScroll({
+//   el: document.querySelector('[data-scroll-container]'),
+//   smooth: true,
+//   smoothMobile: false,
+//   inertia: 1.1,
+// });
 
-global.locoScroll = locoScroll;
+// global.locoScroll = locoScroll;
 /*
  * smooth scroll end
  */
@@ -138,8 +138,8 @@ function disableScroll() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  disableScroll();
-  window.locoScroll.update();
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//   disableScroll();
+//   window.locoScroll.update();
+// });
 /** ******************************* */

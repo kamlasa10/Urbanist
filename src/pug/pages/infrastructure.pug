@@ -29,39 +29,51 @@ block content
     .map__block.js-map 
     .map__infra 
       .map__infra-list 
-        .map__infra-item.map__infra-item--1
-          +svg('1')
+        .map__infra-item.js-map__infra-item.map__infra-item--1(data-category="complex")
+          .map__infra-item-wrap
+            +svg('1')
           span ЖК Urbanist
-        .map__infra-item.map__infra-item--2
-          +svg('2')
+        .map__infra-item.js-map__infra-item.map__infra-item--2(data-category="metro")
+          .map__infra-item-wrap
+            +svg('2')
           span Метро
-        .map__infra-item.map__infra-item--3
-          +svg('3')
+        .map__infra-item.js-map__infra-item.map__infra-item--3(data-category="park")
+          .map__infra-item-wrap
+            +svg('3')
           span Парки 
-        .map__infra-item.map__infra-item--4
-          +svg('4')
+        .map__infra-item.js-map__infra-item.map__infra-item--4(data-category="study")
+          .map__infra-item-wrap
+            +svg('4')
           span Освіта
-        .map__infra-item.map__infra-item--5
-          +svg('5')
+        .map__infra-item.js-map__infra-item.map__infra-item--5(data-category="restaraunt")
+          .map__infra-item-wrap
+            +svg('5')
           span Кафе, рестораны
-        .map__infra-item.map__infra-item--6
-          +svg('6')
+        .map__infra-item.js-map__infra-item.map__infra-item--6(data-category="shop")
+          .map__infra-item-wrap
+            +svg('6')
           span Магазини
-        .map__infra-item.map__infra-item--7
-          +svg('7')
+        .map__infra-item.js-map__infra-item.map__infra-item--7(data-category="sport")
+          .map__infra-item-wrap
+            +svg('7')
           span Спорт
-        .map__infra-item.map__infra-item--8
-          +svg('8')
+        .map__infra-item.js-map__infra-item.map__infra-item--8(data-category="dance")
+          .map__infra-item-wrap
+            +svg('8')
           span Школи танцю 
-        .map__infra-item.map__infra-item--9
-          +svg('9')
+        .map__infra-item.js-map__infra-item.map__infra-item--9(data-category="cinema")
+          .map__infra-item-wrap
+            +svg('9')
           span Кінотеатри
-        .map__infra-item.map__infra-item--10
-          +svg('10')
+        .map__infra-item.js-map__infra-item.map__infra-item--10(data-category="pharmacy")
+          .map__infra-item-wrap
+            +svg('10')
           span Аптеки
-        .map__infra-item.map__infra-item--11
-          +svg('11')
+        .map__infra-item.js-map__infra-item.map__infra-item--11(data-category="transport")
+          .map__infra-item-wrap
+            +svg('11')
           span Зупинки громадського транспорту
+      a(href="#").map__link.link__btn_green обрати квартиру
 block footer
   include ../includes/footer.pug
 

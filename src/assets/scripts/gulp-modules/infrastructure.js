@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+    window.initCustomScroll(false)
+
     const map = new google.maps.Map(document.querySelector('.js-map'), {
-      center: { lat: 50.4324399, lng: 30.5996779 },
-      zoom: 15,
+      center: {lat: 50.4596227,lng: 30.435069},
+      zoom: 16,
       disableDefaultUI: true,
       styles: [
           {
@@ -363,4 +365,85 @@ document.addEventListener('DOMContentLoaded', () => {
           }
       ]
     });
+
+    const markers = [
+        {
+            position: {lat: 50.4596227,lng: 30.435069},
+            icon: './assets/images/infrastructure/complex.svg',
+            category: 'complex'
+        }
+    ]
+
+    const infrastructure  = {
+        complex: [
+            {
+                position: {lat: 50.4596227,lng: 30.435069},
+                icon: './assets/images/infrastructure/complex.svg',
+                category: 'complex'
+            }
+        ]
+    }
+
+  const markersOnMap = [];
+  const activeCategories = new Set();
+  
+  function setMapOnAll(map) {
+    markers.forEach((newMark) => {
+      const marker = new google.maps.Marker(newMark);
+      marker.setMap(map);
+      marker.category = newMark.category;
+      console.log(marker)
+      activeCategories.add(newMark.category)
+      markersOnMap.push(marker);
+    })
+  }
+
+  function clearMarkers() {
+    setMapOnAll(null);
+  }
+
+  function deleteMarkers() {
+    clearMarkers();
+  }
+
+  $("[data-category]").each(function () {
+    $(this).on("click", (e) => {
+      e.preventDefault();
+      $(this).toggleClass('map__infra-item--active')
+  
+      if ($(this).hasClass('map__infra-item--active')) {
+        markers[$(this).data('category')] = infrastructure[$(this).data('category')]
+        activeCategories.add(this.dataset.category);
+        // console.log(activeCategories)
+        // setMapOnAll(map)
+        // return
+      } else {
+        activeCategories.delete(this.dataset.category);
+      }
+      console.log(activeCategories)
+  
+      delete markers[$(this).data('category')]
+      newFilterMarkers(markersOnMap, activeCategories)
+      // deleteMarkers()
+    })
+  })
+
+  function newFilterMarkers(markersArray, categoriesArray) {
+    markersArray.forEach((mark) => {
+      if (categoriesArray.has(mark.category)) {
+        mark.setVisible(true)
+      } else {
+        mark.setVisible(false)
+      }
+    
+      // if (!mark.category) mark.setVisible(true)
+    })
+  }
+
+  $('.js-map__infra-item').each(function () {
+    $(this).addClass('map__infra-item--active')
+    markers[$(this).data('category')] = infrastructure[$(this).data('category')]
+  })
+
+  setMapOnAll(map)
 })
