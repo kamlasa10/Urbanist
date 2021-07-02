@@ -3,17 +3,75 @@ body.class-page-contacts {
 	background-size: cover;
 }
 
+#id-page-contacts {
+	.content {
+		width: 100%;
+		position: relative;
+	}
+
+	.form__field.warn {
+		.popup__text-warn {
+			opacity: 1;
+		}
+	}
+
+	.vector-main {
+		left: 23%;
+	}
+
+	.contacts__top {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+	}
+	
+	.page-section {
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 82vh;
+			background: linear-gradient(180deg, rgba(15, 28, 32, 0) 0%, #0F1C20 100%);
+			mix-blend-mode: luminosity;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 18vh;
+			background: linear-gradient(270deg, #0F1C20 0%, rgba(15, 28, 32, 0.0749543) 92.5%, rgba(15, 28, 32, 0) 100%);
+		}
+	}
+}
+
 .contacts {
 	display: grid;
 	grid-template-columns: auto auto 394px;
 	grid-column-gap: 125px;
 	justify-content: space-between;
-	padding-bottom: 110px;
 	&__icon {
-		width: 14px;
+		width: 15px;
 		height: auto;
 		margin-right: 20px;
+
+		@include to(1440px) {
+			width: 14px;
+		}
 	}
+
+	&__form {
+		margin-bottom: 27px;
+	}
+
 	&__title {
 		font-weight: normal;
 		font-size: 14px;
@@ -37,25 +95,20 @@ body.class-page-contacts {
 	&__text {
 		font-style: normal;
 		font-weight: normal;
-		font-size: 14px;
-		line-height: 120%;
+		line-height: 1.2em;
 		color: #ECEFDC;
 		text-decoration: none;
 	}
 	&__link {
 		margin-bottom: 30px;
-    @media (min-width:1920px) {
-      font-size: 16px;
-	  margin-bottom: 32px;
-    }
 	}
 	&__inf {
 		&__block {
-				display: flex;
-				margin-bottom: 15px;
-				.contacts__text {
-					line-height: 140%;
-				}
+			display: flex;
+			margin-bottom: 15px;
+			.contacts__text {
+				line-height: 140%;
+			}
 		}
 	}
 }
@@ -78,16 +131,17 @@ body.class-page-contacts {
   border-bottom: 1px solid #2A363B;
   outline: 0;
   font-size: 1.3rem;
-  color: #fff;
+  color: #ECEFDC;
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
 	&_textarea {
 		height: 80px;
+		resize: none;
 	}
 
   &::placeholder {
-    color: transparent;
+    color: #ECEFDC;
   }
 
   &:placeholder-shown ~ .form__label {
@@ -117,9 +171,9 @@ body.class-page-contacts {
     position: absolute;
     top: 0;
     display: block;
+	color: #9EBC00;
     transition: 0.2s;
     font-size: 1rem;
-		opacity: 0.4;
   }
   padding-bottom: 6px;  
 	border-bottom: 1px solid #9EBC00;

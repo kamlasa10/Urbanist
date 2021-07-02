@@ -46,6 +46,12 @@ button {
   }
 }
 
+.page-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
 .btn {
   position: relative;
   transition: all .4s;
@@ -69,7 +75,7 @@ button {
   &::before {
     content: "";
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     height: 0;
     width: 100%;
@@ -198,7 +204,7 @@ button {
   }
 
   &__item {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 
     &.warn {
       .popup__text-warn {

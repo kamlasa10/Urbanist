@@ -78,6 +78,22 @@
     z-index: 6;
     transform: translate(-50%);
   }
+
+  .slides-nav__button {
+    transform: none;
+
+    &.swiper-button-next_gallery {
+      transform: rotate(180deg);
+
+      &:hover {
+        transform: rotate(180deg) translateX(-7px);
+      }
+    }
+
+    &:hover {
+      transform: translateX(-7px);
+    }
+  }
 }
 
 .gallery-thumbs {
