@@ -5,6 +5,10 @@ class InitDoubleSliders {
     this.sizeThumb = 0
   }
 
+  static clickableSlide = null
+  static isClickableSlide = false 
+  static isFirstSlideChange = true
+
   animationTransition() {
 
   }
@@ -50,23 +54,33 @@ class InitDoubleSliders {
       slidesPerView: 5,
       centeredSlides: true,
       on: {
-        beforeSlideChangeStart(swiper) {
-          console.log(swiper)
-        },
         init(swiper) {
-          let currentActiveSlide = null
 
           swiper.slides.forEach(item => {
             item.addEventListener('click', e => {
-              const clickedSlide = $(e.currentTarget)[0]
-              const activeSlide = currentActiveSlide || $('.js-gallery-thumbs').find('.swiper-slide-active')[0]
+              InitDoubleSliders.clickableSlide = $(e.currentTarget)[0]
+              const activeSlide = swiper.slides[swiper.activeIndex]
               // const neighborBottom = activeSlide.next()
               // const neighborTop = activeSlide.prev()
-              const clickedSlideTop = clickedSlide.getBoundingClientRect().bottom
-              const activeSlideTop = activeSlide.getBoundingClientRect().bottom
 
-              swiper.slides.forEach(slide => slide.classList.remove('swiper-slide-active'))
-              clickedSlide.classList.add('swiper-slide-active')
+              // if(activeSlide === InitDoubleSliders.clickableSlide) return
+              // if(swiper.slides[swiper.activeIndex] === InitDoubleSliders.clickableSlide.nextElementSibling) {
+              //   console.log('after')
+              //   swiper.slidePrev(700)
+              //   InitDoubleSliders.isClickableSlide = true
+              //   return
+              // }
+              // if(swiper.slides[swiper.activeIndex] === InitDoubleSliders.clickableSlide.previousElementSibling) {
+              //   console.log('after')
+              //   swiper.slideNext(700)
+              //   InitDoubleSliders.isClickableSlide = true
+              //   return
+              // }
+
+              InitDoubleSliders.isClickableSlide = false
+
+              // swiper.slides.forEach(slide => slide.classList.remove('swiper-slide-active'))
+              // clickedSlide.classList.add('swiper-slide-active')
 
               // gsap.to(clickedSlide, {
               //   top: (activeSlideTop - clickedSlideTop) + 'px',
@@ -77,8 +91,6 @@ class InitDoubleSliders {
               //   top: (clickedSlideTop - activeSlideTop) + 'px',
               //   duration: 0.7
               // })
-
-              currentActiveSlide = clickedSlide
 
               // if(neighborTop.hasClass('swiper-slide-active')) {
               //   gsap.to(neighborTop, {
@@ -110,11 +122,13 @@ class InitDoubleSliders {
     // })
     this.$slider1 = new Swiper(this.$slider1, {
       loop: true,
-      speed: 400,
+      speed: 700,
       navigation: {
         nextEl: '.js-swiper-button-next_gallery',
         prevEl: '.js-swiper-button-prev_gallery',
       },
+      direction: 'vertical',
+      sliderDrag: false,
       thumbs: {
         swiper: this.$slider2,
       },
@@ -138,12 +152,45 @@ class InitDoubleSliders {
     });
 
     this.controlsSlider()
+    this.$slider2.on('slideChangeTransitionStart', (swiper) => {
+      // const activeSlide = swiper.slides[swiper.activeIndex]
+      // swiper.activeIndex
+      // const prevSlide = activeSlide.previousElementSibling
+      // const nextSlide = activeSlide.nextElementSibling
+      // if(activeSlide.classList.contains('swiper-slide-thumb-active') || activeSlide.classList.contains('swiper-slide-active') === false) {
+      //   return
+      // }
 
+      // if(prevSlide.classList.contains('swiper-slide-thumb-active')) {
+      //   swiper.slidePrev()
+      //   return
+      // }
+      // if(nextSlide.classList.contains('swiper-slide-thumb-active')) {
+      //   swiper.slideNext()
+      //   return
+      // }
+    })
     this.$slider2.on('slideChange', swiper => {
-      console.log('slideChange')
+
+      // const activeSlide = swiper.slides[swiper.activeIndex]
+      // const prevSlide = activeSlide.previousElementSibling
+      // const nextSlide = activeSlide.nextElementSibling
+
+      // if(InitDoubleSliders.isClickableSlide) return
+
+      // if(prevSlide.classList.contains('swiper-slide-thumb-active') && !InitDoubleSliders.isClickableSlide) {
+      //   InitDoubleSliders.isClickableSlide = true
+      //   swiper.slidePrev(700)
+      //   return
+      // }
+      // if(nextSlide.classList.contains('swiper-slide-thumb-active') && !InitDoubleSliders.isClickableSlide) {
+      //   InitDoubleSliders.isClickableSlide = true
+      //   swiper.slideNext(700)
+      //   return
+      // }
     })
 
-    this.sizeThumb = $('.js-gallery-thumbs .swiper-slide')[0].getBoundingClientRect().height
+    // this.sizeThumb = $('.js-gallery-thumbs .swiper-slide')[0].getBoundingClientRect().height
   }
 }
 
