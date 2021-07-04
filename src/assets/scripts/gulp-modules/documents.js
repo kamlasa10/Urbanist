@@ -1,12 +1,13 @@
-
 document.addEventListener('DOMContentLoaded', () => {
+  window.initCustomScroll()
+
 	const swiper = new Swiper('.swiper-container', {
 		slidesPerView: 4,
 		spaceBetween: 40,
 		navigation: {
-			nextEl: '.swiper-button-next1',
-			prevEl: '.swiper-button-prev1',
+			nextEl: '.slides-nav__button--next',
+			prevEl: '.slides-nav__button--prev',
 		},
 	})
-	
+
 } )

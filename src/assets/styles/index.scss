@@ -633,8 +633,12 @@ body {
       font-size: 12px;
     }
 		&_icon {
-			max-width: 12px;
+			max-width: 14px;
 			margin-right: 10px;
+
+      @include to(1440px) {
+        max-width: 12px;
+      }
 		}
 }
 

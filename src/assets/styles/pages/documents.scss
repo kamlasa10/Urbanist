@@ -1,15 +1,60 @@
 .content-docs {
 	background: url(../images/bg/bg-docs.jpg) no-repeat bottom;
 	background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
+
+#id-page-documents {
+  .page-info {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .swiper__btns_doc {
+    position: absolute;
+    bottom: 50px;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+
+    @include to(1440px) {
+      bottom: 30px;
+    }
+
+    .slides-nav__button {
+      transform: none;
+
+      &:hover {
+        transform: translateX(-7px);
+      }
+    }
+
+    .slides-nav__button--next {
+      transform: rotate(180deg) translateY(-3px);
+
+      &:hover {
+        transform: rotate(180deg) translateX(-7px) translateY(-3px);
+      }
+    }
+  }
+}
+
 .docs {
-	padding-top: 52px;
-	padding-bottom: 135px;
 	&__block{
 		display: flex;
 		flex-direction: column;
 		margin-bottom: 30px;
-		max-width: 240px;
+    max-width: 270px;
+
+    @include to(1440px) {
+      max-width: 240px;
+    }
+
 		&_title {
 			font-size: 14px;
 			line-height: 160%;
@@ -21,13 +66,26 @@
       }
 		}
 	}
+
+  .swiper-slide .link__btn {
+    width: 270px;
+
+    @include to(1440px) {
+      width: 240px;
+    }
+  }
+
 	&__inf {
 		margin-bottom: 20px;
 		display: flex;
 		align-items: center;
 		&_photo {
-			max-width: 65px;
+			max-width: 75px;
 			margin-right: 32px;
+
+      @include to(1440px) {
+        max-width: 65px;
+      }
 		}
 		&_date {
 			color: #ECEFDC;
@@ -36,10 +94,14 @@
 	}
 	&__size {
 		font-weight: normal;
-		font-size: 12px;
+		font-size: 14px;
 		line-height: 100%;
 		color: #ECEFDC;
 		margin-bottom: 15px;
+
+    @include to(1440px) {
+      font-size: 12px;
+    }
 	}
 }
 
@@ -48,7 +110,6 @@
 	z-index: 20;
 	padding-left: 20%;
 }
-
 
 .arrow {
 	width: 53px;
@@ -65,14 +126,4 @@
 
 .swiper-button-next1, .swiper-button-prev1 {
   cursor: pointer;
-}
-
-.swiper__btns_doc {
-	position: absolute;
-	bottom: 30px;
-	left: 50%;
-	transform: translate(-50%);
-	display: flex;
-	justify-content: space-between;
-	width: 136px;
 }
