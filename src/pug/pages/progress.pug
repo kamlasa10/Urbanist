@@ -21,6 +21,73 @@ block scripts
   script(defer src='./assets/scripts/progress.js')
 block content
   .content
+    .gallery.js-gallery
+      .gallery__overlay  
+      .gallery__top
+        .container
+          .gallery__top-wrap
+            .date__block 
+              +img('clock.svg').date__block_icon
+              p 10.12.2020
+            button(typ="button").btn-res.gallery__close.js-gallery-close
+              span Закрити
+              +svg('close')
+          .gallery__title.page-title Січень
+          button(type="button").gallery__back.btn-res.js-gallery-close.btn-with-triangle назад
+      .gallery-main.swiper-container.js-gallery-main
+        .swiper-wrapper 
+          .swiper-slide 
+            +img('/progress-slider/1.jpg')
+          .swiper-slide 
+            +img('/progress-slider/2.jpg')
+          .swiper-slide 
+            +img('/progress-slider/3.jpg')
+          .swiper-slide 
+            +img('/progress-slider/4.jpg')
+          .swiper-slide 
+            +img('/progress-slider/5.jpg')
+      <div class="swiper-container gallery-thumbs js-gallery-thumbs">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            +img('/progress-slider/1.jpg')
+          </div>
+          <div class="swiper-slide">
+            +img('/progress-slider/2.jpg')
+          </div>
+          <div class="swiper-slide">
+            +img('/progress-slider/3.jpg')
+          </div>
+          <div class="swiper-slide">
+            +img('/progress-slider/4.jpg')
+          </div>
+          <div class="swiper-slide">
+            +img('/progress-slider/5.jpg')
+          </div>
+        </div>
+      </div>
+      .gallery__bottom 
+        .container
+          .gallery__bottom-content
+            .gallery__bottom-wrap
+              .gallery__controls.js-swiper__btns_gallery 
+                <button class="js-swiper-button-prev_gallery slides-nav__button slides-nav__button--prev" aria-label="Previous slide">
+                  <svg viewBox="0 0 53 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 1C12.5 3.83333 7.7 10.1 0.5 12.5" stroke="#ECEFDC"/>
+                    <path d="M14 24C12.5 21.1667 7.7 14.9 0.5 12.5" stroke="#ECEFDC"/>
+                    <path d="M53 13H0" stroke="#ECEFDC"/>
+                  </svg>
+                </button>
+                <button class="js-swiper-button-next_gallery slides-nav__button slides-nav__button--next" aria-label="Previous slide">
+                  <svg viewBox="0 0 53 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 1C12.5 3.83333 7.7 10.1 0.5 12.5" stroke="#ECEFDC"/>
+                    <path d="M14 24C12.5 21.1667 7.7 14.9 0.5 12.5" stroke="#ECEFDC"/>
+                    <path d="M53 13H0" stroke="#ECEFDC"/>
+                  </svg>
+                </button>
+              .swiper-pagination
+            .gallery__load 
+              button(type="button").btn-res.gallery__load-btn--prev.js-gallery-load-prev.btn-with-triangle попередній місяць
+              button(type="button").btn-res.gallery__load-btn--next.js-gallery-load-next.btn-with-triangle наступний місяць
     .container-content.container
       .vector.vector-main
         .vector__rounded
@@ -32,43 +99,41 @@ block content
           h3.progress__inf_title Статус робіт:
           p.progress__inf_text Виконується монтаж ліфтів. Триває влаштування систем опалення, вентиляції, водопроводу, каналізації та електрики. 
           <div class="items">
-            <div class="item">
-              <svg viewBox="-250 -250 500 500">
-                <circle r="180"  class="sc"/>
-                <circle r="180"  class="c1"/>
-                <text x="-70" y="30"> 74% </text>
-              </svg>
-              <div>будівництво</div>
+            <div class="building-progress__info-item" data-progress="74">
+              <div class="building-progress__info-percent">
+                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="data-progress-circle" cx="32" cy="32" r="31.5" stroke="#9EBC00" style="stroke-dasharray: 113.914, 153.938; stroke-dashoffset: 267.852; transition: stroke-dashoffset 1.5s ease 0s; fill: none; transform-origin: center center;"></circle>
+                  </svg><span class="building-progress__info-text">74%</span>
+              </div>
+              <div class="building-progress__info-name">будівництво</div>
             </div>
-
-            <div class="item">
-              <svg viewBox="-250 -250 500 500">
-                <circle r="180"  class="sc"/>
-                <circle r="180"  class="c2"/>
-                <text x="-70" y="30"> 25% </text>
-              </svg>
-              <div>фасад</div>
+            <div class="building-progress__info-item" data-progress="25">
+              <div class="building-progress__info-percent">
+                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="data-progress-circle" cx="32" cy="32" r="31.5" stroke="#9EBC00" style="stroke-dasharray: 113.914, 153.938; stroke-dashoffset: 267.852; transition: stroke-dashoffset 1.5s ease 0s; fill: none; transform-origin: center center;"></circle>
+                  </svg><span class="building-progress__info-text">25%</span>
+              </div>
+              <div class="building-progress__info-name">фасад</div>
             </div>
-
-            <div class="item">
-              <svg viewBox="-250 -250 500 500">
-                <circle r="180"  class="sc"/>
-                <circle r="180"  class="c3"/>
-                <text x="-70" y="30"> 62% </text>
-              </svg>
-              <div>благоустрій</div>h
+            <div class="building-progress__info-item" data-progress="62">
+              <div class="building-progress__info-percent">
+                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="data-progress-circle" cx="32" cy="32" r="31.5" stroke="#9EBC00" style="stroke-dasharray: 113.914, 153.938; stroke-dashoffset: 267.852; transition: stroke-dashoffset 1.5s ease 0s; fill: none; transform-origin: center center;"></circle>
+                  </svg><span class="building-progress__info-text">62%</span>
+              </div>
+              <div class="building-progress__info-name">благоустрій</div>
             </div>
-
-            <div class="item">
-              <svg viewBox="-250 -250 500 500">
-                <circle r="180" class="sc"/>
-                <circle r="180" class="c4"/>
-                <text x="-70" y="30"> 17% </text>
-              </svg>
-              <div>мережі</div>
+            <div class="building-progress__info-item" data-progress="17">
+              <div class="building-progress__info-percent">
+                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="data-progress-circle" cx="32" cy="32" r="31.5" stroke="#9EBC00" style="stroke-dasharray: 113.914, 153.938; stroke-dashoffset: 267.852; transition: stroke-dashoffset 1.5s ease 0s; fill: none; transform-origin: center center;"></circle>
+                  </svg><span class="building-progress__info-text">17%</span>
+              </div>
+              <div class="building-progress__info-name">мережі</div>
             </div>
           </div>
-          a.link__btn(href="webcam.html") Веб камера
+          a.link__btn.btn(href="webcam.html") 
+            span.btn__text Веб камера
         .progress__content
           .progress__blocks
             .progress__item
@@ -139,10 +204,7 @@ block content
                   p 10.12.2020
       
           .progress__pagination 
-            button.pagination__button
-              <svg width="5" height="6" viewBox="0 0 5 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 6V0L0 3L5 6Z" fill="#FFF2E4"/>
-              </svg>
+            button.disabled.pagination__button.pagination__button--prev.js-pagination__button-prev
               p попередня
             button.pagination__button
               p 1
@@ -152,11 +214,8 @@ block content
               p 3
             button.pagination__button
               p 4
-            button.pagination__button
+            button.pagination__button.pagination__button--next.js-pagination__button-next
               p наступна
-              <svg width="6" height="7" viewBox="0 0 6 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0.5 6.5L0.5 0.5L5.5 3.5L0.5 6.5Z" fill="#ECEFDC"/>
-              </svg>
       
 block footer
   include ../includes/footer.pug

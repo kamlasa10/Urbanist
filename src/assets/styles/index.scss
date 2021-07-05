@@ -423,7 +423,8 @@ body {
 	pointer-events: none;
 	z-index: -1;
 	&__rounded {
-		width: 19vw;
+		// width: 19vw;
+		width: 14vw;
 		height: calc(100vh - 80px);
 		position: relative;
 		border-width: 1px;
@@ -446,9 +447,21 @@ body {
 			border-image: initial;
 			border-radius: 0px 0px 50% 50% / 0px 0px 10% 10%;
 		}
+
+		// @include to(1440px) {
+		// 	width: 15vw;
+		// }
 	}
 	&-main {
-		left: 16%;
+		left: 22.5%;
+
+		@include to(1440px) {
+			left: 19.5%;
+		}
+
+		@include to(1370px) {
+			left: 18.5%;
+		}
 	}
 }
 

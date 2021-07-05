@@ -230,6 +230,8 @@ class Slideshow extends EventEmitter {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    window.initCustomScroll()
+
     const slideshow = new Slideshow(document.querySelector('.slideshow'));    
     const navigation = new Navigation(document.querySelector('.slides-nav'));
     // navigation events

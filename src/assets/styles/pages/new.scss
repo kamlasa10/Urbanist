@@ -1,3 +1,13 @@
+#id-page-new {
+	.date__block {
+		color: #FFF2E4;
+	}
+
+	.breadcrumbs {
+		margin-bottom: 20px;
+	}
+}
+
 .new {
 	display: flex;
 	justify-content: space-between;
@@ -11,23 +21,51 @@
 		display: flex;
 		align-items: center;
 		margin-right: 65px;
+		text-decoration: none;
+		transition: all .4s;
+
+		svg {
+			width: 6px;
+			height: 7px;
+			transition: all .4s;
+
+			@include to(1440px) {
+				width: 5px;
+				height: 6px;
+			}
+		}
+
 		&_text {
-			font-size: 10px;
+			font-size: 12px;
 			line-height: 100%;
 			letter-spacing: 0.05em;
 			text-transform: uppercase;
 			color: #ECEFDC;
 			margin-left: 15px;
+
+			@include to(1440px) {
+				font-size: 10px;
+			}
+		}
+
+		&:hover {
+			opacity: 0.8;
+
+			svg {
+				transform: translateX(3px);
+			}
 		}
 	}
 	&__container {
 		margin-right: 104px;
 	}
 	&__text {
-		font-size: 14px;
-		line-height: 160%;
 		color: #ECEFDC;
 		margin-bottom: 30px;
+
+		span {
+			color: #9EBC00;
+		}
 	}
 	&__image {
 		margin-bottom: 30px;

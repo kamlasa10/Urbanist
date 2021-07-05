@@ -21,6 +21,8 @@ function init() {
   slider.on('activeIndexChange', (obj) => {
     document.querySelector('[data-current]').innerHTML = obj.realIndex + 1;
   });
+
+  window.initCustomScroll()
 }
 
 document.addEventListener('DOMContentLoaded', init);

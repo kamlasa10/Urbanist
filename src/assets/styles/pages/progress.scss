@@ -1,4 +1,215 @@
+#id-page-progress {
+	.building-progress__info {
+		&-item {
+			color: #CAD1A6;
+			text-align: center;
+		}
 
+		&-percent {
+			margin-bottom: 21px;
+			position: relative;
+
+			.data-progress-circle {
+				width: 70px;
+				height: 70px;
+			}
+		}
+
+		&-text {
+			top: 47%;
+			left: 51%;
+			transform: translate(-50%, -50%);
+			position: absolute;
+		}
+	}
+
+	.gallery {
+		position: fixed;
+		position: absolute;
+		top: -136px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		transform: none;
+		height: 100vh;
+
+		&::before,
+		&::after,
+		&__overlay {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			z-index: 5;
+		}
+
+		&__overlay {
+			left: auto;
+			height: 100vh;
+			width: 18vw;
+			transform: matrix(-1, 0, 0, 1, 0, 0);
+			background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+		}
+
+		&::before {
+			height: 40vh;
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+		}
+
+		&::after {
+			top: auto;
+			bottom: 0;
+			height: 18vh;
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+		}
+
+		&-main {
+			height: 100vh;
+		}
+
+		&-thumbs {
+			z-index: 8;
+		}
+
+		.date__block {
+			color: #ECEFDC;
+		}
+
+		.page-title {
+			margin-bottom: 20px;
+		}
+
+		.gallery__close {
+			display: inline-flex;
+			align-items: center;
+			text-transform: uppercase;
+			font-size: 12px;
+			color: #ECEFDC;
+			transition: all .4s;
+			padding: 0;
+
+			@include to(1440px) {
+				font-size: 10px;
+			}
+
+			span {
+				margin-right: 20px;
+			}
+
+			svg {
+				width: 20px;
+				height: 20px;
+				transition: all .4s;
+
+				@include to(1440px) {
+					width: 18px;
+					height: 18px;
+				}
+			}
+
+			&:hover {
+				opacity: 0.8;
+
+				svg {
+					transform: rotate(180deg)
+				}
+			}
+		}
+
+		&__top,
+		&__bottom {
+			z-index: 7;
+			color: #ECEFDC;
+			left: 0;
+			right: 0;
+		}
+
+		&__top {
+			margin-top: 136px;
+			position: absolute;
+			top: 0;
+
+			&-wrap {
+				margin-bottom: 10px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+		}
+
+		&__bottom {
+			position: absolute;
+			bottom: 50px;
+
+			@include to(1440px) {
+				bottom: 35px;
+			}
+
+			&-wrap {
+				display: flex;
+				align-items: center;
+			}
+
+			&-content {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+
+			.container {
+				padding-right: 150px;
+			}
+		}
+
+		&__controls {
+			display: flex;
+			align-items: center;
+			margin-right: 30px;
+		}
+
+		.swiper-pagination {
+			transform: translateY(3px);
+		}
+
+		.slides-nav__button {
+			transform: none;
+
+			&--next {
+				transform: rotate(180deg) translateY(-3px);
+
+				&:hover {
+					transform: rotate(180deg) translateY(-3px) translateX(-7px);
+				}
+			}
+
+			&--prev {
+				&:hover {
+					transform: translateX(-7px);
+				}
+			}
+		}
+
+		&__load-btn {
+			padding: 0;
+
+			&--next {
+				margin-left: 30px;
+				&::before {
+					top: 4px;
+					position: absolute;
+					right: -14px;
+					transform: translateX(100%) rotate(180deg);
+				}
+
+				&:hover {
+					&::before {
+						transform: translateX(calc(100% + 3px)) rotate(180deg);
+					}
+				}
+			}
+		}
+	}
+}
 
 .progress {
 	display: grid;
@@ -60,6 +271,7 @@
 	}
 	&__item {
 		&__block {
+			display: block;
 			position: relative;
 		}
 		&_button {
@@ -100,7 +312,8 @@
 
 
 .items {
-  display: grid;
+	margin-bottom: 40px;
+  	display: grid;
 	grid-template-columns: repeat(4, 65px);
 	grid-gap: 32px;
   @media (min-width:1920px) {
@@ -155,67 +368,6 @@ text {
 }
 
 
-.c1 {
-  stroke: #9EBC00;
-  stroke-dasharray: 0 1383;
-  animation: c1 1.5s linear forwards;
-}
-
-.c2 {
-  stroke: #9EBC00;
-  stroke-dasharray: 0 1383;
-  animation: c2 1.5s linear forwards;
-}
-
-.c3 {
-  stroke: #9EBC00;
-  stroke-dasharray: 0 1383;
-  animation: c3 1.5s linear forwards;
-}
-
-.c4 {
-  stroke: #9EBC00;
-  stroke-dasharray: 0 1383;
-  animation: c4 1.5s linear forwards;
-}
-
-@keyframes c1 {
-  0% {
-    stroke-dasharray: 0 1383;
-  }
-  100% {
-    stroke-dasharray: 850 1383;
-  }
-}
-
-@keyframes c2 {
-  0% {
-    stroke-dasharray: 0 1383;
-  }
-  100% {
-    stroke-dasharray: 300 1383;
-  }
-}
-
-@keyframes c3 {
-  0% {
-    stroke-dasharray: 0 1383;
-  }
-  100% {
-    stroke-dasharray: 700 1383;
-  }
-}
-
-@keyframes c4 {
-  0% {
-    stroke-dasharray: 0 1383;
-  }
-  100% {
-    stroke-dasharray: 220 1383;
-  }
-}
-
-
 .pagination__button {
 	font-family: "TTFirsNeue";
 	margin-top: 50px;
@@ -223,24 +375,91 @@ text {
 	background: transparent;
 	border: none;
 	outline: none;
-	font-size: 14px;
-	line-height: 100%;
+	font-size: 16px;
+	line-height: 1em;
 	color: #ECEFDC;
 	align-items: center;
+	transition: all .4s;
+
+	@include to(1440px) {
+		font-size: 14px;
+	}
+
 	p {
 		margin: 0 10px;
 	}
-  @media (min-width:1920px) {
-    font-size: 16px;
-    margin-top: 54px;
-  }
+
+	&:hover {
+		color: #9EBC00;
+	}
+
+	&--prev,
+	&--next {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 6px;
+			left: 0;
+			width: 0; 
+			height: 0; 
+			border-top: 4px solid transparent;
+			border-bottom: 4px solid transparent;
+			border-left: 7px solid #ECEFDC;
+			transition: all .4s;
+
+			@include to(1440px) {
+				border-top: 3px solid transparent;
+				border-bottom: 3px solid transparent;
+				
+				border-left: 5px solid #ECEFDC;
+			}
+		}
+	}
+
+	&--prev {
+		&::before {
+			transform: rotate(180deg);
+		}
+
+		&:hover {
+			&::before {
+				transform: rotate(180deg) translateX(-3px);
+			}
+		}
+	}
+
+	&--next {
+		&::before {
+			left: auto;
+			right: 0;
+		}
+
+		&:hover {
+			&::before {
+				transform: translateX(3px);
+			}
+		}
+	}
+
+	&.disabled {
+		cursor: default;
+		pointer-events: none;
+		color: #79868A;
+		
+		&::before {
+			border-left-color: #79868A;
+		}
+	}
 }
 
 
 .container-gallery {
 	position: relative;
 }
-
 
 .gallery {
 	position: absolute;
@@ -297,9 +516,6 @@ text {
   box-sizing: border-box;
 }
 
-
-
-
 .swiper__content {
   position: absolute;
   z-index: 2;
@@ -319,8 +535,6 @@ text {
 }
 
 .swiper-pagination {
-  font-size: 10px;
-  line-height: 100%;
   text-transform: uppercase;
   color: #ECEFDC;
   position: static;
@@ -329,12 +543,12 @@ text {
 
 .swiper__content {
   width: 100%;
-    position: absolute;
-    z-index: 2;
-    bottom: 35px;
-    left: 50%;
-    z-index: 4;
-    transform: translate(-50%);
-    display: flex;
-    align-items: center;
+  position: absolute;
+  z-index: 2;
+  bottom: 35px;
+  left: 50%;
+  z-index: 4;
+  transform: translate(-50%);
+  display: flex;
+  align-items: center;
 }
