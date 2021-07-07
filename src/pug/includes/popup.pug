@@ -1,8 +1,8 @@
 .menu.js-menu 
 		.pattern.pattern__small
 		.menu__image.js-menu__image 
-			+img('bg/bg-menu.png')
-		.menu__container
+			+img('bg/menu.jpg')
+		.menu__container.container
 			.vector.vector__menu
 				.vector__rounded
 			.menu__container-wrap
@@ -39,7 +39,7 @@
 			button(type="button").popup__close.btn-res(data-popup-close="consult")
 				+svg('close')
 		form.popup__wrap
-			.popup__title Замовити <br> дзвінок
+			.popup__title Замовити <br> консультацію
 			.popup__item 
 				input.popup__input.btn-res(type="text" name="name" placeholder="Ім`я*" data-required="true" autocomplete="off")
 				.popup__text-warn text

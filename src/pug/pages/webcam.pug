@@ -31,11 +31,11 @@ block content
         a.webcam-title__link(href='progress.html') 
           p Хід будівництва
           +img('Arrow.svg').webcam-title__link_arrow
-      .webcam 
-        .block__btns
-          button.border-green_btn Камера 1
-          button.webcam_btn Камера 2
-        <video class="webcam__video" width="706"  height="350" src="https://www.w3schools.com/html/mov_bbb.mp4"  controls autobuffer>
+  .webcam
+    .block__btns
+      button.webcam_btn.border-green_btn(data-camera="https://open.ivideon.com/embed/v2/?server=100-iTiXYJ51IaDVedkMV8luPI&camera=196608&width=&height=&lang=ru") Камера 1
+      button.webcam_btn(data-camera="https://open.ivideon.com/embed/v2/?server=100-iTiXYJ51IaDVedkMV8luPI&camera=196608&width=&height=&lang=ru") Камера 2
+    <iframe class="webcam__video js-webcam" src="https://open.ivideon.com/embed/v2/?server=100-iTiXYJ51IaDVedkMV8luPI&camera=196608&width=&height=&lang=ru"></iframe>
 block footer
   include ../includes/footer.pug
 

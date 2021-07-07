@@ -1,12 +1,41 @@
+#id-page-developer {
+	.content {
+		.container {
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+		}
+
+		&__top {
+			position: absolute;
+			top: 0;
+		}
+	}
+
+	.container {
+		position: relative;
+	}
+
+	.breadcrumbs {
+		margin-top: 0;
+		padding-top: 136px;
+	}
+
+	// .developer {
+	// 	position: absolute;
+	// 	top: 50%;
+	// 	right: 0;
+	// 	transform: translateY(-50%);
+	// }
+}
+
 .developer {
-	padding-top: 20px;
 	display: grid;
 	grid-template-columns: 47% 53%;
 	margin-right: 50px;
 	max-width: 66%;
 	justify-content: end;
 	margin-left: auto;
-	padding-bottom: 145px;
   @media (min-width:1920px) {
     max-width: 70%;
   }

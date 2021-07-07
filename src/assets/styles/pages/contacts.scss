@@ -4,10 +4,6 @@ body.class-page-contacts {
 }
 
 #id-page-contacts {
-  .contacts-wrap {
-
-  }
-
 	.content {
 		width: 100%;
 		position: relative;
@@ -20,10 +16,10 @@ body.class-page-contacts {
 	}
 
 	.vector-main {
-		left: 23%;
+		left: 0;
 
-		@include to(1370px) {
-			left: 20.5%;
+		.vector__rounded {
+			margin-left: 205px;
 		}
 	}
 

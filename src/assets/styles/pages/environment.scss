@@ -19,8 +19,8 @@
 		&_block {
 			display: flex;
 			justify-content: space-between;
-			width: 649px;
-			height: 220px;
+			min-width: 649px;
+			min-height: 220px;
 			background: rgba(15, 28, 32, 0.9);
 			position: absolute;
 			left: 0;
@@ -29,7 +29,6 @@
 		}
 	}
 }
-
 
 .block__text {
 	display: flex;
@@ -45,8 +44,8 @@
 		color: #ECEFDC;
 		max-width: 240px;
     @media (min-width:1920px) {
-      font-size: 16px;
-      max-width: 270px;
+      font-size: 18px;
+      max-width: 300px;
     }
 	}
 }

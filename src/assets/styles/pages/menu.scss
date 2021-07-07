@@ -1,13 +1,17 @@
 .menu {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr;
+	justify-content: flex-end;
 	&__title {
 		margin-bottom: 40px;
 	}
 	&__container {
+		height: 100vh;
+		width: 100%;
 		display: flex;
 		align-items: center;
-		padding-left: 180px;
+		justify-content: flex-end;
+		padding-right: 150px !important;
 		position: relative;
 
 		@include to(1440px) {
@@ -28,11 +32,46 @@
 	}
 
 	&__image {
-		position: relative;
-		overflow: hidden;
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		width: 50%;
+		clip-path: circle(75% at 21% 46%);
+
+		@media (min-width: 2000px) {
+			clip-path: circle(75% at 32% 46%);
+		}
+
+		@include to(1440px) {
+			clip-path: circle(75% at 19% 46%);
+		}
+
+		@include to(1370px) {
+			clip-path: circle(75% at 15% 46%);
+		}
+
+		@include to(1200px) {
+			clip-path: circle(75% at 13% 46%);
+		}
+
+		img {
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 }
 
 .vector__menu {
-	left: 53%;
+	left: 50%;
+
+	@include to(1440px) {
+		left: 54%;
+	}
+
+	.vector__rounded {
+		width: auto;
+		max-width: 225px;
+		max-height: 715px !important;
+	}
 }

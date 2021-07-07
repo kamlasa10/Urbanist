@@ -1,3 +1,27 @@
+body.loading {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    // background-color: #0F1C20;
+    transition: all .4s
+  }
+}
+
+.link-opacity {
+  transition: all .4s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
 .row {
 	@include row-flex();
 }
@@ -176,8 +200,8 @@ button {
     }
 
     @include to(1440px) {
-      width: 16px;
-      height: 16px;
+      min-width: 16px;
+      min-height: 16px;
     }
 
     &:hover {

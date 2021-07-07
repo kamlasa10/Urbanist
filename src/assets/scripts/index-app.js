@@ -19,6 +19,7 @@ global.LocomotiveScroll = LocomotiveScroll
 global.axios = axios;
 global.ScrollTrigger = ScrollTrigger
 global.EventEmitter = EventEmitter
+global.isWatchInScroll = true
 
 window.initCustomScroll = function(needSmothScroll = true) {
   $(window)
@@ -81,7 +82,10 @@ window.initCustomScroll = function(needSmothScroll = true) {
 
   if (window.locoScroll) {
     window.locoScroll.on('scroll', e => {
-      animateScroll(e.scroll.y);
+      if(window.isWatchInScroll) {
+        animateScroll(e.scroll.y);
+        window.scrollOffset = e.scroll.y
+      }
     });
 
     return;

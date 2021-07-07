@@ -1,20 +1,39 @@
 @@include('../libs/libs.js')
 let menuTl = gsap.timeline()
 
+function loadingPageEnd() {
+  setTimeout(() => {
+    document.body.classList.remove('loading')
+    $('.js-spinner').fadeOut(200)
+  }, 400)
+}
+
+// document.body.classList.addClass('loading')
+
+window.createScrollTrigger = function (opts, fn, scrub = true) {
+  ScrollTrigger.create({
+    scrub,
+    animation: fn(),
+    immediateRender: scrub && false,
+    ...opts,
+    scroller: $(window)
+      .width() > 1025 ? '[data-scroll-container]' : '',
+  });
+};
+
 window.InitDoubleSliders = class InitDoubleSliders {
-  constructor({ $slider1, $slider2 }) {
-    this.$slider1 = $slider1;
-    this.$slider2 = $slider2;
-  }
+  static $slider1 = document.querySelector('.js-gallery-main')
+  static $slider2 = document.querySelector('.js-gallery-thumbs')
 
   static countLoopSlider = $('.js-gallery-main').find('.swiper-slide').length
 
-  init() {
-    this.$slider2 = new Swiper(this.$slider2, {
+  static init() {
+    InitDoubleSliders.$slider2 = new Swiper(InitDoubleSliders.$slider2, {
       direction: 'vertical',
       loop: true,
       loopedSlides: InitDoubleSliders.countLoopSlider,
       speed: 700,
+      watchOverflow: true,
       // slidesPerView: 5,
       centeredSlides: true,
       slidesPerView: 5,
@@ -29,11 +48,12 @@ window.InitDoubleSliders = class InitDoubleSliders {
     // this.$slider2.on('slideChange', swiper => {
     //   console.log(swiper)
     // })
-    this.$slider1 = new Swiper(this.$slider1, {
+    InitDoubleSliders.$slider1 = new Swiper(InitDoubleSliders.$slider1, {
       loop: true,
       autoplay: {
         delay: 7000
       },
+      watchOverflow: true,
       loopedSlides: InitDoubleSliders.countLoopSlider,
       direction: 'vertical',
       speed: 700,
@@ -62,15 +82,31 @@ window.InitDoubleSliders = class InitDoubleSliders {
       },
     });
 
-    this.$slider1.controller.control = this.$slider2
-    this.$slider2.controller.control = this.$slider1
+    InitDoubleSliders.$slider1.controller.control = InitDoubleSliders.$slider2
+    InitDoubleSliders.$slider2.controller.control = InitDoubleSliders.$slider1
+  }
+
+  static updateSliders() {
+    InitDoubleSliders.$slider1.update()
+    InitDoubleSliders.$slider1.loopDestroy()
+    InitDoubleSliders.$slider1.loopCreate()
+    InitDoubleSliders.$slider2.update()
+    InitDoubleSliders.$slider2.loopDestroy()
+    InitDoubleSliders.$slider2.loopCreate()
   }
 }
 
 function animateShowingMenu() {
     if(menuTl) menuTl.kill()
 
-    menuTl = gsap.timeline()
+    menuTl = gsap.timeline({
+      onStart() {
+        setTimeout(() => {
+          window.isWatchInScroll = false
+          $('.header').removeClass('move')
+        }, 200)
+      }
+    })
 
     menuTl.fromTo('.js-menu__title', {
         opacity: 0,
@@ -101,20 +137,40 @@ function animateShowingMenu() {
         y: 0,
         duration: 1.3
     }, 0)
-
 }
 
 function showMenu() {
     $('.js-btn-menu').on('click', e => {
         e.preventDefault()
+        e.stopPropagation()
 
         $('.header').toggleClass('active')
         $('.js-menu').toggleClass('show')
 
         if($('.header').hasClass('active')) {
             animateShowingMenu()
+            return
         }
+        animationScroll()
     })
+}
+
+function animationScroll() {
+  if(window.scrollOffset < 10) {
+    $('.header').removeClass('move')
+    return
+  }
+
+  $('.header').addClass('move')
+}
+
+function animationDefaultScroll() {
+  if($(window).offset().top < 10) {
+    $('.header').removeClass('move')
+    return
+  }
+
+  $('.header').addClass('move')
 }
 
 function disabledScroll() {
@@ -171,6 +227,7 @@ function handlePopup({listeners, doOpen, popupType}) {
 
 document.addEventListener('DOMContentLoaded', () => {
     showMenu()
+    loadingPageEnd()
 
     document.addEventListener('click', e => {
         if(e.target.classList.contains('overlay')) {

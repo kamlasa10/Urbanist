@@ -28,7 +28,7 @@ block content
       h1.page-title Оточення
       .pattern
       .environment 
-        .environment__blocks 
+        .environment__blocks(data-block="1") 
           .environment__item 
             .block__text
               +img('vector.svg').block__text_vector
@@ -49,7 +49,7 @@ block content
               +img('vector.svg').block__text_vector
               p.block__text_desc Вдале розташування в одному з центральних районів міста.
             +img('environment4.jpg').environment__item_photo
-        .environment__main
+        .environment__main(data-block="2")
           +img('environment-main.jpg').environment__main__photo 
           .environment__main_block 
             .block__text

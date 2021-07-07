@@ -20,14 +20,15 @@ block scripts
   script(defer src='./assets/scripts/header.js')
   script(defer src='./assets/scripts/contacts.js')
 block content
+  .vector.vector-main
+    .container
+      .vector__rounded
   .contacts-wrap.page-section
     .pattern.pattern__small.pattern__contacts
     .container.contacts__top
       include ../includes/breadcrumbs.pug
     .content
       .container-content.container
-        .vector.vector-main
-          .vector__rounded
         h1.page-title Контакти
         .contacts 
           .contacts__adress

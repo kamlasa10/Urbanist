@@ -24,28 +24,6 @@
 
 	&__month__fill {
 		position: relative;
-
-		&::after {
-			content: "";
-			position: absolute;
-			top: 0;
-			right: 0;
-			transform: translateX(100%);
-			width: 50px;
-			height: 10px;
-			background-color: transparent;
-		}
-
-		&::before {
-			content: "";
-			position: absolute;
-			height: 200px;
-			width: 50px;
-			transform: translateX(100%);
-			right: 0;
-			background-color: transparent;
-			display: none;
-		}
 	}
 
 	&__year__fill {
@@ -174,12 +152,12 @@
 		border-right: none;
 	}
 	&__year {
-		display: none;
+		opacity: 0;
+		pointer-events: none;
 		transition: opacity 0.4s;
 		width: 120px;
 		background: #9EBC00;
 		position: absolute;
-		transition: all .4s;
 		top: -40px;
     right: -14px;
     transform: translate(83%, 0);
@@ -195,7 +173,8 @@
 		&__fill {
 			&:hover { 
 				.filter__year {
-					display: flex;
+					opacity: 1;
+					pointer-events: initial;
 				}
 
 				& .chevron__filter {
@@ -205,7 +184,8 @@
 		}
 	}
 	&__month {
-		display: none;
+		opacity: 0;
+		pointer-events: none;
 		transition: opacity 0.4s;
 		width: 490px;
 		background: #9EBC00;
@@ -213,6 +193,7 @@
 		top: 0;
     right: -14px;
 		flex-direction: column;
+
 		&__container {
 			display: flex;
 			height: 100%;
@@ -233,7 +214,8 @@
 		&__fill {
 			&:hover {
 				.filter__month {
-					display: flex;
+					opacity: 1;
+					pointer-events: initial;
 				}
 
 				& .chevron__filter {
@@ -245,6 +227,26 @@
 				}
 			}
 		}
+	}
+}
+
+.filter__month,
+.filter__year {
+	&::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 25px;
+		transform: translateX(-100%);
+		background-color: transparent;
+	}
+}
+
+.filter__year {
+	&::before {
+		height: 30%;
 	}
 }
 
@@ -287,9 +289,9 @@
 
 		&__year {
 			margin-bottom: 36px;
-			cursor: pointer;
 		}
 		&__fill {
+			cursor: pointer;
 			font-weight: normal;
 			font-size: 10px;
 			line-height: 100%;

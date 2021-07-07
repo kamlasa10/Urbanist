@@ -1,12 +1,51 @@
+class GalleryActions {
+    static close(callback) {
+        // if(!callback) {
+        //     throw new Error('callback expect how a function, but is value' + ' ' + callback)
+        // }
+
+        GalleryActions.animationHide()
+        onScroll()
+    }
+
+    static animationHide() {
+        gsap.to('.js-gallery', {
+            opacity: 0,
+            display: 'none',
+            direction: 1,
+            onStart() {
+                setTimeout(animationScroll, 500)
+            }
+        })
+    }
+
+    static animationShow(fn) {
+        gsap.to('.js-gallery', {
+            opacity: 1,
+            display: 'block',
+            direction: 1,
+            onStart() {
+                $('.header').removeClass('move')
+            },
+            onComplete: fn
+        })
+    }
+
+    static open(callback) {
+        if(!callback) {
+            throw new Error('callback expect how a function, but is value' + ' ' + callback)
+        }
+        
+        callback()
+
+        disabledScroll()
+        
+        GalleryActions.animationShow(window.InitDoubleSliders.updateSliders)
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    window.initCustomScroll(true)
-
-    const initDoubleSliders = new window.InitDoubleSliders({
-        $slider1: '.js-gallery-main',
-        $slider2: '.js-gallery-thumbs',
-    });
-
-    initDoubleSliders.init()
+    window.initCustomScroll(false)
 
     function setDashoffsetCircle(el) {
         return 2 * Math.PI * el.getAttribute("r");
@@ -40,6 +79,23 @@ document.addEventListener('DOMContentLoaded', () => {
           simulatePathDrawing(icon, percent);
         }
     );
+
+    function addHandlerClick(className, fn) {
+        document.querySelectorAll(className).forEach(node => {
+            node.addEventListener('click', e => {
+                e.preventDefault()
+                fn()
+            })
+        })
+    }
+
+    addHandlerClick('.js-gallery-close', () => {
+        GalleryActions.close()
+    })
+
+    addHandlerClick('.js-progress__item', () => {
+        GalleryActions.open(InitDoubleSliders.init)
+    })
 
 //   var galleryTop = new Swiper('.gallery-top', {
 //     slidesPerView: 1,  

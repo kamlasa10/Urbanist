@@ -8,7 +8,7 @@ body {
 }
 
 .breadcrumbs {
-	margin-top: 136px;
+	padding-top: 136px;
 	margin-bottom: 8px;
 	display: flex;
 
@@ -67,6 +67,33 @@ body {
 	padding-right: 50px;
 }
 
+.webcam_btn {
+	width: 240px;
+	height: 50px;
+	background: transparent;
+	border: none;
+	font-size: 10px;
+	line-height: 100%;
+	text-align: center;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	color: 	#ECEFDC;
+	transition: all .4s;
+@media (min-width:1920px) {
+  font-size: 12px;
+  height: 54px;
+}
+
+&:hover {
+	opacity: 0.8;
+}
+
+&.border-green_btn {
+	cursor: default;
+	opacity: 1 !important;
+}
+}
+
 #home-page {
 	.container {
 		padding: 0 50px;
@@ -80,21 +107,40 @@ body {
 		}
 	}
 
+	@media (min-width: 2000px) {
+		.menu__container {
+			padding-right: 12vw !important;
+		}
+
+		.vector__menu .vector__rounded {
+			max-height: none !important;
+		}
+	}
+
 	.page__content {
 		margin-top: 0;
 	}
 
 	@media (min-width: 2000px) {
-		max-width: calc(100vw - 10vw);
-
 		.menu__container {
 			padding-left: 17vw;
 		}
 	}
+
+	@media (min-width: 2000px) {
+		.vector-main {
+			left: 14.5%;
+		}
+	}
+
+	.vector__rounded {
+		width: 14vw;
+		max-width: none;
+		max-height: none;
+	}
 }
 
 #home-page {
-	
 	.slideshow {
 		width: 100vw;
 		min-height: 100vh;
@@ -264,6 +310,10 @@ body {
 	.slides-nav__index-total {
 		margin-left: 15px;
 	}
+
+	.vector {
+		top: 0;
+	}
 }
 
 .slides-nav__button {
@@ -416,16 +466,18 @@ body {
 }
 
 .vector {
-	position: fixed;
-	top: 0px;
+	position: absolute;
+	top: 0;
 	width: 100%;
 	height: 100%;
 	pointer-events: none;
 	z-index: -1;
 	&__rounded {
 		// width: 19vw;
-		width: 14vw;
+		width: 12vw;
 		height: calc(100vh - 80px);
+		max-width: 225px;
+		max-height: 715px;
 		position: relative;
 		border-width: 1px;
 		border-style: solid;
@@ -448,9 +500,10 @@ body {
 			border-radius: 0px 0px 50% 50% / 0px 0px 10% 10%;
 		}
 
-		// @include to(1440px) {
-		// 	width: 15vw;
-		// }
+		@include to(1440px) {
+			max-height: 608px;
+			width: 186px;
+		}
 	}
 	&-main {
 		left: 22.5%;
@@ -572,14 +625,19 @@ body {
 	outline: none;
 	border: 1px solid #CAD1A6;
 	font-weight: normal;
-	font-size: 10px;
+	font-size: 12px;
 	line-height: 100%;
 	text-align: center;
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
 	color: #FFFFFF;
 	width: 240px;
-	height: 50px;
+	height: 54px;
+
+	@include to(1440px) {
+		font-size: 10px;
+		height: 50px;
+	}
 }
 
 .green-light_btn {
