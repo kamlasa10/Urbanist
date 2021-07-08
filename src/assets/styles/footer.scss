@@ -1,13 +1,19 @@
 .footer {
   background: #0F1C20;
-  padding-bottom: 50px;
+  padding-bottom: 15px;
   z-index: -2;
   &__content {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #2A363B;
     margin-top: 100px;
+    flex-wrap: wrap;
     padding-bottom: 50px;
+
+    @include to(850px) {
+      margin-top: 70px;
+      padding-bottom: 25px;
+    }
   }
   
   &__form {
@@ -16,11 +22,44 @@
     @include to(1440px) {
       width: 268px;
     }
+
+    @include to(850px) {
+      margin-top: 40px;
+      order: 1;
+      display: flex;
+      width: auto;
+
+      &-wrap {
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .footer__input {
+        display: flex;
+        margin-right: 20px;
+
+        &_title {
+          max-width: 240px;
+        }
+
+        &_inp {
+          width: calc(65% - 10px);
+          margin-left: 10px;
+        }
+      }
+    }
   }
   &__input {
     padding-bottom: 30px;
     border-bottom: 1px solid #2A363B;
     margin-bottom: 30px;
+
+    @include to(850px) {
+      border: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
     &_title {
       font-weight: normal;
       font-size: 15px;
@@ -39,8 +78,12 @@
       font-weight: normal;
       font-size: 30px;
       line-height: 100%;
-
       color: #ECEFDC;
+
+      @include to(850px) {
+        font-size: 25px;
+        transform: translateY(3px);
+      }
     }
     &_inp {
       width: 185px;
@@ -55,6 +98,11 @@
 
       @include to(1440px) {
         width: 149px;
+      }
+
+      @include to(850px) {
+        width: 165px;
+        font-size: 25px;
       }
 
       &:focus,&:active {
@@ -78,10 +126,19 @@
       @include to(1440px) {
         width: 240px;
       }
+
+      @include to(850px) {
+        width: 200px;
+      }
     }
   }
   &__contacts {
     width: 290px;
+
+    @include to(1025px) {
+      width: 240px;
+    }
+
     &_item {
       margin-bottom: 20px;
     }

@@ -37,6 +37,10 @@ body {
 	@include to(1440px) {
 		font-size: 14px;
 	}
+
+	@include to(1025px) {
+		overflow-x: hidden;
+	}
 }
 
 body input, body textarea {

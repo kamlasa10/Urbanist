@@ -137,6 +137,15 @@ body {
 		width: 14vw;
 		max-width: none;
 		max-height: none;
+
+		@include to(1025px) {
+			width: 186px;
+		}
+
+		@include to(600px) {
+			width: 110px;
+			max-height: 500px;
+		}
 	}
 }
 
@@ -150,6 +159,10 @@ body {
 	
 	.slide {
 		margin: 0;
+	}
+
+	.text-animate {
+		position: relative;
 	}
 	
 	.slide,
@@ -221,6 +234,10 @@ body {
 		overflow: hidden;
 		display: block;
 		white-space: nowrap;
+
+		@include to(1025px) {
+			white-space: normal;
+		}
 	}
 	
 	.text-row > span {
@@ -243,6 +260,15 @@ body {
 			display: flex;
 			align-items: center;
 		}
+
+		@include to(770px) {
+			transform: translateX(-50px);
+		}
+
+		@include to(720px) {
+			justify-content: flex-start;
+			transform: translateX(0);
+		}
 	}
 	
 	.slides-nav__button {
@@ -259,17 +285,35 @@ body {
 		transform: translateX(-106px);
 		transition: all .4s;
 
+		@include to(720px) {
+			transform: translateX(0);
+			width: 44px;
+			height: 23px;
+		}
+
 		&--prev {
 			&:hover {
 				transform: translateX(-113px);
+
+				@include to(720px) {
+					transform: translateX(-7px);
+				}
 			}
 		}
 
 		&--next {
 			transform: translateX(-106px) rotate(180deg);
 
+			@include to(720px) {
+				transform: translateX(0) rotate(180deg);
+			}
+
 			&:hover {
 				transform: translateX(-99px) rotate(180deg);
+
+				@include to(720px) {
+					transform: translateX(7px) rotate(180deg);
+				}
 			}
 		}
 	}
@@ -295,6 +339,12 @@ body {
 		position: absolute;
 		align-items: center;
 		font-size: 15px;
+
+		@include to(720px) {
+			position: static;
+			margin-left: 15px;
+			font-size: 14px;
+		}
 	}
 	
 	.slides-nav__index-current {
@@ -313,6 +363,16 @@ body {
 
 	.vector {
 		top: 0;
+
+		&__rounded {
+			@include to(1370px) {
+				height: 608px;
+			}
+		}
+
+		@include to(770px) {
+			left: 30%;
+		}
 	}
 }
 
@@ -356,6 +416,20 @@ body {
 		@include to(1440px) {
 			font-size: 64px;
 		}
+
+		@include to(770px) {
+			font-size: 50px;
+			margin-left: 60px;
+		}
+
+		@include to(720px) {
+			font-size: 30px;
+			margin-left: 0;
+		}
+
+		@include to(320px) {
+			font-size: 28px;
+		}
 	
 		color: #9EBC00;
 		max-width: 1122px;
@@ -367,11 +441,23 @@ body {
 			max-width: calc(100% - 20%);
 		}
 
+		@include to(720px) {
+			margin-bottom: 10px;
+		}
+
 		&_light {
 			color: #ECEFDC;
 		}
 	}
 	&__desc {
+		@include to(770px) {
+			margin-left: 70px;
+		}
+
+		@include to(720px) {
+			margin-left: 0;
+		}
+
 		&_text {
 			font-weight: normal;
 			max-width: 280px;
@@ -383,6 +469,10 @@ body {
 
 			@include to(1440px) {
 				max-width: 250px;
+			}
+
+			@include to(720px) {
+				margin-bottom: 20px;
 			}
 		}
 	}
@@ -397,6 +487,14 @@ body {
 
 		@media (min-width: 2000px) {
 			margin-bottom: 6vh;
+		}
+
+		@include to(770px) {
+			margin-bottom: 96px;
+		}
+
+		@include to(720px) {
+			display: none;
 		}
 
 		&_icon {
@@ -433,6 +531,14 @@ body {
 		@media (min-width: 2000px) {
 			bottom: 6vh;
 		}
+
+		@include to(770px) {
+			bottom: 90px;
+		}
+
+		@include to(720px) {
+			bottom: 35px;
+		}
 	}
 
 	&__img {
@@ -451,6 +557,10 @@ body {
 			bottom: 0;
 			z-index: 1;
 			background: rgba(#0F1C20, 0.5);
+		}
+
+		@include to(770px) {
+			height: 100vh;
 		}
 	}
 
@@ -588,6 +698,15 @@ body {
     font-size: 12px;
     width: 244px;
 	  height: 54px;
+  }
+
+  @include to(850px) {
+	  width: 200px;
+  }
+
+  @include to(600px) {
+	  min-height: 45px;
+	  height: auto;
   }
 
 }

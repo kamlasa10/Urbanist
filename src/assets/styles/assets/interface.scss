@@ -38,6 +38,11 @@ body.loading {
 		flex-shrink: 0;
 	}
 }
+
+.wrapper {
+  overflow: hidden;
+}
+
 .section-pading--top {
 	padding-top: 60px;
 }
@@ -77,6 +82,7 @@ button {
 }
 
 .btn {
+  
   position: relative;
   transition: all .4s;
   font-size: 12px !important;

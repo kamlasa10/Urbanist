@@ -16,12 +16,13 @@ header(class="header")
 							a(href="#").lang__link.lang__link--current uk
 							a(href="#").lang__link ru
 							a(href="#").lang__link en
-				li.header-list__item
+				li.header-list__item.header-list__item--2
 					a(href='apartments.html').header-list__item_link.link-with-opacity-animate Обрати квартиру
-				li.header-list__item
+				li.header-list__item.header-list__item-phone
 					a(href="tel:0449999123").header-list__item_phone.link-with-opacity-animate (044) 99 99 123
 				li.header-list__item
-					button.border-green_btn.show__popup.btn(data-popup-btn="callback") 
+					+img('phone.svg').phone-tablet(data-popup-btn="callback") 
+					button.border-green_btn.show__popup.btn.phone-desk(data-popup-btn="callback") 
 						span.btn__text Замовити дзвінок
 				li.header-list__item
 					button(class="header-list__item_menu header-menu js-btn-menu")

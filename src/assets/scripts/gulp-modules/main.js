@@ -44,10 +44,14 @@ class Slideshow extends EventEmitter {
         // some settings, like the clip paths
         let initialCircle
 
-        if($(window).width() < 2000 && $(window).width() > 1350) {
+        if(document.documentElement.clientWidth < 2000 && document.documentElement.clientWidth > 1350) {
             initialCircle = 'circle(52% at 70% 50%)'
         } else {
             initialCircle = 'circle(55% at 70% 50%)'
+        }
+
+        if(document.documentElement.clientWidth < 770) {
+            initialCircle = 'circle(59% at 73% 47%)'
         }
 
         this.config = {
@@ -66,7 +70,6 @@ class Slideshow extends EventEmitter {
         gsap.set(this.slides[this.current].DOM.imgWrap, {clipPath: this.config.clipPath.initial});
         // when hovering over the "explore" link on each slide, we animate the clip path from this.config.clipPath.initial to this.config.clipPath.hover
         for (const slide of this.slides) {
-            console.log(slide.DOM.links.find(el => el.classList.contains('js-link-with-hover')))
             const linkWithHoverEffect = slide.DOM.links.find(el => el.classList.contains('js-link-with-hover'))
 
             linkWithHoverEffect.addEventListener('mouseenter', () => {

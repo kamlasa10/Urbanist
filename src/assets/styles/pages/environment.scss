@@ -7,10 +7,15 @@
 	padding-bottom: 130px;
 	&__blocks {
 		display: grid;
-	 grid-template-columns: 1fr 1fr;
-	 justify-content: space-between;
-	 grid-gap: 50px;
-	 margin-bottom: 50px;
+		grid-template-columns: 1fr 1fr;
+		justify-content: space-between;
+		column-gap: 126px;
+		row-gap: 50px;
+		margin-bottom: 50px;
+
+		@include to(1200px) {
+			column-gap: 70px;
+		} 
 	}
 	&__main {
 		display: flex;

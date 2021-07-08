@@ -21,79 +21,8 @@ window.createScrollTrigger = function (opts, fn, scrub = true) {
   });
 };
 
-window.InitDoubleSliders = class InitDoubleSliders {
-  static $slider1 = document.querySelector('.js-gallery-main')
-  static $slider2 = document.querySelector('.js-gallery-thumbs')
-
-  static countLoopSlider = $('.js-gallery-main').find('.swiper-slide').length
-
-  static init() {
-    InitDoubleSliders.$slider2 = new Swiper(InitDoubleSliders.$slider2, {
-      direction: 'vertical',
-      loop: true,
-      loopedSlides: InitDoubleSliders.countLoopSlider,
-      speed: 700,
-      watchOverflow: true,
-      // slidesPerView: 5,
-      centeredSlides: true,
-      slidesPerView: 5,
-      touchRatio: 0.4,
-      slideToClickedSlide: true,
-      keyboard: {
-        enabled: true,
-        onlyInViewport: false
-      }
-    });
-
-    // this.$slider2.on('slideChange', swiper => {
-    //   console.log(swiper)
-    // })
-    InitDoubleSliders.$slider1 = new Swiper(InitDoubleSliders.$slider1, {
-      loop: true,
-      autoplay: {
-        delay: 7000
-      },
-      watchOverflow: true,
-      loopedSlides: InitDoubleSliders.countLoopSlider,
-      direction: 'vertical',
-      speed: 700,
-      grabCursor: false,
-      navigation: {
-        nextEl: '.js-swiper-button-next_gallery',
-        prevEl: '.js-swiper-button-prev_gallery',
-      },
-      // direction: 'vertical',
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'fraction',
-        formatFractionCurrent(number) {
-          const isWithZero = number < 10 ? `0${number}` : `${number}`;
-          return isWithZero.slice(-2);
-        },
-        formatFractionTotal(number) {
-          const isWithZero = number < 10 ? `0${number}` : `${number}`;
-          return isWithZero.slice(-2);
-        },
-        renderFraction(currentClass, totalClass) {
-          return (
-            `<span class="${currentClass}"></span>` + ' - ' + `<span class="${totalClass}"></span>`
-          );
-        },
-      },
-    });
-
-    InitDoubleSliders.$slider1.controller.control = InitDoubleSliders.$slider2
-    InitDoubleSliders.$slider2.controller.control = InitDoubleSliders.$slider1
-  }
-
-  static updateSliders() {
-    InitDoubleSliders.$slider1.update()
-    InitDoubleSliders.$slider1.loopDestroy()
-    InitDoubleSliders.$slider1.loopCreate()
-    InitDoubleSliders.$slider2.update()
-    InitDoubleSliders.$slider2.loopDestroy()
-    InitDoubleSliders.$slider2.loopCreate()
-  }
+function getClientWidth() {
+  return document.documentElement.clientWidth
 }
 
 function animateShowingMenu() {
@@ -126,10 +55,16 @@ function animateShowingMenu() {
         stagger: 0.2
     }, 0.3)
     .fromTo('.js-menu__image img', {
-        opacity: 0.2
+        opacity: getClientWidth() > 1025 ? 0.2 : 1
     }, {
         opacity: 1,
         duration: 1.3
+    }, 0.2)
+    .fromTo('.js-menu__image-overlay', {
+      opacity: getClientWidth() > 1025 ? 0 : 0.2
+    }, {
+      opacity: getClientWidth() > 1025 ? 0 : 1,
+      duration: 1.3
     }, 0.2)
     .fromTo('.vector__rounded', {
         y: '-100%',
@@ -226,6 +161,9 @@ function handlePopup({listeners, doOpen, popupType}) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    window.$slider1 = document.querySelector('.js-gallery-main')
+    window.$slider2 = document.querySelector('.js-gallery-thumbs')
+
     showMenu()
     loadingPageEnd()
 
@@ -248,6 +186,10 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     $('[name=phone]').each(function() {
+        if($(this).hasClass('js-footer-phone')) {
+          $(this).mask('0000-000-000', {selectOnFocus: true});
+          return
+        }
 
         $(this).mask('(000) 000-000-000', {selectOnFocus: true});
     });

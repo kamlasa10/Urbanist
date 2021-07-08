@@ -7,6 +7,7 @@ import * as yup from 'yup';
 import FormMonster from '../../pug/components/form/form';
 import SexyInput from '../../pug/components/input/input';
 import { EventEmitter } from 'events';
+import $ from 'jquery'
 
 gsap.registerPlugin(ScrollTrigger)
 

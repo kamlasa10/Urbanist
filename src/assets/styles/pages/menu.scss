@@ -17,6 +17,11 @@
 		@include to(1440px) {
 			padding-left: 132px;
 		}
+
+		@include to(1025px) {
+			padding-right: 0 !important;
+			justify-content: center;
+		}
 	}
 	&__content {
 		display: flex;
@@ -55,10 +60,40 @@
 			clip-path: circle(75% at 13% 46%);
 		}
 
+		@include to(1025px) {
+			width: 100%;
+			top: 120px;
+			clip-path: circle(73% at 52% 97%);
+
+			&-overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: rgba(#0F1C20, 0.8);
+				clip-path: circle(73% at 52% 97%);
+			}
+		}
+
+		@include to(770px) {
+			clip-path: circle(73% at 52% 72%);
+
+			&-overlay {
+				clip-path: circle(73% at 52% 72%);
+			}
+		}
+
 		img {
 			height: 100%;
 			object-fit: cover;
 		}
+	}
+}
+
+.menu__container-wrap {
+	@include to(770px) {
+		transform: translateY(16%);
 	}
 }
 
@@ -73,5 +108,9 @@
 		width: auto;
 		max-width: 225px;
 		max-height: 715px !important;
+	}
+
+	@include to(1025px) {
+		z-index: -1;
 	}
 }

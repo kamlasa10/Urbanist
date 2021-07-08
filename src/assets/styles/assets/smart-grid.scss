@@ -55,6 +55,14 @@ $fields_ss: 10px;
         padding-right: 50px;
     }
 
+    @include to(770px) {
+        padding: 0 30px !important;
+    }
+
+    @include to(600px) {
+        padding: 0 15px !important;
+    }
+
     // @media (min-width: 2000px) {
     //     max-width: calc(100vw - 10vw);
     // }
