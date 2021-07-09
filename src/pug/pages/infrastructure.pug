@@ -26,9 +26,12 @@ block content
       include ../includes/breadcrumbs.pug
       h1.page-title Інфраструктура
   .map 
+    .map__btn-mobile.js-open-infra.link__btn_green Инфраструктура
     .map__block.js-map 
-    .map__infra 
-      .map__infra-list 
+    .map__infra.js-map-infra
+      .map__infra-wrap
+        button(type="button").btn-res.map__close.js-map-close Закрити  
+      .map__infra-list
         .map__infra-item.js-map__infra-item.map__infra-item--1(data-category="complex")
           .map__infra-item-wrap
             +svg('1')

@@ -84,9 +84,18 @@ function showMenu() {
 
         if($('.header').hasClass('active')) {
             animateShowingMenu()
+            disabledScroll()
             return
         }
-        animationScroll()
+
+        onScroll()
+        
+        if(window.locoScroll) {
+          animationScroll()
+          return
+        }
+
+        animationDefaultScroll()
     })
 }
 
@@ -100,7 +109,7 @@ function animationScroll() {
 }
 
 function animationDefaultScroll() {
-  if($(window).offset().top < 10) {
+  if($(window).scrollTop() < 10) {
     $('.header').removeClass('move')
     return
   }
@@ -163,7 +172,9 @@ function handlePopup({listeners, doOpen, popupType}) {
 document.addEventListener('DOMContentLoaded', () => {
     window.$slider1 = document.querySelector('.js-gallery-main')
     window.$slider2 = document.querySelector('.js-gallery-thumbs')
-
+    setTimeout(function () {
+      window.scrollTo(0, 1);
+    }, 1000);
     showMenu()
     loadingPageEnd()
 

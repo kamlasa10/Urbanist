@@ -14,10 +14,42 @@
       margin-top: 70px;
       padding-bottom: 25px;
     }
+
+    @include to(480px) {
+      justify-content: center;
+
+      .menu__block {
+        width: 50%;
+
+        &:nth-child(2) {
+          padding-left: 17px;
+        }
+      }
+    }
   }
   
   &__form {
     width: 300px;
+    
+    .popup__text-warn {
+      padding-top: 0;
+      color: #fff;
+      display: none;
+      margin-top: -13px;
+    }
+
+    &-wrap {
+      flex-wrap: wrap;
+    }
+
+    &-wrap.warn {
+      position: relative;
+
+      .popup__text-warn {
+        color: #fff;
+        display: block;
+      }
+    }
 
     @include to(1440px) {
       width: 268px;
@@ -32,20 +64,70 @@
       &-wrap {
         display: flex;
         align-items: flex-start;
+
+        @include to(770px) {
+          margin-left: 20px;
+        }
+
+        @include to(480px) {
+          margin-left: 0;
+          overflow: hidden;
+          display: grid;
+          grid-template-columns: 1fr 5fr;
+        }
+
+        @include to(375px) {
+          grid-template-columns: 2fr 7fr;
+        }
       }
+
+      .footer__send {
+        @include to(480px) {
+          margin-top: 25px;
+          display: flex;
+          justify-content: center;
+        }
+      } 
 
       .footer__input {
         display: flex;
         margin-right: 20px;
 
+        @include to(770px) {
+          display: grid;
+          grid-template-columns: 1fr 1.3fr;
+        }
+
         &_title {
           max-width: 240px;
+
+          @include to(480px) {
+            max-width: 100%;
+            margin-right: 0;
+          }
         }
 
         &_inp {
           width: calc(65% - 10px);
           margin-left: 10px;
+
+          @include to(480px) {
+            width: 100%;
+          }
         }
+
+        @include to(770px) {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    @include to(480px) {
+      display: block;
+      margin-top: 25px;
+
+      .footer__input {
+        display: block;
       }
     }
   }
@@ -65,13 +147,16 @@
       font-size: 15px;
       line-height: 160%;
       text-transform: uppercase;
-
+      color: #9EBC00;
+      margin-bottom: 30px;
+       
       @include to(1440px) {
         font-size: 14px;
       }
 
-      color: #9EBC00;
-      margin-bottom: 30px;
+      @include to(480px) {
+        margin-bottom: 20px;
+      }
       
     }
     &_label {
@@ -137,6 +222,30 @@
 
     @include to(1025px) {
       width: 240px;
+    }
+
+    @include to(480px) {
+      width: 100%;
+
+      ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 30px;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+
+      .footer__social {
+        width: 100%;
+        justify-content: center;
+        display: flex;
+
+        &_item {
+          &:not(:last-child) {
+            margin-right: -15px;
+          }
+        }
+      }
     }
 
     &_item {

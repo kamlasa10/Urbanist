@@ -1,6 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     window.initCustomScroll(false)
 
+    $('.js-open-infra').on('click', e => {
+        e.preventDefault()
+        $('.js-map-infra').addClass('show')
+    })
+
+    $('.js-map-close').on('click', e => {
+        e.preventDefault()
+        $('.js-map-infra').removeClass('show')
+    })
+
     const map = new google.maps.Map(document.querySelector('.js-map'), {
       center: {lat: 50.4596227,lng: 30.435069},
       zoom: 16,

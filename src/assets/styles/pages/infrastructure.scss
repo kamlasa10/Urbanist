@@ -10,6 +10,32 @@
 
     .map {
         position: relative;
+
+        @include to(480px) {
+            height: 100vh;
+        }
+
+        &__close {
+            padding: 0;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        &__btn-mobile {
+            display: none;
+
+            @include to(480px) {
+                display: inline-flex;
+                position: absolute;
+                bottom: 30px;
+                left: 50%;
+                z-index: 3;
+                transform: translateX(-50%);
+            }
+        }
+        
         &__block {
             height: 100vh;
             width: 100%;
@@ -29,6 +55,10 @@
 
         &__link {
             color: #fff;
+
+            @include to(480px) {
+                display: none;
+            }
         }
 
         &__infra {
@@ -38,6 +68,17 @@
             transform: translateY(50%);
             right: 50px;
             z-index: 4;
+            transition: all .4s;
+
+            &-wrap {
+                display: none;
+
+                @include to(480px) {
+                    margin-bottom: 20px;
+                    display: flex;
+                    justify-content: flex-end;
+                }
+            }
 
             &-list {
                 height: 350px;
@@ -56,11 +97,31 @@
                 @include to(1440px) {
                     height: 300px;
                 }
+
+                @include to(480px) {
+                    margin-bottom: 0;
+                }
             }
 
             @include to(1440px) {
                 bottom: 70px;
                 transform: translateY(0);
+            }
+           
+            @include to(480px) {
+                background-color: #fff;
+                border-radius: 5px;
+                padding: 20px;
+                width: 270px;
+                bottom: 0;
+                transform: translate(-50%, 100%);
+                pointer-events: none;
+                left: 50%;
+            }
+
+            &.show {
+                transform: translate(-50%, 0);
+                pointer-events: initial;
             }
 
             &-item {

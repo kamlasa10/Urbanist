@@ -542,6 +542,10 @@ text {
   justify-content: space-between;
   width: 158px;
   margin-right: 25px;
+
+  @include to(480px) {
+	  margin-right: 15px;
+  }
 }
 
 .swiper-button-prev_gallery, .swiper-button-next_gallery {

@@ -50,14 +50,14 @@ class Slideshow extends EventEmitter {
             initialCircle = 'circle(55% at 70% 50%)'
         }
 
-        if(document.documentElement.clientWidth < 770) {
-            initialCircle = 'circle(59% at 73% 47%)'
+        if(document.documentElement.clientWidth < 750) {
+            initialCircle = '0'
         }
 
         this.config = {
             clipPath: {
                 initial: initialCircle,
-                final: 'circle(15% at 70% 50%)',
+                final: getClientWidth() > 755 ? 'circle(15% at 70% 50%)' : '',
                 hover: 'circle(20% at 30% 50%)'
             }
         };

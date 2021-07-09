@@ -48,6 +48,41 @@
 				input.popup__input.btn-res(type="tel" name="phone" placeholder="Телефон*" data-required="true" autocomplete="off")
 				.popup__text-warn text
 			button(type="submit" class="link__btn_green popup__submit") надіслати повідомлення
+	.popup.popup-callback(data-popup-type="manager") 
+		.popup__decor 
+			+svg('global-decor')
+		.popup__block
+			button(type="button").popup__close.btn-res(data-popup-close="manager")
+				+svg('close')
+		form.popup__wrap
+			.popup__title Зв’язатися з <br> менеджером
+			.popup__item 
+				input.popup__input.btn-res(type="text" name="name" placeholder="Ім`я*" data-required="true" autocomplete="off")
+				.popup__text-warn text
+			.popup__item 
+				input.popup__input.btn-res(type="tel" name="phone" placeholder="Телефон*" data-required="true" autocomplete="off")
+				.popup__text-warn text
+			button(type="submit" class="link__btn_green popup__submit") чекаю на дзвінок
+	.popup.popup-price(data-popup-type="get-price")
+		.popup__left
+			.popup__left-wrap
+				.popup__left-title Ціна від забудовника – від 35 тис. грн за кв. метр.
+				.popup__left-text Детальніше про умови придбання та ціни на конкретні квартири можна дізнатися у відділі продажу. Замовляйте дзвінок і ми вам зателефонуємо»
+		.popup__content
+			.popup__decor 
+				+svg('global-decor')
+			.popup__block
+				button(type="button").popup__close.btn-res(data-popup-close="get-price")
+					+svg('close')
+			form.popup__wrap
+				.popup__title Дізнатися <br> про ціну
+				.popup__item 
+					input.popup__input.btn-res(type="text" name="name" placeholder="Ім`я*" data-required="true" autocomplete="off")
+					.popup__text-warn text
+				.popup__item 
+					input.popup__input.btn-res(type="tel" name="phone" placeholder="Телефон*" data-required="true" autocomplete="off")
+					.popup__text-warn text
+				button(type="submit" class="link__btn_green popup__submit") Надіслати
 	.popup.popup-callback.popup-thanks(data-popup-type="thanks") 
 		.popup__decor 
 			+svg('global-decor')

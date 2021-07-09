@@ -216,6 +216,10 @@
         transform: translateY(-60px);
         background-color: $green;
         width: 100%;
+
+        @include to(480px) {
+          transform: translateY(-55px);
+        }
       }
 
       @include to(1440px) {

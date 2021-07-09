@@ -1,3 +1,7 @@
+input {
+  border-radius: 0;
+}
+
 body.loading {
   &::before {
     content: "";
@@ -82,7 +86,6 @@ button {
 }
 
 .btn {
-  
   position: relative;
   transition: all .4s;
   font-size: 12px !important;
@@ -95,6 +98,15 @@ button {
 
   @include to(1440px) {
     font-size: 10px !important;
+  }
+
+  @include to(770px) {
+    width: 240px !important;
+  }
+
+  @include to(480px) {
+    width: 220px;
+    height: 50px !important;
   }
 
   &__text {
@@ -167,6 +179,11 @@ button {
   color: #fff;
   width: 485px;
 
+  @include to(480px) {
+    width: 100%;
+    padding: 20px 15px;
+  }
+
   &__decor {
     position: absolute;
     top: 0;
@@ -176,11 +193,15 @@ button {
       width: 35px;
       height: 28%;
     }
+
+    @include to(480px) {
+      display: none;
+    }
   }
 
   &__text-warn {
     font-size: 14px;
-    opacity: 0;
+    display: none;
     transition: all .4s;
   }
 
@@ -210,6 +231,13 @@ button {
       min-height: 16px;
     }
 
+    @include to(770px) {
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
     &:hover {
       transform: rotate(180deg);
     }
@@ -226,11 +254,26 @@ button {
     @include to(1440px) {
       font-size: 36px;
     }
+
+    @include to(850px) {
+      font-size: 30px;
+    }
+
+    @include to(720px) {
+      font-size: 25px;
+      margin-bottom: 25px;
+    }
   }
 
   &__wrap {
     width: 300px;
     margin: 0 auto;
+
+    @include to(770px) {
+      width: 100%;
+      margin-left: 30px;
+      margin-right: 50px;
+    }
   }
 
   &__item {
@@ -238,7 +281,7 @@ button {
 
     &.warn {
       .popup__text-warn {
-        opacity: 1;
+        display: block;
       }
     }
   }
@@ -265,6 +308,15 @@ button {
   &__submit {
     margin-top: 40px;
     margin-bottom: 50px;
+
+    @include to(850px) {
+      margin-top: 15px;
+    }
+
+    @include to(480px) {
+      margin-top: 25px;
+      margin-bottom: 15px;
+    }
   }
 
   &-thanks {
@@ -294,6 +346,173 @@ button {
       margin-top: 20px;
       width: calc(100% + 60px);
       margin-left: -30px;
+    }
+  }
+
+  &__left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url(../images/pattern2.png);
+    background-position: left bottom;
+    background-repeat: repeat;
+
+    &-wrap {
+      position: relative;
+      z-index: 3;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(#0A171C, 0.7);
+    }
+
+    &-wrap {
+      max-width: 270px;
+
+      @include to(1440px) {
+        max-width: 240px;
+      }
+
+      @include to(770px) {
+        max-width: 200px;
+      }
+
+      @include to(720px) {
+        max-width: 100%;
+        padding: 0 20px;
+        padding-top: 40px;
+        padding-bottom: 30px;
+      }
+
+      @include to(480px) {
+        padding-top: 50px;
+      }
+    }
+
+    &-title {
+      margin-bottom: 20px;
+      font-size: 26px;
+      line-height: 1.4em;
+      text-transform: uppercase;
+      color: #9EBC00;
+
+      @include to(1440px) {
+        font-size: 24px;
+      }
+
+      @include to(850px) {
+        font-size: 16px;
+      }
+
+      @include to(770px) {
+        margin-bottom: 30px;
+      }
+
+      @include to(720px) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    padding: 30px;
+
+    @include to(850px) {
+      .popup__decor {
+        display: none;
+      }
+    }
+
+    @include to(770px) {
+      .popup__wrap {
+        margin-right: 0;
+        padding-right: 50px;
+      }
+
+      margin-left: 20px;
+      padding-left: 0;
+      padding-right: 49px;
+    }
+
+    @include to(720px) {
+      padding-top: 20px;
+      position: static;
+      margin-left: 0;
+    }
+
+    @include to(480px) {
+      padding-right: 10px;
+    }
+  }
+
+  &-callback {
+    @include to(770px) {
+      .popup__wrap {
+        width: 300px;
+        margin: 0 auto;
+      }
+
+      .popup__submit {
+        margin-top: 40px;
+      }
+    }
+
+    @include to(480px) {
+      .popup__submit {
+        margin-top: 25px;
+      }
+
+      .popup__wrap {
+        margin: 0;
+        width: calc(100% - 5px);
+      }
+    }
+  }
+
+  &-price {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    min-width: 871px;
+
+    @include to(850px) {
+      width: calc(100% - 90px);
+      min-width: auto;
+      grid-template-columns: 1.7fr 2fr;
+    }
+
+    @include to(720px) {
+      width: calc(100% - 30px);
+
+      .popup__close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+      overflow-y: auto;
+      max-height: 100vh;
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #9EBC00;
+      }
+
+      &::-webkit-scrollbar-track {
+        -webkit-box-shadow: none !important;
+        background-color: transparent;
+      }
+    }
+
+    @include to(650px) {
+      display: block;
     }
   }
 }
