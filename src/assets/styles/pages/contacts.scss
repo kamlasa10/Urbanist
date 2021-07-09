@@ -70,6 +70,15 @@ body.class-page-contacts {
 
 	@include to(900px) {
 		grid-template-columns: repeat(2, 1fr);
+		column-gap: 20px;
+	}
+
+	&__adress {
+		&-tablet {
+			@include to(900px) {
+				order: 1;
+			} 
+		}
 	}
 
 	&__icon {
@@ -84,6 +93,10 @@ body.class-page-contacts {
 
 	&__form {
 		margin-bottom: 27px;
+
+		@include to(900px) {
+			margin-bottom: 0;
+		}
 	}
 
 	&__title {
