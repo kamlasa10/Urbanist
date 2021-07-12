@@ -1,49 +1,3 @@
-class GalleryActions {
-    static close(callback) {
-        // if(!callback) {
-        //     throw new Error('callback expect how a function, but is value' + ' ' + callback)
-        // }
-
-        GalleryActions.animationHide()
-        onScroll()
-    }
-
-    static animationHide() {
-        gsap.to('.js-gallery', {
-            opacity: 0,
-            pointerEvents: 'none',
-            direction: 1,
-            onStart() {
-                setTimeout(animationScroll, 500)
-            }
-        })
-    }
-
-    static animationShow(fn) {
-        gsap.to('.js-gallery', {
-            opacity: 1,
-            pointerEvents: 'initial',
-            direction: 1,
-            onStart() {
-                $('.header').removeClass('move')
-            },
-            onComplete: fn
-        })
-    }
-
-    static open(callback) {
-        if(!callback) {
-            throw new Error('callback expect how a function, but is value' + ' ' + callback)
-        }
-        
-        callback(false)
-
-        disabledScroll()
-        
-        GalleryActions.animationShow(window.InitDoubleSliders.updateSliders)
-    }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     let countLoopSliders = $('.js-gallery-main').find('.swiper-slide').length
 
@@ -108,16 +62,62 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     
         static updateSliders() {
-        window.$slider1.update()
-        window.$slider1.loopDestroy()
-        window.$slider1.loopCreate()
-        window.$slider2.update()
-        window.$slider2.loopDestroy()
-        window.$slider2.loopCreate()
+            window.$slider1.update()
+            window.$slider1.loopDestroy()
+            window.$slider1.loopCreate()
+            window.$slider2.update()
+            window.$slider2.loopDestroy()
+            window.$slider2.loopCreate()
         }
     }
 
     InitDoubleSliders.init(false)
+
+    class GalleryActions {
+        static close(callback) {
+            // if(!callback) {
+            //     throw new Error('callback expect how a function, but is value' + ' ' + callback)
+            // }
+    
+            GalleryActions.animationHide()
+            onScroll()
+        }
+    
+        static animationHide() {
+            gsap.to('.js-gallery', {
+                opacity: 0,
+                pointerEvents: 'none',
+                direction: 1,
+                onStart() {
+                    setTimeout(animationScroll, 500)
+                }
+            })
+        }
+    
+        static animationShow(fn) {
+            gsap.to('.js-gallery', {
+                opacity: 1,
+                pointerEvents: 'initial',
+                direction: 1,
+                onStart() {
+                    $('.header').removeClass('move')
+                },
+                onComplete: fn
+            })
+        }
+    
+        static open(callback) {
+            if(!callback) {
+                throw new Error('callback expect how a function, but is value' + ' ' + callback)
+            }
+            
+            callback(false)
+    
+            disabledScroll()
+            
+            GalleryActions.animationShow(InitDoubleSliders.updateSliders)
+        }
+    }
 
     window.initCustomScroll(false)
 

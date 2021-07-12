@@ -21,138 +21,139 @@ block scripts
   script(defer src='./assets/scripts/documents.js')
 
 block content
-  .content.content-docs
-    .container-content
-      .page-info
-        .container
-          include ../includes/breadcrumbs.pug
-          h1.page-title Документи
-            .vector
-              .vector__rounded
-      .docs
-        <div class="swiper-container js-slider-docs swiper-container__docs">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              .docs__block
-                .docs__inf 
-                  +img('documents/1.jpg').docs__inf_photo
-                  .docs__inf__text 
-                    p.docs__size 1.65 мб (PDF)
-                    .date__block 
-                      +img('clock.svg').date__block_icon
-                      p.docs__inf_date 10.12.2020
-                p.docs__block_title Експертиза проекта
-              a.link__btn.btn(href='#')
-                span.btn__text Завантажити
-            </div>
-            <div class="swiper-slide">
-              .docs__block
-                .docs__inf 
-                  +img('documents/2.jpg').docs__inf_photo
-                  .docs__inf__text 
-                    p.docs__size 6.33 мб (PDF)
-                    .date__block 
-                      +img('clock.svg').date__block_icon
-                      p.docs__inf_date 10.12.2020
-                p.docs__block_title Договір оренди земельної ділянки від 12.06.2020р
-              a.link__btn.btn(href='#')
-                span.btn__text Завантажити
-            </div> 
-            <div class="swiper-slide">
-              .docs__block
-                .docs__inf 
-                  +img('documents/2.jpg').docs__inf_photo
-                  .docs__inf__text 
-                    p.docs__size 6.33 мб (PDF)
-                    .date__block 
-                      +img('clock.svg').date__block_icon
-                      p.docs__inf_date 10.12.2020
-                p.docs__block_title Договір оренди земельної ділянки від 12.06.2020р
-              a.link__btn.btn(href='#')
-                span.btn__text Завантажити
-            </div> 
-            <div class="swiper-slide">
-              .docs__block
-                .docs__inf 
-                  +img('documents/2.jpg').docs__inf_photo
-                  .docs__inf__text 
-                    p.docs__size 6.33 мб (PDF)
-                    .date__block 
-                      +img('clock.svg').date__block_icon
-                      p.docs__inf_date 10.12.2020
-                p.docs__block_title Договір оренди земельної ділянки від 12.06.2020р
-              a.link__btn.btn(href='#')
-                span.btn__text Завантажити
-            </div> 
-            <div class="swiper-slide">
-              .docs__block
-                .docs__inf 
-                  +img('documents/3.jpg').docs__inf_photo
-                  .docs__inf__text 
-                    p.docs__size 1.26 мб (PDF)
-                    .date__block 
-                      +img('clock.svg').date__block_icon
-                      p.docs__inf_date 10.12.2020
-                p.docs__block_title Лiцензiя Г. П. Командор ( повiдомлення, перелiк робiт, Витяг iз сайту_ДАБI )
-              a.link__btn.btn(href='#')
-                span.btn__text Завантажити
-            </div>
-            <div class="swiper-slide">
-              .docs__block
-                .docs__inf 
-                  +img('documents/4.jpg').docs__inf_photo
-                  .docs__inf__text 
-                    p.docs__size 860.4 кб (PDF)
-                    .date__block 
-                      +img('clock.svg').date__block_icon
-                      p.docs__inf_date 10.12.2020
-                p.docs__block_title 2020-11-26 ГП Цедика 14А Стадия П - КОРРЕКТ-2 ГП
-              a.link__btn.btn(href='#')
-                span.btn__text Завантажити
-            </div>
-            <div class="swiper-slide">
-              .docs__block
-                .docs__inf 
-                  +img('documents/5.jpg').docs__inf_photo
-                  .docs__inf__text 
-                    p.docs__size 77.92 кб (PDF)
-                    .date__block 
-                      +img('clock.svg').date__block_icon
-                      p.docs__inf_date 10.12.2020
-                p.docs__block_title Витяг на земельний участок
-              a.link__btn.btn(href='#')
-                span.btn__text Завантажити
-            </div>
-            <div class="swiper-slide">
-              .docs__block
-                .docs__inf 
-                  +img('documents/6.jpg').docs__inf_photo
-                  .docs__inf__text 
-                    p.docs__size 154.62 КБ (PDF)
-                    .date__block 
-                      +img('clock.svg').date__block_icon
-                      p.docs__inf_date 10.12.2020
-                p.docs__block_title Дозвіл на будівництво ІУ013210208238
-              a.link__btn.btn(href='#')
-                span.btn__text Завантажити
+  .wrapper
+    .content.content-docs
+      .container-content
+        .page-info
+          .container
+            include ../includes/breadcrumbs.pug
+            h1.page-title Документи
+              .vector
+                .vector__rounded
+        .docs
+          <div class="swiper-container js-slider-docs swiper-container__docs">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                .docs__block
+                  .docs__inf 
+                    +img('documents/1.jpg').docs__inf_photo
+                    .docs__inf__text 
+                      p.docs__size 1.65 мб (PDF)
+                      .date__block 
+                        +img('clock.svg').date__block_icon
+                        p.docs__inf_date 10.12.2020
+                  p.docs__block_title Експертиза проекта
+                a.link__btn.btn(href='#')
+                  span.btn__text Завантажити
+              </div>
+              <div class="swiper-slide">
+                .docs__block
+                  .docs__inf 
+                    +img('documents/2.jpg').docs__inf_photo
+                    .docs__inf__text 
+                      p.docs__size 6.33 мб (PDF)
+                      .date__block 
+                        +img('clock.svg').date__block_icon
+                        p.docs__inf_date 10.12.2020
+                  p.docs__block_title Договір оренди земельної ділянки від 12.06.2020р
+                a.link__btn.btn(href='#')
+                  span.btn__text Завантажити
+              </div> 
+              <div class="swiper-slide">
+                .docs__block
+                  .docs__inf 
+                    +img('documents/2.jpg').docs__inf_photo
+                    .docs__inf__text 
+                      p.docs__size 6.33 мб (PDF)
+                      .date__block 
+                        +img('clock.svg').date__block_icon
+                        p.docs__inf_date 10.12.2020
+                  p.docs__block_title Договір оренди земельної ділянки від 12.06.2020р
+                a.link__btn.btn(href='#')
+                  span.btn__text Завантажити
+              </div> 
+              <div class="swiper-slide">
+                .docs__block
+                  .docs__inf 
+                    +img('documents/2.jpg').docs__inf_photo
+                    .docs__inf__text 
+                      p.docs__size 6.33 мб (PDF)
+                      .date__block 
+                        +img('clock.svg').date__block_icon
+                        p.docs__inf_date 10.12.2020
+                  p.docs__block_title Договір оренди земельної ділянки від 12.06.2020р
+                a.link__btn.btn(href='#')
+                  span.btn__text Завантажити
+              </div> 
+              <div class="swiper-slide">
+                .docs__block
+                  .docs__inf 
+                    +img('documents/3.jpg').docs__inf_photo
+                    .docs__inf__text 
+                      p.docs__size 1.26 мб (PDF)
+                      .date__block 
+                        +img('clock.svg').date__block_icon
+                        p.docs__inf_date 10.12.2020
+                  p.docs__block_title Лiцензiя Г. П. Командор ( повiдомлення, перелiк робiт, Витяг iз сайту_ДАБI )
+                a.link__btn.btn(href='#')
+                  span.btn__text Завантажити
+              </div>
+              <div class="swiper-slide">
+                .docs__block
+                  .docs__inf 
+                    +img('documents/4.jpg').docs__inf_photo
+                    .docs__inf__text 
+                      p.docs__size 860.4 кб (PDF)
+                      .date__block 
+                        +img('clock.svg').date__block_icon
+                        p.docs__inf_date 10.12.2020
+                  p.docs__block_title 2020-11-26 ГП Цедика 14А Стадия П - КОРРЕКТ-2 ГП
+                a.link__btn.btn(href='#')
+                  span.btn__text Завантажити
+              </div>
+              <div class="swiper-slide">
+                .docs__block
+                  .docs__inf 
+                    +img('documents/5.jpg').docs__inf_photo
+                    .docs__inf__text 
+                      p.docs__size 77.92 кб (PDF)
+                      .date__block 
+                        +img('clock.svg').date__block_icon
+                        p.docs__inf_date 10.12.2020
+                  p.docs__block_title Витяг на земельний участок
+                a.link__btn.btn(href='#')
+                  span.btn__text Завантажити
+              </div>
+              <div class="swiper-slide">
+                .docs__block
+                  .docs__inf 
+                    +img('documents/6.jpg').docs__inf_photo
+                    .docs__inf__text 
+                      p.docs__size 154.62 КБ (PDF)
+                      .date__block 
+                        +img('clock.svg').date__block_icon
+                        p.docs__inf_date 10.12.2020
+                  p.docs__block_title Дозвіл на будівництво ІУ013210208238
+                a.link__btn.btn(href='#')
+                  span.btn__text Завантажити
+              </div>
             </div>
           </div>
-        </div>
-        .swiper__btns_doc
-          <button class="slides-nav__button slides-nav__button--prev" aria-label="Previous slide">
-          <svg viewBox="0 0 53 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M14 1C12.5 3.83333 7.7 10.1 0.5 12.5" stroke="#ECEFDC"/>
-          <path d="M14 24C12.5 21.1667 7.7 14.9 0.5 12.5" stroke="#ECEFDC"/>
-          <path d="M53 13H0" stroke="#ECEFDC"/>
-          </svg>
-          </button>
-          <button class="slides-nav__button slides-nav__button--next" aria-label="Previous slide">
-          <svg viewBox="0 0 53 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M14 1C12.5 3.83333 7.7 10.1 0.5 12.5" stroke="#ECEFDC"/>
-          <path d="M14 24C12.5 21.1667 7.7 14.9 0.5 12.5" stroke="#ECEFDC"/>
-          <path d="M53 13H0" stroke="#ECEFDC"/>
-          </svg>
-          </button>
+          .swiper__btns_doc
+            <button class="slides-nav__button slides-nav__button--prev" aria-label="Previous slide">
+            <svg viewBox="0 0 53 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1C12.5 3.83333 7.7 10.1 0.5 12.5" stroke="#ECEFDC"/>
+            <path d="M14 24C12.5 21.1667 7.7 14.9 0.5 12.5" stroke="#ECEFDC"/>
+            <path d="M53 13H0" stroke="#ECEFDC"/>
+            </svg>
+            </button>
+            <button class="slides-nav__button slides-nav__button--next" aria-label="Previous slide">
+            <svg viewBox="0 0 53 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1C12.5 3.83333 7.7 10.1 0.5 12.5" stroke="#ECEFDC"/>
+            <path d="M14 24C12.5 21.1667 7.7 14.9 0.5 12.5" stroke="#ECEFDC"/>
+            <path d="M53 13H0" stroke="#ECEFDC"/>
+            </svg>
+            </button>
   
 block footer
   include ../includes/footer.pug

@@ -9,6 +9,10 @@
 			margin-bottom: 20px;
 			font-size: 25px;
 		}
+
+		@include to(480px) {
+			font-size: 23px;
+		}
 	}
 	&__container {
 		height: 100vh;

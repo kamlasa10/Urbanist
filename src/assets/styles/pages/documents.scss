@@ -4,6 +4,15 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
+
+  @include to(770px) {
+    min-height: calc(100vh - 55px);
+  }
+
+  @include to(320px) {
+    display: block;
+    min-height: 100vh;
+  }
 }
 
 #id-page-documents {
@@ -13,6 +22,16 @@
     top: 0;
     left: 0;
     right: 0;
+
+    @include to(320px) {
+      position: static;
+    }
+  }
+
+  .link__btn {
+    @include to(770px) {
+      width: 100% !important;
+    }
   }
 
   .swiper__btns_doc {
@@ -40,6 +59,14 @@
       &:hover {
         transform: rotate(180deg) translateX(-7px) translateY(-3px);
       }
+
+      @include to(720px) {
+        transform: rotate(180deg) translateY(1px);
+
+        &:hover {
+          transform: rotate(180deg) translateX(-7px) translateY(1px);
+        }
+      }
     }
   }
 
@@ -53,6 +80,14 @@
 
   .swiper-container {
     padding-right: 50px;
+
+    @include to(770px) {
+      padding-right: 30px;
+    }
+
+    @include to(480px) {
+      padding-right: 15px;
+    }
   }
 
 	&__block{
@@ -63,6 +98,10 @@
 
     @include to(1440px) {
       max-width: 240px;
+    }
+
+    @include to(480px) {
+      margin-bottom: 18px;
     }
 
 		&_title {
@@ -85,6 +124,11 @@
 		margin-bottom: 20px;
 		display: flex;
 		align-items: center;
+
+    @include to(480px) {
+      margin-bottom: 15px;
+    }
+    
 		&_photo {
 			max-width: 75px;
 			margin-right: 32px;
@@ -128,4 +172,16 @@
 
 .swiper-button-next1, .swiper-button-prev1 {
   cursor: pointer;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) and ( max-width: 480px) {
+  #id-page-documents {
+    .content-docs {
+      min-height: 100vh;
+    }
+
+    .swiper__btns_doc {
+      bottom: 30px;
+    }
+  }
 }

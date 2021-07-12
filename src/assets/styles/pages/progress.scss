@@ -32,7 +32,6 @@
 		opacity: 0;
 		pointer-events: none;
 		transform: none;
-		height: 100vh;
 
 		&::before,
 		&::after,
@@ -217,6 +216,12 @@
 			}
 		}
 	}
+
+	@include to(480px) {
+		.pagination__button {
+			margin-top: 25px;
+		}
+	}
 }
 
 .progress {
@@ -229,7 +234,30 @@
 		grid-gap: 40px;
 	}
 
+	@include to(770px) {
+		padding-bottom: 90px;
+		grid-gap: 20px;
+	}
+
+	@include to(720px) {
+		grid-template-columns: 1fr;
+	}
+
+	@include to(480px) {
+		padding-bottom: 45px;
+	}
+
 	&__inf {
+		@include to(720px) {
+			width: 340px;
+			margin: 0 auto;
+			margin-bottom: 25px;
+		}
+
+		@include to(480px) {
+			width: 100%;
+		}
+
 		&_title {
 			font-style: normal;
 			font-weight: normal;
@@ -261,6 +289,10 @@
 		grid-template-columns: 1fr 1fr;
 		grid-column-gap: 45px;
 		grid-row-gap: 30px;
+
+		@include to(1025px) {
+			grid-template-columns: 1fr;
+		}
 	}
 	&__text {
 		margin-top: 20px;
@@ -280,13 +312,25 @@
 		display: flex;
 		width: 50%;
 		margin: auto;
-		justify-content: space-between;
+		justify-content: center;
+
+		@include to(770px) {
+			width: 100%;
+			justify-content: center;
+		}
 	}
 	&__item {
 		&__block {
 			cursor: pointer;
 			display: block;
 			position: relative;
+			
+			img {
+				object-fit: cover;
+				width: 100%;
+				height: auto;
+				max-height: 290px;
+			}
 		}
 		&_button {
 			border: none;
@@ -323,17 +367,24 @@
 
 }
 
-
-
 .items {
 	margin-bottom: 40px;
   	display: grid;
 	grid-template-columns: repeat(4, 65px);
 	grid-gap: 32px;
-  @media (min-width:1920px) {
-    grid-template-columns: repeat(4, 74px);
-	  grid-gap: 34px;
-  }
+
+	@media (min-width:1920px) {
+		grid-template-columns: repeat(4, 74px);
+		grid-gap: 34px;
+	}
+
+	@include to(770px) {
+		grid-gap: 23px;
+	}
+
+	@include to(480px) {
+		margin-bottom: 30px;
+	}
 }
 
 .item svg {
@@ -570,3 +621,15 @@ text {
   display: flex;
   align-items: center;
 }
+
+// @media screen and (-webkit-min-device-pixel-ratio: 1.5) and ( max-width: 770px) {
+// 	#id-page-progress {
+// 	  .gallery {
+// 		min-height: 93vh;
+// 	  }
+  
+// 	  .swiper__btns_doc {
+// 		bottom: 30px;
+// 	  }
+// 	}
+//   }

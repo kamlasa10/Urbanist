@@ -1,7 +1,6 @@
 .footer {
   background: #0F1C20;
   padding-bottom: 15px;
-  z-index: -2;
   &__content {
     display: flex;
     justify-content: space-between;
@@ -17,6 +16,7 @@
 
     @include to(480px) {
       justify-content: center;
+      margin-top: 45px;
 
       .menu__block {
         width: 50%;
@@ -56,6 +56,7 @@
     }
 
     @include to(850px) {
+     
       margin-top: 40px;
       order: 1;
       display: flex;

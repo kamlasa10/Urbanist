@@ -6,6 +6,54 @@
       height: calc(75vh - 80px);
     }
   }
+
+  @include to(1200px) {
+	  .vector {
+		  display: none;
+	  }
+  }
+
+  .progress__pagination {
+	  width: 100%;
+	  justify-content: center;
+  }
+}
+
+.pagination__button {
+	padding: 0;
+
+	&:not(:last-child) {
+	  margin-right: 20px;
+
+	  @include to(480px) {
+		  &:not(:last-child) {
+			  margin-right: 15px;
+		  }
+	  }
+	}	
+
+	&.pagination__button--prev {
+		margin-right: 40px;
+		padding-left: 20px;
+
+		@include to(480px) {
+			margin-right: 25px;
+		}
+	}
+
+	&.pagination__button--next {
+		margin-left: 20px;
+		padding-right: 20px;
+
+		@include to(480px) {
+			margin-left: 10px;
+		}
+	}
+
+	&.pagination__button--prev::before,
+	&.pagination__button--next::before {
+		top: 5px;
+	}
 }
 
 .filter {
@@ -101,6 +149,14 @@
 					border-left: 5px solid transparent;
 					transform: translateX(-3px);
 					transition: all .4s;
+
+					@include to(480px) {
+						right: -22px;
+					}
+
+					@include to(320px) {
+						right: -15px;
+					}
 				}
 
 				&:hover {
@@ -191,16 +247,32 @@
 		background: #9EBC00;
 		position: absolute;
 		top: 0;
-    right: -14px;
+    	right: -14px;
 		flex-direction: column;
+		transform: translate(102%, -81%);
+		padding: 38px;
+
+		@include to(480px) {
+			padding: 30px 25px;
+			width: 100vw;
+			z-index: 5;
+			transform: translate(35%, -81%);
+			right: -24px;
+		}
+
+		@include to(375px) {
+			right: -19px;
+		}
+
+		@include to(320px) {
+			right: -10px;
+		}
 
 		&__container {
 			display: flex;
 			height: 100%;
 		}
-    transform: translate(102%, -81%);
-		padding: 38px;
-		
+
 		&__block {
 			display: flex;
 			flex-direction: column;
@@ -262,6 +334,19 @@
 		max-width: 80%;
 	}
 
+	@include to(1200px) {
+		max-width: 100%;
+		display: flex;
+		width: 100%;
+		justify-content: stretch;
+	}
+
+	@include to(480px) {
+		flex-wrap: wrap;
+		justify-content: center;
+		padding-bottom: 45px;
+	}
+
 	.filter__month__fill-block {
 		display: inline-flex;
 		align-items: center;
@@ -275,12 +360,27 @@
 		padding: 50px 55px;
 		position: relative;
 
+		@include to(1025px) {
+			width: 100%;
+			width: 200px;
+		}
+
+		@include to(480px) {
+			margin-right: 0;
+			margin-bottom: 30px;
+			padding: 25px 20px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
 		.chevron__filter {
 			margin-left: 22px;
 		}
 
 		.chevron {
 			width: 7px;
+			transition: all .4s;
 
 			@include to(1440px) {
 				width: 6px;
@@ -310,6 +410,7 @@
 		.filter__month__fill {
 			.chevron__filter {
 				margin-left: 25px;
+				transition: all .4s;
 			}
 
 			.filter__link {
@@ -340,21 +441,52 @@
       }
 		}
 	}
-	&__blocks {
+	&__blocks-wrap {
 		width: 100%;
 		display: grid;
     grid-template-columns: repeat(2, 1fr);
 		grid-auto-rows: auto;
 		grid-gap: 45px;
+
+		@include to(1025px) {
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		} 
+
+		@include to(850px) {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		@include to(480px) {
+			grid-gap: 30px;
+		}
 	}
 	&__item {
+		text-decoration: none;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
 		position: relative;
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+		img {
+			position: static;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+
 		&__link {
-			position: absolute;
+			position: static;
 			bottom: 30px;
 			right: 30px;
-			display: none;
+			margin-top: 150px;
+			display: flex;
+			justify-content: flex-end;
+			opacity: 0;
+			pointer-events: none;
+			transition: all .4s;
 			&_more {
 				background: #0F1C20;
 				transition: all .4s;
@@ -363,12 +495,30 @@
 					border-color: transparent;
 				}
 			}
+
+			@include to(1025px) {
+				margin-top: 115px;
+			}
+
+			@include to(850px) {
+				margin-top: 95px;
+			}
+
+			@include to(480px) {
+				margin-top: 65px;
+			}
+
+			@include to(320px) {
+				margin-top: 55px;
+			}
 		}
 		&__text {
+			display: flex;
+			flex-direction: column;
 			transition: all .4s;
 			width: 100%;
 			height: 100%;
-			position: absolute;
+			position: static;
 			top: 0;
 			left: 0;
 			background: linear-gradient(180deg, rgba(15, 28, 32, 0.8) 0%, rgba(15, 28, 32, 0.4) 100%);
@@ -379,8 +529,30 @@
 					color: #FFFFFF;
 				}
 				.news__item__link {
-					display: block;
+					opacity: 1;
+					pointer-events: initial;
 				}
+			}
+
+			&__wrap {
+				margin-bottom: auto;
+				max-width: 275px;
+
+				@include to(1440px) {
+					max-width: 250px;
+				}
+			}
+
+			.date__block {
+				color: #ECEFDC;
+			}
+
+			@include to(1025px) {
+				padding: 30px 40px 30px;
+			}
+
+			@include to(480px) {
+				padding: 25px 30px;
 			}
 	
 		}
@@ -390,10 +562,20 @@
 			line-height: 140%;
 			color: #ECEFDC;
 			margin-top: 20px;
-      @media (min-width:1920px) {
-        font-size: 20px;
-        margin-top: 22px;
-      }
+
+			@media (min-width:1920px) {
+				font-size: 20px;
+				margin-top: 22px;
+			}
+
+			@include to(480px) {
+				margin-top: 13px;
+				font-size: 16px;
+			}
+		}
+
+		@include to(850px) {
+			width: 100%;
 		}
 	}
 }

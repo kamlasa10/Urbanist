@@ -11,6 +11,7 @@ body {
 	padding-top: 136px;
 	margin-bottom: 8px;
 	display: flex;
+	flex-wrap: wrap;
 
 	@include to(480px) {
 		padding-top: 105px;
@@ -611,6 +612,15 @@ body {
 			max-height: 608px;
 			width: 186px;
 		}
+
+		@include to(770px) {
+			max-height: 500px;
+			width: 160px;
+		}
+
+		@include to(720px) {
+			display: none;
+		}
 	}
 	&-main {
 		left: 22.5%;
@@ -659,6 +669,11 @@ body {
   }
 }
 
+.gallery {
+	opacity: 0;
+	pointer-events: none;
+}
+
 
 .page-title {
 	font-weight: bold;
@@ -674,8 +689,13 @@ body {
     margin-bottom: 32px;
   }
 
+  @include to(770px) {
+	  margin-bottom: 25px;
+	  font-size: 30px;
+  }
+
   @include to(720px) {
-	  font-size: 25px;
+	  font-size: 23px;
   }
 }
 

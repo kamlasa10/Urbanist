@@ -21,7 +21,7 @@ window.createScrollTrigger = function (opts, fn, scrub = true) {
   });
 };
 
-function getClientWidth() {
+window.getClientWidth =  function getClientWidth() {
   return document.documentElement.clientWidth
 }
 

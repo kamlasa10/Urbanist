@@ -1,8 +1,3 @@
-body.class-page-contacts {
-	background: url(../images/bg/bg-contacts.jpg) no-repeat bottom;
-	background-size: cover;
-}
-
 #id-page-contacts {
 	.content {
 		width: 100%;
@@ -12,6 +7,14 @@ body.class-page-contacts {
 	.form__field.warn {
 		.popup__text-warn {
 			opacity: 1;
+		}
+	}
+
+	.pattern {
+		z-index: 0;
+
+		@include to(480px) {
+			display: none;
 		}
 	}
 
@@ -29,10 +32,20 @@ body.class-page-contacts {
 		left: 0;
 		right: 0;
 		width: 100%;
+
+		@include to(720px) {
+			position: static;
+		}
 	}
 	
 	.page-section {
 		position: relative;
+		background: url(../images/bg/bg-contacts.jpg) no-repeat bottom;
+		background-size: cover;
+
+		@include to(720px) {
+			display: block;
+		}
 
 		&::before {
 			content: "";
@@ -45,14 +58,19 @@ body.class-page-contacts {
 			mix-blend-mode: luminosity;
 		}
 
-		&::after {
+		&::after { 
 			content: "";
 			position: absolute;
 			bottom: 0;
+			z-index: 5;
 			left: 0;
 			right: 0;
 			height: 18vh;
 			background: linear-gradient(270deg, #0F1C20 0%, rgba(15, 28, 32, 0.0749543) 92.5%, rgba(15, 28, 32, 0) 100%);
+
+			@include to(480px) {
+				display: none;
+			}
 		}
 	}
 }
@@ -71,13 +89,35 @@ body.class-page-contacts {
 	@include to(900px) {
 		grid-template-columns: repeat(2, 1fr);
 		column-gap: 20px;
+		row-gap: 40px;
+	}
+
+	@include to(480px) {
+		display: block;
 	}
 
 	&__adress {
 		&-tablet {
 			@include to(900px) {
 				order: 1;
+				grid-column: 1/3;
+				display: grid;
+				justify-content: space-between;
+				grid-template-columns: repeat(2, 1fr);
+				column-gap: 20px;
 			} 
+
+			@include to(480px) {
+				display: block;
+			}
+		}
+	}
+
+	&__btn {
+		margin-top: 27px;
+
+		@include to(480px) {
+			margin-top: 15px;
 		}
 	}
 
@@ -104,13 +144,18 @@ body.class-page-contacts {
 		font-size: 14px;
 		line-height: 160%;
 		text-transform: uppercase;
-
 		color: #9EBC00;
 		margin-bottom: 20px;
-    @media (min-width:1920px) {
-      font-size: 16px;
-      margin-bottom: 22px;
-    }
+
+		@media (min-width:1920px) {
+			font-size: 16px;
+			margin-bottom: 22px;
+		}
+
+		@include to(480px) {
+			margin-bottom: 13px;
+		}
+
 	}
 	&__block {
 		display: flex;
@@ -128,6 +173,10 @@ body.class-page-contacts {
 	}
 	&__link {
 		margin-bottom: 30px;
+
+		@include to(480px) {
+			margin-bottom: 20px;
+		}
 	}
 	&__inf {
 		&__block {
@@ -142,17 +191,22 @@ body.class-page-contacts {
 
 .form__group {
   position: relative;
-  margin-top: 10px;
+  margin-top: 25px;
   width: 100%;
+
+  @include to(480px) {
+	  margin-top: 15px;
+  }
+
 	&_textarea {
-		padding-top: 22px;
+		padding-top: 0;
 	}
 
   &.warn {
     .popup__text-warn {
-      padding-top: 5px;
-      opacity: 1;
-      color: #fff;
+		padding-top: 5px;
+		display: block;
+		color: #fff;
     }
   }
 }

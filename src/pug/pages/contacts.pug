@@ -24,6 +24,7 @@ block content
     .container
       .vector__rounded
   .contacts-wrap.page-section
+    .contacts__overlay
     .pattern.pattern__small.pattern__contacts
     .container.contacts__top
       include ../includes/breadcrumbs.pug
@@ -39,12 +40,13 @@ block content
             a.contacts__link.link__btn.btn(href='https://goo.gl/maps/6bBHwDMPXudZx6od8' target='__blank') 
               span.btn__text показати на google maps
           .contacts__adress.contacts__adress-tablet
-            h2.contacts__title відділ продажів:
-            .contacts__block
-              +img('map-pin.svg').contacts__icon
-              p.contacts__text м. Київ, вул. Бойчука, 44а
-            a.contacts__link.link__btn.btn(href='https://goo.gl/maps/G84BivrkGUJKHLoM9' target="__blank") 
-              span.btn__text показати на google maps
+            .contacts__address-wrap
+              h2.contacts__title відділ продажів:
+              .contacts__block
+                +img('map-pin.svg').contacts__icon
+                p.contacts__text м. Київ, вул. Бойчука, 44а
+              a.contacts__link.link__btn.btn(href='https://goo.gl/maps/G84BivrkGUJKHLoM9' target="__blank") 
+                span.btn__text показати на google maps
             .contacts__inf 
               .contacts__inf__block
                 +img('phone.svg').contacts__icon
@@ -75,7 +77,7 @@ block content
                 .popup__text-warn text
                 //- <label for="name" class="form__label">Повідомлення</label>
               </div>
-              button.green-light_btn(type='submit') надіслати повідомлення
+              button.green-light_btn.contacts__btn(type='submit') надіслати повідомлення
 
 block footer
   include ../includes/footer.pug

@@ -28,102 +28,109 @@ block content
     h1.page-title Новини
     .pattern.pattern__small
     .news
-      .news__filter 
-        p.news__filter_title Фільтр
-        .news__filter__year
-          p.news__filter_desc Рік
-          .news__filter__fill.filter__year__fill 2021
-            +img('chevron.svg').chevron.chevron__filter
-            .filter__year
-              .filter__link.active Усі
-              .filter__link 2021
-              .filter__link 2020
-              .filter__link 2019
-        .news__filter__month
-          p.news__filter_desc Місяць
-          .news__filter__fill.filter__month__fill 
-            .filter__month__fill-block 
-              span Січень
+      .news__filter
+        .news__filter-wrap 
+          p.news__filter_title Фільтр
+          .news__filter__year
+            p.news__filter_desc Рік
+            .news__filter__fill.filter__year__fill 2021
               +img('chevron.svg').chevron.chevron__filter
-            .filter__month
-              .filter__title 
-                p.filter__text Усі
-                .filter__line
-              .filter__month__container
-                .filter__month__block
-                  .filter__link.disabled 
-                    span Січень
-                  .filter__link 
-                    span лютий
-                  .filter__link 
-                    span березень
-                  .filter__link.active 
-                    span квітень
-                .filter__month__block
-                  .filter__link 
-                    span Травень
-                  .filter__link 
-                    span Червень
-                  .filter__link 
-                    span Липень
-                  .filter__link 
-                    span серпень
-                .filter__month__block
-                  .filter__link 
-                    span Вересень
-                  .filter__link 
-                    span Жовтень
-                  .filter__link 
-                    span Листопад
-                  .filter__link 
-                    span грудень
+              .filter__year
+                .filter__link.active Усі
+                .filter__link 2021
+                .filter__link 2020
+                .filter__link 2019
+          .news__filter__month
+            p.news__filter_desc Місяць
+            .news__filter__fill.filter__month__fill 
+              .filter__month__fill-block 
+                span Січень
+                +img('chevron.svg').chevron.chevron__filter
+              .filter__month
+                .filter__title 
+                  p.filter__text Усі
+                  .filter__line
+                .filter__month__container
+                  .filter__month__block
+                    .filter__link.disabled 
+                      span Січень
+                    .filter__link 
+                      span лютий
+                    .filter__link 
+                      span березень
+                    .filter__link.active 
+                      span квітень
+                  .filter__month__block
+                    .filter__link 
+                      span Травень
+                    .filter__link 
+                      span Червень
+                    .filter__link 
+                      span Липень
+                    .filter__link 
+                      span серпень
+                  .filter__month__block
+                    .filter__link 
+                      span Вересень
+                    .filter__link 
+                      span Жовтень
+                    .filter__link 
+                      span Листопад
+                    .filter__link 
+                      span грудень
       .news__blocks
-        a(href="#").news__item
-          +img('news/1.jpg')
-          .news__item__text  
-            .date__block 
-              +img('clock.svg').date__block_icon
-              p 10.12.2020
-            p.news__item_title Графік роботи відділу продажу на новорічні свята
-            .news__item__link
-              .link__btn.news__item__link_more Детальніше
-        a(href="#").news__item
-          +img('news/2.jpg')
-          .news__item__text  
-            .date__block 
-              +img('clock.svg').date__block_icon
-              p 10.12.2020
-            p.news__item_title Встигніть здійснити бажання про власне житло! Купуйте квартиру з першим внеском 10%
-            .news__item__link
-              .link__btn.news__item__link_more Детальніше
-        a(href="#").news__item
-          +img('news/3.jpg')
-          .news__item__text  
-            .date__block 
-              +img('clock.svg').date__block_icon
-              p 10.12.2020
-            p.news__item_title Наші балкони люблять Bosch за простір для важливих речей!
-            .news__item__link
-              .link__btn.news__item__link_more Детальніше
-        a(href="#").news__item
-          +img('news/1.jpg')
-          .news__item__text  
-            .date__block 
-              +img('clock.svg').date__block_icon
-              p 10.12.2020
-            p.news__item_title На виплат у гривнях чи у доларах? Обирайте, що зручніше!
-            .news__item__link
-              .link__btn.news__item__link_more Детальніше
-        a(href="#").news__item
-          +img('news/1.jpg')
-          .news__item__text  
-            .date__block 
-              +img('clock.svg').date__block_icon
-              p 10.12.2020
-            p.news__item_title Встигніть скористатися акційними умовами розстрочки
-            .news__item__link
-              .link__btn.news__item__link_more Детальніше
-        
+        .news__blocks-wrap
+          a(href="#").news__item(style="background-image: url(./assets/images/news/1.jpg)")
+            .news__item__text
+              .news__item__text__wrap  
+                .date__block 
+                  +img('clock.svg').date__block_icon
+                  p 10.12.2020
+                p.news__item_title Графік роботи відділу продажу на новорічні свята
+              .news__item__link
+                .link__btn.news__item__link_more Детальніше
+          a(href="#").news__item(style="background-image: url(./assets/images/news/2.jpg)")
+            .news__item__text  
+              .date__block 
+                +img('clock.svg').date__block_icon
+                p 10.12.2020
+              p.news__item_title Встигніть здійснити бажання про власне житло! Купуйте квартиру з першим внеском 10%
+              .news__item__link
+                .link__btn.news__item__link_more Детальніше
+          a(href="#").news__item(style="background-image: url(./assets/images/news/3.jpg)")
+            .news__item__text
+              .news__item__text__wrap  
+                .date__block 
+                  +img('clock.svg').date__block_icon
+                  p 10.12.2020
+                p.news__item_title Наші балкони люблять Bosch за простір для важливих речей!
+              .news__item__link
+                .link__btn.news__item__link_more Детальніше
+          a(href="#").news__item(style="background-image: url(./assets/images/news/1.jpg)")
+            .news__item__text
+              .news__item__text__wrap  
+                .date__block 
+                  +img('clock.svg').date__block_icon
+                  p 10.12.2020
+                p.news__item_title На виплат у гривнях чи у доларах? Обирайте, що зручніше!
+              .news__item__link
+                .link__btn.news__item__link_more Детальніше
+          a(href="#").news__item(style="background-image: url(./assets/images/news/2.jpg)")
+            .news__item__text 
+              .news__item__text__wrap 
+                .date__block 
+                  +img('clock.svg').date__block_icon
+                  p 10.12.2020
+                p.news__item_title Встигніть скористатися акційними умовами розстрочки
+              .news__item__link
+                .link__btn.news__item__link_more Детальніше
+        .progress__pagination 
+          button.disabled.pagination__button.pagination__button--prev.js-pagination__button-prev попередня
+          button.pagination__button 1
+          button.pagination__button 2
+          button.pagination__button 3
+          button.pagination__button 4
+          button.pagination__button.pagination__button--next.js-pagination__button-next наступна
 block footer
   include ../includes/footer.pug
 
