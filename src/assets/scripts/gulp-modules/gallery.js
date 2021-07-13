@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
   let countLoopSliders = $('.js-gallery-main').find('.swiper-slide').length
-
   class InitDoubleSliders { 
     static init(isAutoPlay) {
       window.$slider2 = new Swiper(window.$slider2, {

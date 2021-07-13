@@ -28,18 +28,22 @@ document.addEventListener('DOMContentLoaded', () => {
     function animateImgWithText(item) {
         const tl = gsap.timeline()
 
+        const isPhoneWidth = window.getClientWidth() <= 480
+
         return function() {
             tl.fromTo($(item).find('.block__text'), {
-                y: -30,
+                y: isPhoneWidth ? '' : -30,
+                x: isPhoneWidth ? 30 : '',
                 opacity: 0
             }, {
                 y: 0,
+                x: 0,
                 opacity: 1,
                 duration: 1.2,
                 stagger: 0.15
             })
             .fromTo($(item).find('.animation-img'), {
-                y: 30,
+                y: isPhoneWidth ? 15 : 30,
                 opacity: 0
             }, {
                 y: 0,

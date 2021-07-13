@@ -697,6 +697,10 @@ body {
   @include to(720px) {
 	  font-size: 23px;
   }
+
+  @include to(480px) {
+	  margin-bottom: 20px;
+  }
 }
 
 .link__btn {

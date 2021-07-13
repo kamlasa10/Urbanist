@@ -29,6 +29,18 @@
 
 #id-page-gallery {
   .container-gallery {
+    position: relative;
+  }
+
+  .gallery-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .container-gallery {
     &::after {
       content: "";
       top: 0;
@@ -55,6 +67,10 @@
       width: 30%;
       top: 0;
       background: linear-gradient(90deg, rgba(36, 121, 148, 0.2) 0%, rgba(15, 28, 32, 0.2) 100%);
+
+      @include to(770px) {
+        height: calc(100vh - 30px);
+      }
     }
 
     &::after {
@@ -229,8 +245,8 @@
 
 @media screen and (-webkit-min-device-pixel-ratio: 2) and ( max-width: 770px) {
   #id-page-gallery {
-    .content-docs {
-      min-height: calc(100vh - 55px);
+    .gallery-top {
+      height: calc(100vh - 30px);
     }
   }
 }

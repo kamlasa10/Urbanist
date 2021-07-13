@@ -8,6 +8,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 document.addEventListener('DOMContentLoaded', function () {
   var countLoopSliders = $('.js-gallery-main').find('.swiper-slide').length;
+  var touchMovePosition = false;
 
   var InitDoubleSliders =
   /*#__PURE__*/
@@ -139,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         callback(false);
         disabledScroll();
-        GalleryActions.animationShow(InitDoubleSliders.updateSliders);
+        GalleryActions.animationShow();
       }
     }]);
 
@@ -180,21 +181,51 @@ document.addEventListener('DOMContentLoaded', function () {
     simulatePathDrawing(icon, percent);
   });
 
-  function addHandlerClick(className, fn) {
+  function addHandler(_ref) {
+    var className = _ref.className,
+        fn = _ref.fn,
+        type = _ref.type;
     document.querySelectorAll(className).forEach(function (node) {
-      node.addEventListener('click', function (e) {
+      node.addEventListener(type, function (e) {
         e.preventDefault();
         fn();
       });
     });
   }
 
-  addHandlerClick('.js-gallery-close', function () {
-    GalleryActions.close();
+  addHandler({
+    className: '.js-gallery-close',
+    fn: GalleryActions.close,
+    type: 'click'
   });
-  addHandlerClick('.js-progress__item', function () {
-    GalleryActions.open(InitDoubleSliders.init);
-  }); //   var galleryTop = new Swiper('.gallery-top', {
+  addHandler({
+    className: '.js-progress__item',
+    fn: function fn() {
+      return GalleryActions.open(InitDoubleSliders.init);
+    },
+    type: 'click'
+  }); // addHandler(
+  //     {
+  //         className: '.js-progress__item',
+  //         fn: () => GalleryActions.open(InitDoubleSliders.init),
+  //         type: 'touchstart'
+  //     }
+  // )
+
+  document.ontouchmove = function (e) {
+    var y = e.touches[0].pageY;
+    touchMovePosition = y;
+  }; // document.addEventListener('touchstart', e => {
+  //     const path = event.path || (event.composedPath && event.composedPath());
+  //     e.stopPropagation()
+  //     // for(let i = 0; i < path.length; i++) {
+  //     //     if(path[i].classList.contains('js-progress__item')) {
+  //     //         GalleryActions.open(InitDoubleSliders.init)
+  //     //         break
+  //     //     }
+  //     // }
+  // })
+  //   var galleryTop = new Swiper('.gallery-top', {
   //     slidesPerView: 1,  
   //     loop: true,
   //     navigation: {
@@ -225,4 +256,5 @@ document.addEventListener('DOMContentLoaded', function () {
   //   });
   //   galleryTop.controller.control = galleryThumbs;
   //   galleryThumbs.controller.control = galleryTop;
+
 });

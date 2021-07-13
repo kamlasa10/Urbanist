@@ -76,7 +76,7 @@
 		}
 
 		@include to(1440px) {
-			clip-path: circle(75% at 19% 46%);
+			clip-path: circle(75% at 18% 46%);
 		}
 
 		@include to(1370px) {
@@ -84,7 +84,8 @@
 		}
 
 		@include to(1200px) {
-			clip-path: circle(75% at 13% 46%);
+			clip-path: circle(75% at 4% 46%);
+			width: 54%;
 		}
 
 		@include to(1025px) {

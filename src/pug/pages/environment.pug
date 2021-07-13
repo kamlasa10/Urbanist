@@ -20,44 +20,45 @@ block scripts
   script(defer src='./assets/scripts/header.js')
   script(defer src='./assets/scripts/environment.js')
 block content
-  .content
-    .container-content.container
-      .vector
-        .vector__rounded
-      include ../includes/breadcrumbs.pug
-      h1.page-title Оточення
-      .pattern
-      .environment 
-        .environment__blocks(data-block="1") 
-          .environment__item 
-            .block__text
-              +img('vector.svg').block__text_vector
-              p.block__text_desc Вдале розташування в одному з центральних районів міста.
-            +img('environment1.jpg').environment__item_photo
-          .environment__item 
-            .block__text
-              +img('vector.svg').block__text_vector
-              p.block__text_desc Вдале розташування в одному з центральних районів міста.
-            +img('environment2.jpg').environment__item_photo
-          .environment__item 
-            .block__text
-              +img('vector.svg').block__text_vector
-              p.block__text_desc Вдале розташування в одному з центральних районів міста.
-            +img('environment3.jpg').environment__item_photo
-          .environment__item 
-            .block__text
-              +img('vector.svg').block__text_vector
-              p.block__text_desc Вдале розташування в одному з центральних районів міста.
-            +img('environment4.jpg').environment__item_photo
-        .environment__main(data-block="2")
-          +img('environment-main.jpg').environment__main__photo 
-          .environment__main_block 
-            .block__text
-              +img('vector.svg').block__text_vector
-              p.block__text_desc Поруч є дитсадок, школа, університети, спорткомплекс, стадіон,  тому URBANIST - це кращий вибір для молоді, студентів та сімей із дітьми. 
-            .block__btns
-              button.border-green_btn Замовити дзвінок	 
-              a.link__btn_green(href='infrastructure.html') Інфраструктура
+  .wrapper
+    .content
+      .container-content.container
+        .vector
+          .vector__rounded
+        include ../includes/breadcrumbs.pug
+        h1.page-title Оточення
+        .pattern
+        .environment 
+          .environment__blocks(data-block="1") 
+            .environment__item 
+              .block__text
+                +img('vector.svg').block__text_vector
+                p.block__text_desc Вдале розташування в одному з центральних районів міста.
+              +img('environment1.jpg').environment__item_photo
+            .environment__item 
+              .block__text
+                +img('vector.svg').block__text_vector
+                p.block__text_desc Вдале розташування в одному з центральних районів міста.
+              +img('environment2.jpg').environment__item_photo
+            .environment__item 
+              .block__text
+                +img('vector.svg').block__text_vector
+                p.block__text_desc Вдале розташування в одному з центральних районів міста.
+              +img('environment3.jpg').environment__item_photo
+            .environment__item 
+              .block__text
+                +img('vector.svg').block__text_vector
+                p.block__text_desc Вдале розташування в одному з центральних районів міста.
+              +img('environment4.jpg').environment__item_photo
+          .environment__main(data-block="2")
+            +img('environment-main.jpg').environment__main__photo 
+            .environment__main_block 
+              .block__text
+                +img('vector.svg').block__text_vector
+                p.block__text_desc Поруч є дитсадок, школа, університети, спорткомплекс, стадіон,  тому URBANIST - це кращий вибір для молоді, студентів та сімей із дітьми. 
+              .block__btns
+                button.border-green_btn Замовити дзвінок	 
+                a.link__btn_green(href='infrastructure.html') Інфраструктура
 block footer
   include ../includes/footer.pug
 

@@ -1,8 +1,19 @@
 #id-page-webcam {
+	.page__content {
+		@include to(770px) {
+			background: url(../images/bg/bg-web.png) no-repeat left top;
+		}
+	}
+
 	.content-web {
-		background: url(../images/bg/bg-web.png) no-repeat left;
+		background: url(../images/bg/bg-web.png) no-repeat left top;
 		z-index: -3;
 		min-height: 100vh;
+
+		@include to(770px) {
+			min-height: auto;
+			background: none;
+		}
 	}
 
 	.pattern {
@@ -31,11 +42,44 @@
 			transform: translate(-50%, 0);
 			max-width: 1250px;
 		}
+
+		@include to(770px) {
+			padding: 0 30px;
+			grid-gap: 40px;
+			position: static;
+			transform: none;
+			padding-bottom: 61px;
+		}
+
+		@include to(600px) {
+			grid-template-columns: 1fr;
+			justify-content: center;
+			padding: 0 15px;
+			padding-bottom: 45px;
+		}
+
+		@include to(480px) {
+			grid-gap: 25px;
+		}
+
 		&__video {
 			width: 100%;
 			height: auto;
 			border: none;
 			height: 56.6vh;
+
+			@include to(770px) {
+				height: 41vh;
+			}
+		}
+	}
+
+	@include to(600px) {
+		.block__btns {
+			display: flex;
+			flex-wrap: wrap;
+			row-gap: 15px;
+			justify-content: center;
 		}
 	}
 }
@@ -44,9 +88,20 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	flex-wrap: wrap;
 	margin-bottom: 60px;
+
+	@include to(375px) {
+		margin-bottom: 30px;
+		display: block;
+	}
+
 	.page-title {
 		margin-bottom: 0;
+
+		@include to(375px) {
+			margin-bottom: 10px;
+		}
 	}
 	&__link {
 		display: flex;
@@ -59,8 +114,16 @@
 		text-decoration: none;
 		color: #9EBC00;
 
+		@include to(480px) {
+			transform: translateY(-5px);
+		}
+
 		img {
 			transition: all .4s;
+
+			@include to(480px) {
+				width: 44px;
+			}
 		}
 
     @media (min-width:1920px) {

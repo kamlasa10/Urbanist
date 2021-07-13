@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     let countLoopSliders = $('.js-gallery-main').find('.swiper-slide').length
+    let touchMovePosition = false
 
     class InitDoubleSliders { 
         static init(isAutoPlay) {
@@ -115,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
             disabledScroll()
             
-            GalleryActions.animationShow(InitDoubleSliders.updateSliders)
+            GalleryActions.animationShow()
         }
     }
 
@@ -154,22 +155,60 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     );
 
-    function addHandlerClick(className, fn) {
+    function addHandler({className, fn, type}) {
         document.querySelectorAll(className).forEach(node => {
-            node.addEventListener('click', e => {
+            node.addEventListener(type, e => {
                 e.preventDefault()
+                
                 fn()
             })
         })
     }
 
-    addHandlerClick('.js-gallery-close', () => {
-        GalleryActions.close()
-    })
+    addHandler(
+        {
+            className: '.js-gallery-close',
+            fn: GalleryActions.close,
+            type: 'click'
+        }
+    )
 
-    addHandlerClick('.js-progress__item', () => {
-        GalleryActions.open(InitDoubleSliders.init)
-    })
+    addHandler(
+        {
+            className: '.js-progress__item',
+            fn: () => GalleryActions.open(InitDoubleSliders.init),
+            type: 'click'
+
+        }
+    )
+
+    // addHandler(
+    //     {
+    //         className: '.js-progress__item',
+    //         fn: () => GalleryActions.open(InitDoubleSliders.init),
+    //         type: 'touchstart'
+    //     }
+    // )
+
+    document.ontouchmove = (e) => {
+        const y = e.touches[0].pageY
+
+        touchMovePosition = y
+    }
+
+    
+    // document.addEventListener('touchstart', e => {
+    //     const path = event.path || (event.composedPath && event.composedPath());
+
+    //     e.stopPropagation()
+        
+    //     // for(let i = 0; i < path.length; i++) {
+    //     //     if(path[i].classList.contains('js-progress__item')) {
+    //     //         GalleryActions.open(InitDoubleSliders.init)
+    //     //         break
+    //     //     }
+    //     // }
+    // })
 
 //   var galleryTop = new Swiper('.gallery-top', {
 //     slidesPerView: 1,  

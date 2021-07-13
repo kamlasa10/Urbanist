@@ -170,6 +170,10 @@ function handlePopup({listeners, doOpen, popupType}) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    if(document.body.getAttribute('id') !== 'id-page-progress') {
+      $('.js-gallery').remove()
+    }
+
     window.$slider1 = document.querySelector('.js-gallery-main')
     window.$slider2 = document.querySelector('.js-gallery-thumbs')
     setTimeout(function () {

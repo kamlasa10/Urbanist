@@ -5,17 +5,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const tl = gsap.timeline()
         const container = $('[data-block="1"]')
 
+
+
         tl.fromTo(container.find('.about__text'), {
             opacity: 0,
-            y: -50,
+            y: window.getClientWidth() >= 480 ? -50 : '',
+            x: window.getClientWidth() >= 480 ? '' : -30
         }, {
             opacity: 1,
             y: 0,
+            x: 0,
             duration: 1
         })
         .fromTo(container.find('.about__main_photo'), {
             opacity: 0,
-            y: 50
+            y: window.getClientWidth() >= 770 ? 50 : 30
         }, {
             opacity: 1,
             y: 0,
@@ -28,19 +32,30 @@ document.addEventListener('DOMContentLoaded', () => {
     function animationBlockTextWithImg(item) {
         const tl = gsap.timeline()
         const isReverse = item.classList.contains('.about__block_reverse')
+        let animationOffset = '50'
+
+        if(window.getClientWidth() <= 770) {
+            animationOffset = '30'
+        }
+
+        if(window.getClientWidth() <= 480) {
+            animationOffset = ''
+        }
 
         return function() {
             tl.fromTo($(item).find('.about__block_photo'), {
                 opacity: 0,
-                x: isReverse ? '50': '-50',
+                x: isReverse ? animationOffset: -animationOffset,
+                y: window.getClientWidth() <= 480 ? '30' : ''
             }, {
                 opacity: 1,
                 x: 0,
+                y: 0,
                 duration: 1.3
             })
             .fromTo($(item).find('.about__block__text'), {
                 opacity: 0,
-                x: isReverse ? '-50': '50',
+                x: isReverse ? -animationOffset: animationOffset,
             }, {
                 opacity: 1,
                 x: 0,
@@ -69,9 +84,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, animationFn, false)
                 break
             case '2':
+                let startPosition = $(window).height() / 1.4
+                
+                if(window.getClientWidth()) {
+                    startPosition = $(window).height() / 1
+                }
+
                 window.createScrollTrigger({
                     trigger: item,
-                    start: () => `-=${$(window).height() / 1.4}`,
+                    start: () => `-=${startPosition}`,
                     end: () => '+=300'
                 }, animationFn(item), false)
                 break

@@ -105,7 +105,7 @@ button {
   }
 
   @include to(480px) {
-    width: 220px;
+    width: 220px !important;
     height: 50px !important;
   }
 
