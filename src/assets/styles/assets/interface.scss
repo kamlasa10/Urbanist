@@ -2,6 +2,10 @@ input {
   border-radius: 0;
 }
 
+#bingc-passive .bingc-styles {
+  background: red !important;
+}
+
 body.loading {
   &::before {
     content: "";
@@ -15,6 +19,48 @@ body.loading {
     z-index: -100;
     // background-color: #0F1C20;
     transition: all .4s
+  }
+}
+
+.paginationjs {
+  position: relative;
+  z-index: 10;
+}
+
+.paginationjs-pages {
+  margin-top: 46px;
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .paginationjs-page {
+      margin-right: 20px;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        transition: all .4s;
+
+        &:hover {
+          color: #9EBC00;
+        }
+      }
+
+      &.active {
+        a {
+          color: #9EBC00;
+        }
+      }
+    }
+
+    .paginationjs-prev {
+      margin-right: 40px;
+    }
+
+    .paginationjs-next {
+      margin-left: 40px;
+    }
   }
 }
 
@@ -76,6 +122,32 @@ button {
     height: 1px;
     background-color: #000;
     content: "";
+  }
+}
+
+.loading-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(#0F1C20, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  z-index: 1000;
+  pointer-events: none;
+
+  &.loading {
+    opacity: 1;
+    pointer-events: initial;
+
+    .loadingio-spinner-dual-ring-74mtjdq34hq {
+      opacity: 1;
+      z-index: 1;
+      display: flex !important;
+    }
   }
 }
 
