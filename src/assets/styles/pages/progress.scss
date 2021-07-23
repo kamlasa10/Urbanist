@@ -9,6 +9,15 @@
 			margin-bottom: 21px;
 			position: relative;
 
+			circle {
+				transform-origin: center;
+				transform-box: fill-box;
+				transform: rotate(-270deg);
+				stroke-linejoin: round;
+				stroke-width: 10px;
+				fill: none;
+			  }
+
 			.data-progress-circle {
 				width: 70px;
 				height: 70px;
@@ -28,6 +37,10 @@
 			transform: translate(-50%, -50%);
 			position: absolute;
 		}
+	}
+
+	.content {
+		min-height: 100vh;
 	}
 
 	.gallery {
@@ -281,6 +294,20 @@
 			margin-top: 25px;
 		}
 	}
+
+	.paginationjs-next a,
+	.paginationjs-prev a {
+		text-decoration: none;
+	}
+
+	.pagination__button {
+		text-decoration: none;
+		margin-right: 0;
+
+		&--next {
+			margin-left: 0;
+		}
+	}
 }
 
 .progress {
@@ -483,15 +510,6 @@
       padding-top: 22px;
       margin-bottom: 20px;
     }
-}
-
-circle {
-  transform-origin: center;
-  transform-box: fill-box;
-  transform: rotate(-270deg);
-  stroke-linejoin: round;
-  stroke-width: 10px;
-  fill: none;
 }
 
 text {

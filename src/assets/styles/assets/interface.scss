@@ -6,6 +6,54 @@ input {
   background: red !important;
 }
 
+.disabled {
+  opacity: 0.7;
+  cursor: not-allowed !important;
+}
+
+#id-page-3d {
+  .container {
+    max-width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .header {
+    pointer-events: none;
+  }
+
+  .vector__menu .vector__rounded {
+    @media (min-width: 2000px) {
+      max-height: none !important;
+      max-width: none !important;
+      width: 14vw;
+    }
+  }
+
+  .header-list {
+    pointer-events: painted;
+
+    @include to(1440px) {
+      grid-gap: 40px;
+    }
+
+    @include to(1370px) {
+      grid-gap: 30px;
+    }
+  }
+
+  .header__logo {
+    pointer-events: painted;
+  }
+
+  @media (min-width: 2000px) {
+    .menu__container {
+      padding-left: 17vw;
+      padding-right: 12vw !important;
+    }
+  }
+}
+
 body.loading {
   &::before {
     content: "";
@@ -29,13 +77,24 @@ body.loading {
 
 .paginationjs-pages {
   margin-top: 46px;
+
+  @include to(480px) {
+    margin-top: 30px;
+  }
+
   ul {
     display: flex;
     justify-content: center;
     align-items: center;
 
     .paginationjs-page {
-      margin-right: 20px;
+      &:not(:last-child) {
+        margin-right: 20px;
+
+        @include to(480px) {
+          margin-right: 10px;
+        }
+      }
 
       a {
         color: #fff;
@@ -56,10 +115,18 @@ body.loading {
 
     .paginationjs-prev {
       margin-right: 40px;
+
+      @include to(480px) {
+        margin-right: 20px;
+      }
     }
 
     .paginationjs-next {
       margin-left: 40px;
+
+      @include to(480px) {
+        margin-left: 20px;
+      }
     }
   }
 }
