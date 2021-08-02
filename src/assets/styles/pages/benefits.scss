@@ -35,6 +35,10 @@
 		margin-bottom: 80px;
 		justify-content: space-between;
 
+		@include to(1440px) {
+			height: 420px;
+		}
+
 		@include to(1370px) {
 			height: 370px;
 		}
@@ -72,8 +76,20 @@
 
 		&_img {
 			width: 100%;
-			height: 100%;
+			height: 450px;
 			object-fit: cover;
+
+			@include to(1440px) {
+				height: 420px;
+			}
+
+			@include to(1370px) {
+				height: 370px;
+			}
+
+			@include to(770px) {
+				height: 300px;
+			}
 
 			@include to(567px) {
 				height: 35vh;
@@ -107,6 +123,35 @@
 		display: flex;
 		justify-content: space-between;
 		position: relative;
+
+		& > img {
+			max-height: 650px;
+			object-fit: cover;
+
+			@include to(1440px) {
+				max-height: 550px;
+			}
+
+			@include to(1025px) {
+				max-height: 414px;
+			}
+
+			@include to(800px) {
+				max-height: 317px;
+			}
+
+			@include to(567px) {
+				max-height: 230px;
+			}
+
+			@include to(375px) {
+				max-height: 190px;
+			}
+
+			@include to(320px) {
+				max-height: 170px;
+			}
+		}
 
 		@include to(480px) {
 			min-height: 350px;
@@ -181,6 +226,12 @@
 
 			.animation-img {
 				margin-top: auto;
+				height: 402px;
+				object-fit: cover;
+
+				@include to(1440px) {
+					height: 340px;
+				}
 
 				@include to(1370px) {
 					height: 300px;
@@ -191,7 +242,7 @@
 				}
 
 				@include to(770px) {
-					height: 260px;
+					height: 250px;
 				}
 
 				@include to(567px) {

@@ -86,6 +86,7 @@ window.initCustomScroll = function(needSmothScroll = true) {
       if(window.isWatchInScroll) {
         animateScroll(e.scroll.y);
         window.scrollOffset = e.scroll.y
+        console.log(window.scrollOffset)
       }
     });
 

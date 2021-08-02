@@ -72,5 +72,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   InitDoubleSliders.init(true)
   window.initCustomScroll(true)
+
+  $(window).on('resize', () => {
+    if($(window).width() <= 1025) {
+      $('.container-gallery').height(document.documentElement.clientHeight + 'px')
+    } else {
+      $('.container-gallery').height('100vh')
+    }
+  }).resize()
 });
 

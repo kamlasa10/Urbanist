@@ -68,6 +68,8 @@ class Slideshow extends EventEmitter {
         this.DOM.slides[this.current].classList.add('slide--current');
         // set the initial clip path
         gsap.set(this.slides[this.current].DOM.imgWrap, {clipPath: this.config.clipPath.initial});
+        gsap.set('.link__btn', {opacity: 0})
+        gsap.set(this.DOM.slides[this.current].querySelector('.link__btn'), {opacity: 1})
         // when hovering over the "explore" link on each slide, we animate the clip path from this.config.clipPath.initial to this.config.clipPath.hover
         for (const slide of this.slides) {
             const linkWithHoverEffect = slide.DOM.links.find(el => el.classList.contains('js-link-with-hover'))

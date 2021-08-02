@@ -211,6 +211,39 @@ body {
 		background-size: cover;
 		will-change: transform;
 		-webkit-backspace-visibility: hidden;
+		background-position: center;
+
+		&-1 {
+			background-position: right;
+
+			@include to(1440px) {
+				background-position: center;
+			}
+		}
+
+		&-2 {
+			background-position: 17vw 7%;
+		}
+
+		&-3 {
+			background-position: 28vw -8vw;
+
+			@include to(1440px) {
+				background-position: 27vw 0;
+			}
+		}
+
+		&-4 {
+			background-position: 24vw -9vw;
+
+			@include to(1440px) {
+				background-position: 19vw 0vw;
+			}
+		}
+
+		@include to(1200px) {
+			background-position: center;
+		}
 
 		&::before {
 			content: "";
@@ -487,10 +520,6 @@ body {
 			margin-bottom: 6vh;
 		}
 
-		@include to(770px) {
-			margin-bottom: 96px;
-		}
-
 		@include to(720px) {
 			display: none;
 		}
@@ -528,14 +557,6 @@ body {
 
 		@media (min-width: 2000px) {
 			bottom: 6vh;
-		}
-
-		@include to(770px) {
-			bottom: 90px;
-		}
-
-		@include to(720px) {
-			bottom: 35px;
 		}
 	}
 

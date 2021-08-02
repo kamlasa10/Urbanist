@@ -24,6 +24,16 @@
 	}
 
 	&__item_photo {
+		height: 320px;
+
+		@include to(1440px) {
+			height: 260px;
+		}
+
+		@include to(1370px) {
+			height: 240px;
+		}
+
 		@include to(770px) {
 			height: 260px;
 			width: 100%;
@@ -55,14 +65,31 @@
 
 		@include to(567px) {
 			grid-template-columns: 1fr;
-			row-gap: 35px;
-			margin-bottom: 35px;
+			row-gap: 30px;
+			margin-bottom: 30px;
 		}
 	}
 	&__main {
 		display: flex;
 		justify-content: space-between;
 		position: relative;
+
+		& > img {
+			height: 650px;
+			object-fit: cover;
+
+			@include to(1440px) {
+				height: 550px;
+			}
+
+			@include to(1025px) {
+				height: 500px;
+			}
+
+			@include to(720px) {
+				height: 350px;
+			}
+		}
 
 		@include to(480px) {
 			min-height: 350px;
@@ -124,11 +151,11 @@
 		font-size: 14px;
 		line-height: 140%;
 		color: #ECEFDC;
-		max-width: 240px;
+		max-width: 217px;
 
 		@media (min-width:1920px) {
 		font-size: 18px;
-		max-width: 300px;
+		max-width: 279px;
 		}
 
 		@include to(567px) {

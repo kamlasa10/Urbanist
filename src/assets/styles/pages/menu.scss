@@ -75,6 +75,10 @@
 			clip-path: circle(75% at 24% 46%);
 		}
 
+		@media (min-width: 2500px) {
+			clip-path: circle(75% at 26% 46%);
+		}
+
 		@include to(1440px) {
 			clip-path: circle(75% at 18% 46%);
 		}

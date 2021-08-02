@@ -132,6 +132,7 @@
 			}
 
 			svg {
+				fill: #fff;
 				width: 20px;
 				height: 20px;
 				transition: all .4s;
@@ -242,7 +243,7 @@
 			}
 
 			&--prev {
-				&:hover {
+				&:hover:not(.disabled) {
 					transform: translateX(-7px);
 				}
 			}
@@ -260,7 +261,7 @@
 					transform: translateX(100%) rotate(180deg);
 				}
 
-				&:hover {
+				&:hover:not(.disabled) {
 					&::before {
 						transform: translateX(calc(100% + 3px)) rotate(180deg);
 					}
@@ -582,9 +583,9 @@ text {
 			transform: rotate(180deg);
 		}
 
-		&:hover {
+		&:hover:not(.disabled) {
 			&::before {
-				transform: rotate(180deg) translateX(-3px);
+				transform: rotate(180deg) translateX(3px);
 			}
 		}
 	}
@@ -595,7 +596,7 @@ text {
 			right: 0;
 		}
 
-		&:hover {
+		&:hover:not(.disabled) {
 			&::before {
 				transform: translateX(3px);
 			}
@@ -604,7 +605,6 @@ text {
 
 	&.disabled {
 		cursor: default;
-		pointer-events: none;
 		color: #79868A;
 		
 		&::before {
@@ -636,6 +636,17 @@ text {
   right: 0;
   margin: auto;
 
+  img {
+	  object-fit: cover;
+  }
+
+  @media (min-width: 2000px) {
+	  width: 140px;
+	  height: 725px;
+	  bottom: 50%;
+	  transform: translateY(50%);
+  }
+
   @include to(1440px) {
     width: 100px;
     height: 500px;
@@ -661,10 +672,10 @@ text {
 	opacity: 1;
 }
 
-.gallery-top {
-  width: 100%;
-  height: 100vh;
-}
+// .gallery-top {
+//   width: 100%;
+//   height: 100vh;
+// }
 
 .gallery-top .swiper-slide {
   display: flex;

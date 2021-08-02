@@ -6,6 +6,216 @@ input {
   background: red !important;
 }
 
+#bingc-phone-button div.bingc-phone-button-tooltip.bingc-phone-button-tooltip-bottom-right {
+  background: #9EBC00 !important;
+}
+
+#bingc-phone-button.bingc-phone-button svg.bingc-phone-button-circle circle.bingc-phone-button-circle-inside {
+  fill: #9EBC00 !important;
+}
+
+#bingc-phone-button.bingc-phone-button:hover svg.bingc-phone-button-circle circle.bingc-phone-button-circle-inside {
+  fill: #9EBC00 !important;
+}
+
+#bingc-phone-button.bingc-phone-button div.bingc-phone-button-tooltip svg.bingc-phone-button-arrow polyline {
+  fill: #9EBC00 !important;
+}
+
+#bingc-passive.bingc-passive div.bingc-passive-overlay {
+  background: #9EBC00 !important;
+}
+
+#bingc-passive.bingc-passive div.bingc-passive-overlay div.bingc-passive-content div.bingc-we-will-call-you {
+  color: #fff !important;
+}
+
+#bingc-passive.bingc-passive div.bingc-passive-overlay div.bingc-passive-content div.bingc-we-will-call-you b {
+  color: #fff !important;
+}
+
+#bingc-passive.bingc-passive div.bingc-passive-overlay div.bingc-passive-content div.bingc-phone-sample span {
+  color: #fff !important;
+}
+
+#bingc-passive.bingc-passive div.bingc-passive-overlay div.bingc-passive-content div.bingc-phone-sample {
+  opacity: 1;
+}
+
+#bingc-passive.bingc-passive div.bingc-passive-overlay div.bingc-passive-content div.bingc-statistics {
+  color: #fff !important;
+  opacity: 1;
+}
+
+#bingc-passive.bingc-passive div.bingc-passive-overlay a.bingc-powered-by span.bingc-powered-by-text {
+  color: #fff !important;
+  opacity: 1;
+}
+
+#bingc-passive.bingc-passive div.bingc-passive-overlay div.bingc-passive-content div.bingc-passive-get-phone-form form.bingc-passive-get-phone-form span.bingc-sample-countdown-timer span {
+  color: #fff !important;
+  opacity: 1;
+}
+
+#bingc-passive.bingc-passive div.bingc-passive-overlay div.bingc-passive-content div.bingc-passive-get-phone-form form.bingc-passive-get-phone-form span.bingc-sample-countdown-timer {
+  color: #fff !important;
+}
+
+#bingc-passive.bingc-passive div.bingc-passive-overlay div.bingc-passive-content div.bingc-passive-get-phone-form form.bingc-passive-get-phone-form a.bingc-passive-phone-form-button {
+  background: #9EBC00 !important;
+  border: 1px solid #CAD1A6;
+  transition: all .4s;
+}
+
+#bingc-passive.bingc-passive div.bingc-passive-overlay div.bingc-passive-content div.bingc-passive-get-phone-form form.bingc-passive-get-phone-form a.bingc-passive-phone-form-button:hover {
+  background: #9EBC00 !important;
+  border-color: transparent;
+}
+
+#bingc-active.bingc-active {
+  background: rgba(#9EBC00, 0.98) !important;
+}
+
+#bingc-active.bingc-active a.bingc-active-close-button svg polygon {
+  fill: #fff !important;
+}
+
+#bingc-active.bingc-active a.bingc-powered-by span.bingc-powered-by-text {
+  color: #fff !important;
+  opacity: 1;
+}
+
+#bingc-active a.bingc-active-close-button {
+  opacity: 1 !important;
+}
+
+#bingc-passive.bingc-passive div.bingc-passive-overlay div.bingc-passive-content div.bingc-something-went-wrong {
+  color: #fff !important;
+}
+
+#bingc-active.bingc-active div.bingc-active-overlay div.bingc-active-content div.bingc-we-will-call-you {
+  color: #fff !important;
+}
+
+#bingc-active.bingc-active div.bingc-active-overlay div.bingc-active-content div.bingc-we-will-call-you span {
+  color: #fff !important;
+}
+
+#bingc-active.bingc-active div.bingc-active-overlay div.bingc-active-content div.bingc-statistics {
+  color: #fff !important;
+  opacity: 1;
+}
+
+#bingc-active.bingc-active div.bingc-active-overlay div.bingc-active-content div.bingc-active-get-phone-form form.bingc-active-get-phone-form span.bingc-sample-countdown-timer span {
+  color: #fff !important;
+  opacity: 1;
+}
+
+#bingc-active.bingc-active div.bingc-active-overlay div.bingc-active-content div.bingc-active-get-phone-form form.bingc-active-get-phone-form span.bingc-sample-countdown-timer {
+  color: #fff !important;
+}
+
+#bingc-active.bingc-active div.bingc-active-overlay div.bingc-active-content div.bingc-active-get-phone-form form.bingc-active-get-phone-form a.bingc-active-phone-form-button {
+  background: #9EBC00 !important;
+  border: 1px solid #CAD1A6;
+  transition: all .4s; 
+  font: 300 20px/48px Open sans,Ubuntu,Arial;
+}
+
+#bingc-active.bingc-active div.bingc-active-overlay div.bingc-active-content div.bingc-active-get-phone-form form.bingc-active-get-phone-form a.bingc-active-phone-form-button:hover {
+  border-color: transparent !important;
+  background: transparent !important;
+}
+
+#bingc-active.bingc-active div.bingc-active-overlay div.bingc-active-content div.bingc-something-went-wrong {
+  color: #fff !important;
+}
+
+#bingc-passive.bingc-passive div.bingc-passive-overlay div.bingc-passive-content div.bingc-we-will-call-you-later {
+  color: #fff !important;
+}
+
+#bingc-passive.bingc-passive div.bingc-passive-overlay div.bingc-passive-content div.bingc-we-will-call-you-later span.small-text {
+  color: #fff !important;
+}
+
+#bingc-passive.bingc-passive div.bingc-passive-overlay div.bingc-passive-content div.bingc-we-already-call-you {
+  color: #fff !important;
+}
+
+#bingc-passive.bingc-passive div.bingc-passive-overlay div.bingc-passive-content div.bingc-passive-countdown-timer {
+  color: #fff !important;
+}
+
+body #bingc-phone-button div.bingc-phone-button-icon-text span {
+  font-size: 9px !important;
+  font-weight: bold !important;   
+  }
+ body #bingc-phone-button div.bingc-phone-button-icon-text {
+top: 19px !important;
+  right: 41px !important;
+  }
+  body #bingc-phone-button svg.bingc-phone-button-icon-icon {
+  position: absolute;
+  top: 16px !important;
+  right: 37px !important;
+  opacity: 0;
+  padding: 7px;
+  width: 46px;
+  height: 47px !important;
+  background-image: none;
+  }
+  body #bingc-phone-button div.bingc-phone-button-tooltip {
+  display: none !important;
+  color: #000 !important;
+  background: #fff !important;
+  }
+  body #bingc-phone-button svg.bingc-phone-button-circle {
+  width: 75px !important;
+  height: 75px !important;
+  }
+
+  @media (max-width: 979px) { 
+    body #bingc-phone-button div.bingc-phone-button-icon-text span {
+    font-size: 9px !important;
+ }
+}
+ @media (max-width: 979px) { 
+  body #bingc-phone-button div.bingc-phone-button-icon-text {
+  top: 19px !important;
+    right: 41px !important;
+  }
+}
+@media (max-width: 979px) { 
+  body #bingc-phone-button svg.bingc-phone-button-icon-icon {
+    position: absolute;
+    top: 16px !important;
+    right: 37px !important;
+    opacity: 0;
+    padding: 7px;
+    width: 46px;
+    height: 47px !important;
+    background-image: none;
+    }
+  }
+  @media (max-width: 979px) { 
+    body #bingc-phone-button div.bingc-phone-button-tooltip {
+    display: none !important;
+    color: #000 !important;
+    background: #fff !important;
+    }
+  }
+    @media (max-width: 979px) { 
+      body #bingc-phone-button svg.bingc-phone-button-circle {
+    width: 75px !important;
+    height: 75px !important;
+    }
+  }
+
+#bingc-phone-button.bingc-phone-button {
+  right: 0 !important;
+}
+
 .disabled {
   opacity: 0.7;
   cursor: not-allowed !important;
@@ -20,6 +230,11 @@ input {
 
   .header {
     pointer-events: none;
+    
+    @include to(480px) {
+      padding-bottom: 10px;
+      background: rgba(15, 28, 32, 0.95);
+    }
   }
 
   .vector__menu .vector__rounded {
@@ -33,13 +248,32 @@ input {
   .header-list {
     pointer-events: painted;
 
-    @include to(1440px) {
-      grid-gap: 40px;
+    &__item--2 {
+      display: none;
     }
 
-    @include to(1370px) {
-      grid-gap: 30px;
+    &__item {
+      &:not(:last-child) {
+        @include to(1440px) {
+          margin-right: 40px;
+        }
+
+        @include to(1370px) {
+          margin-right: 30px;
+        }
+
+        @include to(480px) {
+          margin-right: 15px;
+        }
+
+        @include to(320px) {
+          margin-right: 13px;
+        }
+      }
     }
+    // @include to(770px) {
+    //   grid-template-columns: repeat(3, auto);
+    // }
   }
 
   .header__logo {
@@ -50,6 +284,16 @@ input {
     .menu__container {
       padding-left: 17vw;
       padding-right: 12vw !important;
+    }
+  }
+
+  @include to(1320px) {
+    .phone-desk {
+      display: none;
+    }
+
+    .phone-tablet {
+      display: block;
     }
   }
 }
@@ -64,9 +308,8 @@ body.loading {
     bottom: 0;
     width: 100%;
     height: 100%;
-    z-index: -100;
-    // background-color: #0F1C20;
-    transition: all .4s
+    z-index: 1000;
+    background-color: #0F1C20;
   }
 }
 
@@ -93,6 +336,12 @@ body.loading {
 
         @include to(480px) {
           margin-right: 10px;
+        }
+      }
+
+      &.active {
+        a {
+          cursor: default;
         }
       }
 
@@ -126,6 +375,14 @@ body.loading {
 
       @include to(480px) {
         margin-left: 20px;
+      }
+    }
+
+    .paginationjs-next,
+    .paginationjs-prev {
+      
+      &.disabled a {
+        cursor: not-allowed;
       }
     }
   }
@@ -361,6 +618,7 @@ button {
     }
 
     svg {
+      fill: #fff;
       width: 100%;
       height: 100%;
     }
@@ -375,6 +633,10 @@ button {
         width: 18px;
         height: 18px;
       }
+    }
+
+    @include to(720px) {
+      z-index: 10;
     }
 
     &:hover {
@@ -432,6 +694,7 @@ button {
     color: #fff;
     border-bottom: 1px solid rgba(236, 239, 220, 0.5);
     margin-bottom: 10px;
+    -webkit-text-fill-color: #fff !important;
     cursor: initial;
     transition: all .4s;
 
@@ -680,9 +943,107 @@ button {
     transition: all .4s;
   }
 
-  &:hover {
+  &:hover:not(.disabled) {
     &::before {
       transform: translateX(-3px);
     }
   }
+}
+
+.page404-wrap {
+  display: flex;
+  justify-content: center;
+  padding-top: 28vh;
+  padding-bottom: 5vh;
+  color: #fff;
+
+  .vector__rounded {
+    max-height: 470px;
+    max-width: 178px;
+  }
+
+  @media (max-width: 1440px) and (max-height: 768px) {
+    .vector__rounded {
+      max-height: 440px;
+      max-width: 173px;
+    }
+  }
+
+  @include to(1100px) {
+    .vector-main {
+      left: 50px;
+    }
+  }
+
+  @include to(770px) {
+    .vector-main {
+      left: 30px;
+    }
+
+    padding-top: 20vh;
+    padding-bottom: 11vh;
+  }
+
+  @include to(720px) {
+    padding-bottom: 0;
+
+    padding-top: 22vh;
+  }
+
+  .container {
+    width: 100%;
+    text-align: center;
+  }
+
+  .button-fill {
+    transition: all .4s;
+
+    &:first-child {
+      margin-right: 30px;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.page404__title {
+  margin-bottom: 10px !important;
+  font-family: $default-font !important;
+  font-weight: 400 !important;
+}
+
+.page404__subtitle {
+  font-size: 18px;
+  margin-bottom: 15px;
+
+  @include to(720px) {
+    font-size: 16px;
+  }
+}
+
+.link-wrap {
+  margin-top: 40px;
+
+  @include to(720px) {
+    margin-top: 30px;
+  }
+
+  @include to(480px) {
+    margin-top: 22px;
+  }
+}
+
+.gm-style-pbc {
+  background: rgba(245, 246, 247, 0.8);
+
+  .gm-style-pbt {
+    color: #0F1C20;
+  }
+}
+
+.swiper-button-disabled {
+  opacity: 0.6;
+  pointer-events: none;
 }

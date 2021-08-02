@@ -29,10 +29,11 @@ block content
         include ../includes/breadcrumbs.pug
         h1.page-title Забудовник
       .developer
-        .developer__site 
-          +img('dev-logo.svg').developer__site_logo
-          a.link__btn.btn(href='#' target='__blank') 
-            span.btn__text сайт забудовника
+        .developer__site
+          .developer__site-wrap 
+            +img('dev-logo.svg').developer__site_logo
+            a.link__btn.btn(href='#' target='__blank') 
+              span.btn__text сайт забудовника
         .developer__contacts
           h2.developer__contacts_title Контакти компанії
           .contacts__inf 
