@@ -190,7 +190,6 @@
   img {
     height: 100%;
   }
-
 }
 
 // .gallery-thumbs .swiper-slide-active {
@@ -207,6 +206,9 @@
   justify-content: center;
   box-sizing: border-box;
   overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .swiper__content {

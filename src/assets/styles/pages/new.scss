@@ -27,7 +27,8 @@
 	}
 
 	&__image {
-		max-height: 450px;
+		max-height: 550px;
+		object-fit: contain;
 
 		@include to(770px) {
 			max-height: 400px;

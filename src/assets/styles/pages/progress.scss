@@ -419,6 +419,31 @@
 				height: auto;
 				max-height: 290px;
 			}
+
+			& > img {
+				height: 290px;
+				max-height: auto;
+
+				@include to(1440px) {
+					height: 240px;
+				}
+
+				@include to(1025px) {
+					height: 290px;
+				}
+
+				@include to(800px) {
+					height: 240px;
+				}
+
+				@include to(480px) {
+					height: 250px;
+				}
+
+				@include to(320px) {
+					height: 220px;
+				}
+			}
 		}
 		&_button {
 			border: none;

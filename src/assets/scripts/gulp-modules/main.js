@@ -248,4 +248,6 @@ document.addEventListener('DOMContentLoaded', () => {
     navigation.DOM.total.innerHTML = slideshow.current < 10 ? `0${slideshow.slidesTotal}` : slideshow.slidesTotal;
     // when a new slide is shown, update the navigation current slide value
     slideshow.on('updateCurrent', position => navigation.updateCurrent(position));
+
+    gsap.fromTo("#path", {drawSVG: "0 5%"}, {duration: 1, drawSVG: "95% 100%"});
 })

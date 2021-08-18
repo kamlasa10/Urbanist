@@ -61,6 +61,10 @@
 
 .news__blocks {
 	position: relative;
+
+	@include to(800px) {
+		width: 100%;
+	}
 }
 
 .filter {
@@ -79,6 +83,10 @@
 
 	&__month__fill {
 		position: relative;
+
+		@include to(480px) {
+			position: static;
+		}
 	}
 
 	&__year__fill {
@@ -214,6 +222,11 @@
 		border-radius: 1.5px 0 0 1.5px;
 		border: 1px solid #BDD734;
 		border-right: none;
+
+		@include to(480px) {
+			right: -25px;
+			top: 3px;
+		}
 	}
 	&__year {
 		opacity: 0;
@@ -262,18 +275,11 @@
 
 		@include to(480px) {
 			padding: 30px 25px;
-			width: 100vw;
+			width: calc(100vw - 30px);
 			z-index: 5;
-			transform: translate(35%, -81%);
-			right: -24px;
-		}
-
-		@include to(375px) {
-			right: -19px;
-		}
-
-		@include to(320px) {
-			right: -10px;
+			transform: translate(0%, 0);
+			right: 15px;
+			top: 22%;
 		}
 
 		&__container {
@@ -380,6 +386,7 @@
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			position: static;
 		}
 
 		.chevron__filter {

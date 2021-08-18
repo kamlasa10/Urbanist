@@ -2,6 +2,7 @@
 	.content {
 		width: 100%;
 		position: relative;
+		z-index: 7;
 
 		@include to(770px) {
 			z-index: 10;
